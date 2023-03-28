@@ -1,10 +1,9 @@
-import Link from "next/link";
 import Contato from "./Contato";
 
 const Footer = () => {
     return (
-        <section id="contato" className="select-none mx-auto border-light-green border-opacity-70 border-t-4">
-            <footer className="select-none bg-[url('/banners/navbar-bg.webp')] bg-center bg-cover bg-fixed bg-no-repeat w-screen">
+        <section id="contato" className="select-none mx-auto border-color1 border-opacity-70 border-t-4">
+            <footer className="select-none bg-gray-200 bg-center bg-cover bg-fixed bg-no-repeat w-screen">
 
                 <Contato />
 
@@ -13,23 +12,10 @@ const Footer = () => {
                         <div className="h-1 my-0 py-0 bg-light-green bg-opacity-30" />
                     </div>
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                        <nav className="flex justify-center gap-6 text-xs text-gray-200 md:justify-end">
-                            <Link href="/termos">
-                                <a className="relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-light-green before:transition hover:before:scale-100">
-                                    Termos &amp; Condições / Cookies
-                                </a>
-                            </Link>
-                            <Link href="/politica">
-                                <a className="relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-light-green before:transition hover:before:scale-100">
-                                    Política de Privacidade
-                                </a>
-                            </Link>
-                        </nav>
                         <p className="text-center text-xs text-gray-400 md:text-left">
-                            ©2022 ConsultBio Jr.
-                            Todos os Direitos Reservados.
+                            ©2023 About Insurances.
+                            All rights reserved.
                         </p>
-
                     </div>
 
                 </div>

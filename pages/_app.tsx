@@ -38,10 +38,10 @@ function MyApp({ Component, pageProps }) {
       window.addEventListener("load", function () {
         navigator.serviceWorker.register("/sw.js").then(
           function (registration) {
-            console.log("Service Worker Registrado com Sucesso", registration.scope);
+            console.log("Service Worker Registered Successfully", registration.scope);
           },
           function (err) {
-            console.log("Falha ao Registrar Service Worker", err);
+            console.log("Failed to Register Service Worker", err);
           }
         );
       });

@@ -1,21 +1,11 @@
 import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
 const PageSeo = dynamic(() => import("../components/PageSeo"));
-const BgFixed1 = dynamic(() => import("../components/BgFixed1"));
-const BgFixed2 = dynamic(() => import("../components/BgFixed2"));
-const BgFixed3 = dynamic(() => import("../components/BgFixed3"));
 const BgParallax1 = dynamic(() => import("../components/BgParallax1"));
 const BgParallax2 = dynamic(() => import("../components/BgParallax2"));
-const BgParallax3 = dynamic(() => import("../components/BgParallax3"));
-const Navbar = dynamic(() => import("../components/Navbar"));
-const SobreConsultbio = dynamic(() => import("../components/SobreConsultbioJr"));
-const SobreMej = dynamic(() => import("../components/SobreMej"));
-const Organizacional = dynamic(() => import("../components/Organizacional"));
-const CartaServicos = dynamic(() => import("../components/CartaServicos"));
-const ServicosPrestados = dynamic(() => import("../components/ServicosPrestados"));
-const Depoimentos = dynamic(() => import("../components/Depoimentos"));
-const Equipe = dynamic(() => import("../components/Equipe"));
-const SobreCeleste = dynamic(() => import("../components/SobreCeleste"));
+const NavBar = dynamic(() => import("../components/Navbar"));
+const SideBar = dynamic(() => import("../components/SideBar"));
+const AboutInsurances = dynamic(() => import("../components/AboutInsurances"));
 const Footer = dynamic(() => import("../components/Footer"));
 
 export default function Home() {
@@ -26,20 +16,14 @@ export default function Home() {
     var navMenu = document.getElementById("nav-toggle");
     var navItem1 = document.getElementById("nav-item1");
     var navItem2 = document.getElementById("nav-item2");
-    var navItem3 = document.getElementById("nav-item3");
-    var navItem4 = document.getElementById("nav-item4");
-    var navItem5 = document.getElementById("nav-item5");
-    var navItem6 = document.getElementById("nav-item6");
-    var navItem7 = document.getElementById("nav-item7");
-    var navItem8 = document.getElementById("nav-item8");
 
     document.onclick = check;
 
-    function check(e: { target: any; }) {
+    function check(e) {
       var target = (e && e.target) || (event && event.srcElement);
 
       if (checkParent(target, navMenuDiv)) {
-        if ((checkParent(target, navItem1)) || (checkParent(target, navItem2)) || (checkParent(target, navItem3)) || (checkParent(target, navItem4)) || (checkParent(target, navItem5)) || (checkParent(target, navItem6)) || (checkParent(target, navItem7)) || (checkParent(target, navItem8))) {
+        if ((checkParent(target, navItem1)) || (checkParent(target, navItem2))) {
           navMenuDiv.classList.add("hidden");
         } else {
           navMenuDiv.classList.remove("hidden");
@@ -59,7 +43,7 @@ export default function Home() {
       }
     }
 
-    function checkParent(t: { parentNode: any; }, elm: HTMLElement) {
+    function checkParent(t, elm) {
       while (t.parentNode) {
         if (t == elm) {
           return true;
@@ -73,31 +57,18 @@ export default function Home() {
   return (
     <PageSeo
       title="Consultoria e Educação Ambiental"
-      titleTemplate="%s | ConsultBio Jr. Visite o site"
+      titleTemplate="%s | About Insurances"
       description="Aprenda a desenvolver sustentavelmente, visando a boa relação com a natureza e a sociedade! Custos diferenciados e consultoria de alta qualidade! Clique aqui e saiba mais."
       path="/"
     >
       <main>
-        <Navbar />
-        <BgFixed1 />
-        <section className="bg-[url('/banners/background-tree-flip.webp')] bg-no-repeat bg-fixed bg-cover w-screen max-w-full h-full">
-          <SobreConsultbio />
-          <SobreMej />
-        </section>
+        <NavBar />
         <BgParallax1 />
-        <section className="bg-[url('/banners/background-tree.webp')] bg-no-repeat bg-fixed bg-cover w-screen max-w-full h-full">
-          <Organizacional />
+        <section className="bg-gray-100 bg-no-repeat bg-fixed bg-cover w-screen max-w-full h-full">
+          <AboutInsurances />
         </section>
         <BgParallax2 />
-        <section className="bg-[url('/banners/bg4-nature.webp')] bg-no-repeat bg-fixed bg-cover w-screen max-w-full h-full">
-          <CartaServicos />
-          <ServicosPrestados />
-          <Depoimentos />
-        </section>
-        <section className="bg-[url('/banners/background-tree-flip.webp')] bg-no-repeat bg-fixed bg-cover w-screen max-w-full h-full">
-          <Equipe />
-          <SobreCeleste />
-        </section>
+        <SideBar />
         <Footer />
       </main >
     </PageSeo>

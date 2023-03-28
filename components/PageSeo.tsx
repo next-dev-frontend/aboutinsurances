@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo';
 
 function PageSeo({ title, titleTemplate, description, path, children }) {
-  const url = `https://consultbio-jr.vercel.app/${path}`;
+  const url = `https://about-insurances.vercel.app/${path}`;
   return (
     <div>
       <NextSeo
@@ -14,7 +14,7 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
           content: 'Matheus S. Lopes'
         }, {
           name: 'application-name',
-          content: 'Site da ConsultBio Jr.'
+          content: 'About Insurances Web Site'
         }, {
           httpEquiv: 'x-ua-compatible',
           content: 'IE=edge; chrome=1'
