@@ -1,0 +1,31 @@
+{
+  "name": "ConsultBio Jr. - Consultoria e Educação Ambiental",
+  "short_name": "ConsultBio Jr.",
+  "description": "Nossa missão tem como objetivo auxiliar seus clientes a alcançarem seu desenvolvimento em equilíbrio com a natureza, através de práticas e soluções sustentáveis através dos serviços prestados à sociedade.",
+  "display": "standalone",
+  "orientation": "Portrait-primary",
+  "purpose": "any maskable",
+  "theme_color": "#008033",
+  "background_color": "#FFFFFF",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/logos/logo-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/logos/logo-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/logos/logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

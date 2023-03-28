@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Host: https://consultbio-jr.vercel.app
+Sitemap: https://consultbio-jr.vercel.app/sitemap.xml

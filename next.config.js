@@ -1,0 +1,105 @@
+const withPWA = require('next-pwa');
+const runtimeCaching = require("next-pwa/cache");
+const withImages = require('next-images');
+const crypto = require('crypto');
+const hash = crypto.createHash('sha256');
+const { nonce } = crypto.randomBytes(8).toString('base64');
+
+const ContentSecurityPolicy = `
+  default-src 'self';
+  base-uri 'self';
+  object-src 'none';
+  form-action 'self';
+  script-src-elem 'self' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
+  script-src 'self' https: 'unsafe-eval' 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
+  style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.fonts.googleapis.com https://fonts.googleapis.com;
+  img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
+  media-src *;
+  frame-src 'self' https: http: 'unsafe-inline' https://www.google.com/maps/* *.google.com;
+  connect-src 'self' 'unsafe-inline' *.fonts.googleapis.com https://fonts.googleapis.com *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com;
+  font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
+`;
+
+const securityHeaders = [
+  // políticas de segurança
+  {
+    key: 'Content-Security-Policy',
+    value: ContentSecurityPolicy.replace(/\n/g, '')
+  },
+  {
+    key: 'Access-Control-Allow-Origin',
+    value: "https://consultbio-jr.vercel.app"
+  },
+  {
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on'
+  },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload'
+  },
+  {
+    key: 'X-XSS-Protection',
+    value: '1; mode=block'
+  },
+  // políticas de permissões
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff'
+  },
+  {
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN'
+  },
+  {
+    key: 'Permissions-Policy',
+    value: 'geolocation=()'
+  },
+  {// política de referência
+    key: 'Referrer-Policy',
+    value: 'same-origin'
+  }
+];
+
+module.exports = withImages({
+  esModule: true
+});
+
+module.exports = withPWA({
+  reactStrictMode: true,
+
+  pwa: {
+    dest: "public",
+    sw: 'sw.js',
+    register: true,
+    skipWaiting: true,
+    dynamicStartUrl: true,
+    runtimeCaching,
+    buildExcludes: [/middleware-manifest\.json$/],
+    disable: process.env.NODE_ENV === 'development',
+  },
+
+  images: {
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+
+  async headers() {
+    return [
+      {
+        source: '/(.*)', // aplicar em todas as rotas
+        headers: securityHeaders,
+      },
+    ];
+  },
+
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
+});
+
+
