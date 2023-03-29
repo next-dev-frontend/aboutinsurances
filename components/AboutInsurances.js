@@ -2,21 +2,21 @@ import Image from 'next/image';
 
 const AboutInsurances = () => {
     return (
-        <div id="insurances" className="select-none container mx-auto pt-10 pb-10 w-full max-w-5xl">
+        <div id="insurances" className="select-none container mx-auto pt-10 pb-10 w-full">
             <div className='flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none'>
                 <div className='w-auto pl-5'>
-                    <h1 className="my-4 text-left lg:text-center text-3xl md:text-4xl lg:text-5xl text-color1 font-bold">
+                    <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-color1 font-bold">
                         How to search and choose reliable insurance companies?
                     </h1>
                 </div>
             </div>
 
-            <div data-anime="left" className="w-full mb-6">
+            <div className="w-full mb-6">
                 <div className="h-1 mx-8 my-0 py-0 bg-gray-400 bg-opacity-25" />
             </div>
 
             <div className="flex flex-wrap text-gray-700">
-                <div className="w-auto md:w-1/2 px-8">
+                <div className="w-auto md:w-1/2 px-8 text-md md:text-xl lg:text-2xl">
                     <div className="mx-auto align-middle">
                         <div>
                             <br />General insurance covers a wide range of non-life insurance products, including car insurance,
@@ -69,10 +69,10 @@ const AboutInsurances = () => {
                             className='rounded-sm mask mask-parallelogram-3'
                             src="/backgrounds/bg-insurances.webp"
                             alt="Insurances Template"
-                            sizes="100vw"
-                            layout="fill"
+                            width={100}
+                            height={100}
+                            layout="responsive"
                             objectFit='cover'
-                            quality={100}
                         />
                     </div>
 
@@ -83,10 +83,10 @@ const AboutInsurances = () => {
                                 className='rounded-sm mask mask-parallelogram-3'
                                 src="/templates/business-template2.webp"
                                 alt="Business Plan Template"
-                                sizes="100vw"
-                                layout="fill"
+                                width={100}
+                                height={12}
+                                layout="responsive"
                                 objectFit='cover'
-                                quality={100}
                             />
                         </div>
                     </a>
@@ -98,10 +98,10 @@ const AboutInsurances = () => {
                                 className='rounded-sm mask mask-parallelogram-3'
                                 src="/templates/kaspersky-template.webp"
                                 alt="Kaspersky Template"
-                                sizes="100vw"
-                                layout="fill"
+                                width={100}
+                                height={100}
+                                layout="responsive"
                                 objectFit='cover'
-                                quality={100}
                             />
                         </div>
                     </a>

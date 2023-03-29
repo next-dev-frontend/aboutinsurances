@@ -25,7 +25,30 @@ WB_MANIFEST.push({
 });
 precacheAndRoute(WB_MANIFEST);
 
-cleanupOutdatedCaches();
+// Lista de URLs de recursos para pré-carregar
+const resourcesToPrecache = [
+  '/_next/index.html',
+  '/_next/fallback.tsx',
+  '/_next/globals.css',
+  '/_next/Navbar.js',
+  '/_next/font/GlacialIndifference-Regular.otf',
+  '/_next/logos/logo-google.webp',
+  '/_next/backgrounds/bg-insurances.webp',
+  '/_next/backgrounds/bg2-insurances.webp',
+  '/_next/backgrounds/bg3-insurances.webp',
+  '/_next/backgrounds/bg6-insurances.webp',
+  '/_next/logos/logo-about-insurances.webp',
+];
+
+// Instalar o Service Worker e pré-carregar os recursos
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open('site-cache').then(cache => {
+      return cache.addAll(resourcesToPrecache);
+    })
+  );
+});
+
 registerRoute(
   '/',
   new NetworkFirst({
@@ -156,6 +179,8 @@ registerRoute(
   'GET'
 );
 
+cleanupOutdatedCaches();
+
 // controle das estratégias de fallback offline
 // https://developers.google.com/web/tools/workbox/guides/advanced-recipes#comprehensive_fallbacks
 
@@ -175,11 +200,11 @@ setCatchHandler(({ event }) => {
       return matchPrecache('/fallback');
     case 'image':
       // Se estiver usando URLs pré-cache
-      return matchPrecache('/static/images/fallback.png');
+      return matchPrecache('/backgrounds/bg-insurances.webp');
     case 'font':
-    // Se estiver usando URLs pré-cache
-    // return matchPrecache(FALLBACK_FONT_URL);
-    // return caches.match('/static/fonts/fallback.otf')
+      // Se estiver usando URLs pré-cache
+      // return matchPrecache(FALLBACK_FONT_URL);
+      return caches.match('/fonts/GlacialIndifference-Regular.otf')
     // break
     default:
       // Se não tiver um fallback, retorna uma resposta de erro

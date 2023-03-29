@@ -31,14 +31,14 @@ const Contato = () => {
                                 />
                             </div>
                         </a>
-                        <p className="text-xs md:text-sm lg:text-md text-light-gray pb-8">
+                        <p className="text-sm md:text-md lg:text-lg text-light-gray pb-8">
                             Insurance information and tips website. Before contracting any insurance service, visit our website and clarify all your doubts on the subject. We try to bring you the most frequently mentioned questions and the answers to your questions about insurance and insurance agencies. We are very happy to be able to help people answer questions and learn more about how the online insurance market works.
                         </p>
 
 
 
-                        <div className="flex items-center">
-                            <ul className="flex justify-center gap-4 md:gap-6 sm:justify-start">
+                        <div className="flex justify-center md:justify-start">
+                            <ul className="flex gap-4 md:gap-6">
                                 <li>
                                     <a href="#home" title="Facebook da ConsultBio Jr." rel="noopener noreferrer" target="_self" className="text-color1 transition hover:text-color2">
                                         <span className="sr-only">Facebook</span>
@@ -78,7 +78,7 @@ const Contato = () => {
                             <ul className="flex mx-auto w-max h-full bg-white border-2 border-light-green rounded p-2 items-center">
                                 <li className='transform transition hover:scale-110 duration-500 ease-in-out'>
                                     <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fconsultbio-jr.vercel.app%2F&hl=pt_BR" rel="noopener noreferrer" target="_blank">
-                                        <div className='relative w-36 h-12'>
+                                        <div className='relative w-24 h-8 md:w-36 md:h-12'>
                                             <Image
                                                 src="/logos/logo-google.webp"
                                                 alt="Logo Site Seguro - Google"
