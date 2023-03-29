@@ -1,8 +1,4 @@
 import Image from 'next/image';
-import bgInsurances from "../public/backgrounds/bg-insurances.webp";
-import businessTemplate from "../public/templates/business-template2.webp";
-import kasperskyTemplate from "../public/templates/kaspersky-template.webp";
-
 
 const AboutInsurances = () => {
     return (
@@ -71,10 +67,10 @@ const AboutInsurances = () => {
                     <div className="relative rounded-md shadow-xl p-2 max-w-full">
                         <Image
                             className='rounded-sm mask mask-parallelogram-3'
-                            src={bgInsurances}
+                            src="/backgrounds/bg-insurances.webp"
                             alt="Insurances Template"
                             sizes="100vw"
-                            layout="responsive"
+                            layout="fill"
                             objectFit='cover'
                             quality={100}
                         />
@@ -85,10 +81,10 @@ const AboutInsurances = () => {
 
                             <Image
                                 className='rounded-sm mask mask-parallelogram-3'
-                                src={businessTemplate}
+                                src="/templates/business-template2.webp"
                                 alt="Business Plan Template"
                                 sizes="100vw"
-                                layout="responsive"
+                                layout="fill"
                                 objectFit='cover'
                                 quality={100}
                             />
@@ -100,10 +96,10 @@ const AboutInsurances = () => {
 
                             <Image
                                 className='rounded-sm mask mask-parallelogram-3'
-                                src={kasperskyTemplate}
+                                src="/templates/kaspersky-template.webp"
                                 alt="Kaspersky Template"
                                 sizes="100vw"
-                                layout="responsive"
+                                layout="fill"
                                 objectFit='cover'
                                 quality={100}
                             />

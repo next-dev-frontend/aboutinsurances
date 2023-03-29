@@ -34,16 +34,15 @@ function MyApp({ Component, pageProps }) {
 
   //inicializa o service-work pwa
   useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/sw.js").then(
-          function (registration) {
-            console.log("Service Worker Registered Successfully", registration.scope);
-          },
-          function (err) {
-            console.log("Failed to Register Service Worker", err);
-          }
-        );
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registrado com sucesso:', registration.scope);
+          })
+          .catch(error => {
+            console.log('Falha ao registrar o Service Worker:', error);
+          });
       });
     }
   }, []);

@@ -1,6 +1,5 @@
-const withPWA = require('next-pwa');
-const runtimeCaching = require("next-pwa/cache");
 const withImages = require('next-images');
+const withPWA = require('next-pwa');
 const crypto = require('crypto');
 const hash = crypto.createHash('sha256');
 const { nonce } = crypto.randomBytes(8).toString('base64');
@@ -61,28 +60,8 @@ const securityHeaders = [
   }
 ];
 
-module.exports = withImages({
-  esModule: true
-});
-
-module.exports = withPWA({
+module.exports = withImages(withPWA({
   reactStrictMode: true,
-
-  pwa: {
-    dest: "public",
-    sw: 'sw.js',
-    register: true,
-    skipWaiting: true,
-    dynamicStartUrl: true,
-    runtimeCaching,
-    buildExcludes: [/middleware-manifest\.json$/],
-    disable: process.env.NODE_ENV === 'development',
-  },
-
-  images: {
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-  },
 
   async headers() {
     return [
@@ -93,13 +72,58 @@ module.exports = withPWA({
     ];
   },
 
+
+  pwa: {
+    dest: "public",
+    sw: 'service-worker.js',
+    register: true,
+    skipWaiting: true,
+    dynamicStartUrl: true,
+    runtimeCaching: [
+      {
+        urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'images',
+          expiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 24 * 60 * 60, // 1 day
+          },
+        },
+      },
+      {
+        urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'google-fonts-stylesheets',
+        },
+      },
+      {
+        urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'google-fonts-webfonts',
+          expiration: {
+            maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+          },
+        },
+      },
+    ],
+    buildExcludes: [/middleware-manifest\.json$/],
+    disable: process.env.NODE_ENV === 'development',
+  },
+
+  images: {
+    formats: ['image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
-
-});
-
+}));
 

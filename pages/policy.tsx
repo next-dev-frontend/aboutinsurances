@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import logoInsurances from '../public/logos/logo-about-insurances.webp';
 const PageSeo = dynamic(() => import("../components/PageSeo"));
 
 export default function Policy() {
@@ -28,7 +27,7 @@ export default function Policy() {
                             <div className='w-auto px-4 lg:px-8 pt-2 lg:pt-3'>
                                 <div className='w-8 md:w-14 lg:w-16 h-auto'>
                                     <Image
-                                        src={logoInsurances}
+                                        src="../public/logos/logo-about-insurances.webp"
                                         alt="Mascote Celeste"
                                         layout="intrinsic"
                                         objectFit='cover'

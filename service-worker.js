@@ -3,9 +3,16 @@ import { ExpirationPlugin } from 'workbox-expiration';
 import { NetworkOnly, NetworkFirst, CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import { registerRoute, setDefaultHandler, setCatchHandler } from 'workbox-routing';
 import { matchPrecache, precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.3.0/workbox-sw.js');
 
-skipWaiting();
-clientsClaim();
+workbox.setConfig({
+  debug: true // Ativa o modo de depuração
+});
+
+workbox.routing.registerRoute(runtimeCaching);
+
+self.skipWaiting();
+self.clientsClaim();
 
 // módulo de manifesto de injeção na workbox
 // https://developers.google.com/web/tools/workbox/guides/precache-files/workbox-build#add_an_injection_point
@@ -13,8 +20,8 @@ const WB_MANIFEST = self.__WB_MANIFEST;
 
 // Rota e imagem de fallback de pré-cache
 WB_MANIFEST.push({
-  url: '/404',
-  revision: '1234567890',
+  url: '/page404',
+  revision: 'version 0.1.0',
 });
 precacheAndRoute(WB_MANIFEST);
 
@@ -64,7 +71,7 @@ registerRoute(
 // desabilitar o cache de imagem, para que possamos observar a imagem do espaço reservado quando estiver offline
 registerRoute(
   /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
-  new NetworkOnly({
+  new CacheFirst({
     cacheName: 'static-image-assets',
     plugins: [
       new ExpirationPlugin({
@@ -106,7 +113,7 @@ registerRoute(
 );
 registerRoute(
   /\.(?:json|xml|csv)$/i,
-  new NetworkFirst({
+  new CacheFirst({
     cacheName: 'static-data-assets',
     plugins: [
       new ExpirationPlugin({
@@ -120,7 +127,7 @@ registerRoute(
 );
 registerRoute(
   /\/api\/.*$/i,
-  new NetworkFirst({
+  new StaleWhileRevalidate({
     cacheName: 'apis',
     networkTimeoutSeconds: 10,
     plugins: [
@@ -166,13 +173,9 @@ setCatchHandler(({ event }) => {
     case 'document':
       // Se estiver usando URLs pré-cache
       return matchPrecache('/fallback');
-      // return caches.match('/fallback')
-      break;
     case 'image':
       // Se estiver usando URLs pré-cache
       return matchPrecache('/static/images/fallback.png');
-      // return caches.match('/static/images/fallback.png')
-      break;
     case 'font':
     // Se estiver usando URLs pré-cache
     // return matchPrecache(FALLBACK_FONT_URL);

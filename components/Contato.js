@@ -1,8 +1,6 @@
 
 import React, { useRef } from 'react'
 import Image from 'next/image';
-import logoInsurances from '../public/logos/logo-about-insurances.webp';
-import logoGoogle from '../public/logos/logo-google.webp';
 
 const Contato = () => {
     const nameRef = useRef()
@@ -25,7 +23,7 @@ const Contato = () => {
                         <a href="#home">
                             <div className="relative w-14 h-14 md:w-18 sm:h-18 lg:w-24 lg:h-24 transform transition hover:scale-105 duration-1000 ease-in-out">
                                 <Image
-                                    src={logoInsurances}
+                                    src="/logos/logo-about-insurances.webp"
                                     alt="Logo About Insurances"
                                     layout="fill"
                                     objectFit="cover"
@@ -82,7 +80,7 @@ const Contato = () => {
                                     <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fconsultbio-jr.vercel.app%2F&hl=pt_BR" rel="noopener noreferrer" target="_blank">
                                         <div className='relative w-36 h-12'>
                                             <Image
-                                                src={logoGoogle}
+                                                src="/logos/logo-google.webp"
                                                 alt="Logo Site Seguro - Google"
                                                 title="Secure Site - Click to Verify!"
                                                 layout="fill"

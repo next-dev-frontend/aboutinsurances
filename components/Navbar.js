@@ -1,7 +1,5 @@
 import React from "react";
 import Image from 'next/image';
-import logoAboutInsurances from '../public/logos/logo-about-insurances.webp';
-
 
 const Navbar = () => {
     return (
@@ -12,7 +10,7 @@ const Navbar = () => {
                 <a href="#home" className="pl-1 pt-2">
                     <div className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 transform transition hover:scale-105 duration-1000 ease-in-out">
                         <Image
-                            src={logoAboutInsurances}
+                            src="/logos/logo-about-insurances.webp"
                             alt="About Insurances Logo"
                             layout="fill"
                             objectFit="cover"
