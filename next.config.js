@@ -5,20 +5,13 @@ const crypto = require('crypto');
 const hash = crypto.createHash('sha256');
 const { nonce } = crypto.randomBytes(8).toString('base64');
 
-const ContentSecurityPolicy = `
-  default-src 'self';
-  base-uri 'self';
-  object-src 'none';
-  form-action 'self';
-  script-src-elem 'self' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
-  script-src 'self' https: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
-  style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.fonts.googleapis.com https://fonts.googleapis.com;
-  img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
-  media-src *;
-  frame-src 'self' https: http: 'unsafe-inline' https://www.google.com/maps/* *.google.com;
-  connect-src 'self' 'unsafe-inline' *.fonts.googleapis.com https://fonts.googleapis.com *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com;
-  font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
-`;
+const ContentSecurityPolicy = ` 
+default-src 'self'; 
+script-src 'self' 'unsafe-inline' 'unsafe-eval' *.google-analytics.com; 
+style-src 'self' 'unsafe-inline' *.googleapis.com; 
+img-src 'self' data: *.google-analytics.com; 
+connect-src 'self' *.google-analytics.com; `
+  ;
 
 const securityHeaders = [
   // políticas de segurança
@@ -28,7 +21,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: "https://consultbio-jr.vercel.app"
+    value: "*"
   },
   {
     key: 'X-DNS-Prefetch-Control',
