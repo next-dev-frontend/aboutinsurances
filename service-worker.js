@@ -1,6 +1,5 @@
-import { skipWaiting, clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
-import { NetworkOnly, NetworkFirst, CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import { NetworkFirst, CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import { registerRoute, setDefaultHandler, setCatchHandler } from 'workbox-routing';
 import { matchPrecache, precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.3.0/workbox-sw.js');
@@ -27,17 +26,27 @@ precacheAndRoute(WB_MANIFEST);
 
 // Lista de URLs de recursos para pré-carregar
 const resourcesToPrecache = [
-  '/_next/index.html',
-  '/_next/fallback.tsx',
-  '/_next/globals.css',
-  '/_next/Navbar.js',
-  '/_next/font/GlacialIndifference-Regular.otf',
-  '/_next/logos/logo-google.webp',
-  '/_next/backgrounds/bg-insurances.webp',
-  '/_next/backgrounds/bg2-insurances.webp',
-  '/_next/backgrounds/bg3-insurances.webp',
-  '/_next/backgrounds/bg6-insurances.webp',
-  '/_next/logos/logo-about-insurances.webp',
+  '/',
+  '/index.html',
+  '/fallback.tsx',
+  '/manifest.json',
+  '/favicon.ico',
+  '/globals.css',
+  '/AboutInsurances.js',
+  '/BgParallax1.js',
+  '/BgParallax2.js',
+  '/Contact.js',
+  '/Footer.js',
+  '/Navbar.js',
+  '/PageSeo.tsx',
+  '/SideBar.js',
+  '/font/GlacialIndifference-Regular.otf',
+  '/logos/logo-google.webp',
+  '/logos/logo-about-insurances.webp',
+  '/backgrounds/bg-insurances.webp',
+  '/backgrounds/bg2-insurances.webp',
+  '/backgrounds/bg3-insurances.webp',
+  '/backgrounds/bg6-insurances.webp',
 ];
 
 // Instalar o Service Worker e pré-carregar os recursos

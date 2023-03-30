@@ -2,7 +2,7 @@
 import React, { useRef } from 'react'
 import Image from 'next/image';
 
-const Contato = () => {
+const Contact = () => {
     const nameRef = useRef()
     const emailRef = useRef()
     const messageRef = useRef()
@@ -101,4 +101,4 @@ const Contato = () => {
     )
 }
 
-export default Contato
+export default Contact

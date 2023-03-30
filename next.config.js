@@ -1,5 +1,6 @@
 const withImages = require('next-images');
 const withPWA = require('next-pwa');
+const withOffline = require('next-offline');
 const crypto = require('crypto');
 const hash = crypto.createHash('sha256');
 const { nonce } = crypto.randomBytes(8).toString('base64');
@@ -60,7 +61,7 @@ const securityHeaders = [
   }
 ];
 
-module.exports = withImages(withPWA({
+module.exports = withOffline(withImages(withPWA({
   reactStrictMode: true,
 
   async headers() {
@@ -87,7 +88,7 @@ module.exports = withImages(withPWA({
           cacheName: 'images',
           expiration: {
             maxEntries: 10,
-            maxAgeSeconds: 24 * 60 * 60, // 1 day
+            maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
           },
         },
       },
@@ -119,11 +120,16 @@ module.exports = withImages(withPWA({
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
+  workboxOpts: {
+    maximumFileSizeToCacheInBytes: 50000000 // 50 MB
+  },
+
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
-}));
+
+})));
 
