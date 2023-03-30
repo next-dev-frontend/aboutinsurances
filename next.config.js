@@ -7,9 +7,9 @@ const { nonce } = crypto.randomBytes(8).toString('base64');
 
 const ContentSecurityPolicy = ` 
 default-src 'self'; 
-script-src 'self' 'unsafe-inline' 'unsafe-eval' *.google-analytics.com; 
-style-src 'self' 'unsafe-inline' *.googleapis.com; 
-img-src 'self' data: *.google-analytics.com; 
+script-src 'self' 'unsafe-inline' 'unsafe-eval' 'require-trusted-types-for' *.google-analytics.com; 
+style-src 'self' 'unsafe-inline' *.googleapis.com;
+img-src 'self' data: *.google-analytics.com;
 connect-src 'self' *.google-analytics.com; `
   ;
 
