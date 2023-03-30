@@ -74,6 +74,7 @@ module.exports = withImages(withPWA({
 
 
   pwa: {
+    webpack5: false,
     dest: "public",
     sw: 'service-worker.js',
     register: true,
@@ -120,7 +121,22 @@ module.exports = withImages(withPWA({
   },
 
   workboxOpts: {
-    maximumFileSizeToCacheInBytes: 50000000 // 50 MB
+    maximumFileSizeToCacheInBytes: 50000000, // 50 MB
+    swDest: 'static/service-worker.js',
+    runtimeCaching: [
+      {
+        urlPattern: /^https?.*/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'offlineCache',
+          expiration: {
+            maxEntries: 200,
+            maxAgeSeconds: 60 * 60 * 24 * 7 // 1 week
+          }
+        }
+      }
+    ]
+
   },
 
   typescript: {
