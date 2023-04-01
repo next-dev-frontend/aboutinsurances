@@ -18,7 +18,7 @@ export default function Home() {
 
     document.onclick = check
 
-    function check(e: { target: any }) {
+    function check(e) {
       const target = (e && e.target) || (event && event.srcElement)
 
       if (checkParent(target, navMenuDiv)) {

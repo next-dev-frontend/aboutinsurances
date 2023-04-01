@@ -137,7 +137,6 @@ module.exports = withImages(
               'offline.html'
             ],
             minify: true,
-            stripPrefix: 'static/',
             navigateFallback: '/offline.html',
             runtimeCaching: [
               {
