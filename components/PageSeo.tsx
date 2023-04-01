@@ -1,7 +1,7 @@
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
 
 function PageSeo({ title, titleTemplate, description, path, children }) {
-  const url = `https://about-insurances.vercel.app/${path}`;
+  const url = `https://about-insurances.vercel.app/${path}`
   return (
     <div>
       <NextSeo
@@ -9,19 +9,23 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
         description={description}
         titleTemplate={titleTemplate}
         canonical={url}
-        additionalMetaTags={[{
-          property: 'dc:creator',
-          content: 'Matheus S. Lopes'
-        }, {
-          name: 'application-name',
-          content: 'About Insurances Web Site'
-        }, {
-          httpEquiv: 'x-ua-compatible',
-          content: 'IE=edge; chrome=1'
-        }]}
+        additionalMetaTags={[
+          {
+            property: 'dc:creator',
+            content: 'Matheus S. Lopes'
+          },
+          {
+            name: 'application-name',
+            content: 'About Insurances Web Site'
+          },
+          {
+            httpEquiv: 'x-ua-compatible',
+            content: 'IE=edge; chrome=1'
+          }
+        ]}
       />
       {children}
     </div>
   )
 }
-export default PageSeo;
+export default PageSeo

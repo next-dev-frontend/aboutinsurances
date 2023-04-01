@@ -1,8 +1,9 @@
-const withImages = require('next-images');
-const withPWA = require('next-pwa');
-const crypto = require('crypto');
-const hash = crypto.createHash('sha256');
-const { nonce } = crypto.randomBytes(8).toString('base64');
+const { GenerateSW } = require('workbox-webpack-plugin')
+const withImages = require('next-images')
+const withPWA = require('next-pwa')
+const crypto = require('crypto')
+const hash = crypto.createHash('sha256')
+const { nonce } = crypto.randomBytes(8).toString('base64')
 
 const ContentSecurityPolicy = `
   default-src 'self';
@@ -10,14 +11,16 @@ const ContentSecurityPolicy = `
   object-src 'none';
   form-action 'self';
   script-src-elem 'self' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
-  script-src 'self' https: 'unsafe-eval' 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
+  script-src 'self' https: 'unsafe-eval' 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest(
+  'base64'
+)}';
   style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.fonts.googleapis.com https://fonts.googleapis.com;
   img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   media-src *;
   frame-src 'self' https: http: 'unsafe-inline' https://www.google.com/maps/* *.google.com;
   connect-src 'self' 'unsafe-inline' *.fonts.googleapis.com https://fonts.googleapis.com *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
-`;
+`
 
 const securityHeaders = [
   // políticas de segurança
@@ -27,7 +30,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: "*"
+    value: '*'
   },
   {
     key: 'X-DNS-Prefetch-Control',
@@ -54,97 +57,105 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'geolocation=()'
   },
-  {// política de referência
+  {
+    // política de referência
     key: 'Referrer-Policy',
     value: 'same-origin'
   }
-];
+]
 
-module.exports = withImages(withPWA({
-  reactStrictMode: true,
+module.exports = withImages(
+  withPWA({
+    reactStrictMode: true,
 
-  async headers() {
-    return [
-      {
-        source: '/(.*)', // aplicar em todas as rotas
-        headers: securityHeaders,
-      },
-    ];
-  },
+    async headers() {
+      return [
+        {
+          source: '/(.*)', // aplicar em todas as rotas
+          headers: securityHeaders
+        }
+      ]
+    },
 
-
-  pwa: {
-    webpack5: false,
-    dest: "public",
-    sw: 'service-worker.js',
-    register: true,
-    skipWaiting: true,
-    dynamicStartUrl: true,
-    runtimeCaching: [
-      {
-        urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'images',
-          expiration: {
-            maxEntries: 10,
-            maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
-          },
+    pwa: {
+      dest: 'public',
+      sw: '/sw-config.js',
+      register: true,
+      skipWaiting: true,
+      dynamicStartUrl: true,
+      runtimeCaching: [
+        {
+          urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'images',
+            expiration: {
+              maxEntries: 10,
+              maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
+            }
+          }
         },
-      },
-      {
-        urlPattern: /^https:\/\/fonts\.googleapis\.com/,
-        handler: 'StaleWhileRevalidate',
-        options: {
-          cacheName: 'google-fonts-stylesheets',
+        {
+          urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'google-fonts-stylesheets'
+          }
         },
-      },
-      {
-        urlPattern: /^https:\/\/fonts\.gstatic\.com/,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'google-fonts-webfonts',
-          expiration: {
-            maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
-          },
-        },
-      },
-    ],
-    buildExcludes: [/middleware-manifest\.json$/],
-    disable: process.env.NODE_ENV === 'development',
-  },
-
-  images: {
-    formats: ['image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-  },
-
-  workboxOpts: {
-    maximumFileSizeToCacheInBytes: 50000000, // 50 MB
-    swDest: 'static/service-worker.js',
-    runtimeCaching: [
-      {
-        urlPattern: /^https?.*/,
-        handler: 'NetworkFirst',
-        options: {
-          cacheName: 'offlineCache',
-          expiration: {
-            maxEntries: 200,
-            maxAgeSeconds: 60 * 60 * 24 * 7 // 1 week
+        {
+          urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'google-fonts-webfonts',
+            expiration: {
+              maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
+            }
           }
         }
+      ],
+      buildExcludes: [/middleware-manifest\.json$/],
+      disable: process.env.NODE_ENV === 'development'
+    },
+
+    images: {
+      formats: ['image/webp'],
+      deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+      imageSizes: [16, 32, 48, 64, 96, 128, 256, 384]
+    },
+
+    exportPathMap: async function (defaultPathMap) {
+      return defaultPathMap
+    },
+    webpack: function (config, { isServer }) {
+      if (!isServer) {
+        config.plugins.push(
+          new GenerateSW({
+            verbose: true,
+            staticFileGlobs: [
+              'static/**/*.{js,ts,tsx,html,css,webp,png,jpg,gif,svg,eot,ttf,woff}',
+              'manifest.json',
+              'offline.html'
+            ],
+            minify: true,
+            stripPrefix: 'static/',
+            navigateFallback: '/offline.html',
+            runtimeCaching: [
+              {
+                urlPattern: /^https:\/\/api\.myapp\.com\/.*/,
+                handler: 'networkFirst'
+              }
+            ]
+          })
+        )
       }
-    ]
+      return config
+    },
 
-  },
-
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
-}));
-
+    typescript: {
+      ignoreBuildErrors: true
+    },
+    eslint: {
+      ignoreDuringBuilds: true
+    }
+  })
+)

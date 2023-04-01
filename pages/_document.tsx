@@ -1,7 +1,6 @@
-import Document, { Html, Head, Main, NextScript } from "next/document"
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
-
   render() {
     return (
       <Html lang="en-US">
@@ -11,13 +10,13 @@ class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico"></link>
           <meta name="theme-color" content="#ff6341" />
         </Head>
-        <body className='scrollbar scrollbar-thumb-color2 scrollbar-track-color1 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default'>
+        <body className="scrollbar scrollbar-thumb-color2 scrollbar-track-color1 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument

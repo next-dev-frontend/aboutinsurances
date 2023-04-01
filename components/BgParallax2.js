@@ -6,14 +6,11 @@ function BgParallax2() {
           <h2 className="sticky bg-light-green bg-opacity-80 p-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">
             "Security is not the end goal. It's a starting point."
           </h2>
-          <p className="text-3xl">
-            - Wendy Kopp
-          </p>
-          <div className="sticky bg-white h-1 flex flex-col w-full">
-          </div>
+          <p className="text-3xl">- Wendy Kopp</p>
+          <div className="sticky bg-white h-1 flex flex-col w-full"></div>
         </div>
       </div>
     </section>
   )
 }
-export default BgParallax2;
+export default BgParallax2

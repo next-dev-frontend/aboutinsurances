@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function page404() {
+export default function offline() {
   return (
     <section
       id="home"
@@ -17,7 +17,7 @@ export default function page404() {
       />
       <div className="absolute grid h-screen place-content-center bg-opacity-0">
         <div className="text-center">
-          <strong className="text-9xl font-black text-color1">404</strong>
+          <strong className="text-9xl font-black text-color1">Offline!</strong>
           <p className="mt-4 text-gray-500 pb-8">Page not found.</p>
           <div className="w-full items-center">
             <a href="/">
