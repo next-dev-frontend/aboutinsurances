@@ -4,8 +4,8 @@ export const staticFileGlobs = [
 ]
 export const runtimeCaching = [
   {
-    urlPattern: /^https:\/\/api\.myapp\.com\/.*/,
-    handler: 'networkFirst'
+    urlPattern: /^https:\/\/aboutinsurances\.vercel\.app\/.*/,
+    handler: 'staleWhileRevalidate'
   }
 ]
 export const stripPrefix = 'static/'
