@@ -79,7 +79,7 @@ module.exports = withImages(
 
     pwa: {
       dest: 'public',
-      sw: '/sw-config.js',
+      sw: 'sw-config.js',
       register: true,
       skipWaiting: true,
       dynamicStartUrl: true,
