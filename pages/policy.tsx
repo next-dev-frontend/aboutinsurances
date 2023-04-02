@@ -7,8 +7,7 @@ export default function Policy() {
     <PageSeo
       title="Privacy Policy"
       titleTemplate="%s | About Insurances"
-      description="Your privacy is important to us. It is Site About Insurance policy.
-              respect your privacy regarding any information we may collect from you on the site"
+      description="Your privacy is important to us. It is Site About Insurance policy. Respect your privacy regarding any information we may collect from you on the site"
       path="/policy"
     >
       <main>
@@ -30,7 +29,7 @@ export default function Policy() {
                 <div className="w-8 md:w-14 lg:w-16 h-auto">
                   <Image
                     src="../public/logos/logo-about-insurances.webp"
-                    alt="Mascote Celeste"
+                    alt="logo about insurances"
                     layout="intrinsic"
                     objectFit="cover"
                     priority

@@ -8,7 +8,7 @@ export default function page404() {
     >
       <Image
         src="../public/backgrounds/bg3-insurances.webp"
-        alt="Background Insurances"
+        alt="background img insurances"
         layout="fill"
         objectFit="cover"
         quality={100}

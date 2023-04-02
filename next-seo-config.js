@@ -1,15 +1,15 @@
 export default {
   openGraph: {
     type: 'website',
-    locate: 'pt_BR',
-    url: 'https://consultbio-jr.vercel.app',
-    site_name: 'ConsultBio Jr.',
+    locate: 'en_US',
+    url: 'https://aboutinsurances.vercel.app',
+    site_name: 'About Insurances',
     images: [
       {
-        url: 'https:/consultbio-jr.vercel.app/logos/logo-512x512.png',
+        url: 'https:/aboutinsurances.vercel.app/logos/logo-512x512.png',
+        alt: 'logo about insurances',
         width: 512,
         height: 512,
-        alt: 'Logo da ConsultBio Jr.',
         type: 'image/png'
       }
     ]

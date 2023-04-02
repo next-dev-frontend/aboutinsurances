@@ -1,15 +1,15 @@
 {
-  "name": "ConsultBio Jr. - Consultoria e Educação Ambiental",
-  "short_name": "ConsultBio Jr.",
-  "description": "Nossa missão tem como objetivo auxiliar seus clientes a alcançarem seu desenvolvimento em equilíbrio com a natureza, através de práticas e soluções sustentáveis através dos serviços prestados à sociedade.",
+  "name": "Ask Your Questions About Insurance and Agencies",
+  "short_name": "About Insurances",
+  "description": "Insurance information and tips website. Before contracting any insurance service, visit our website and clarify all your doubts on the subject.",
   "display": "standalone",
   "orientation": "Portrait-primary",
   "purpose": "any maskable",
-  "theme_color": "#008033",
-  "background_color": "#FFFFFF",
+  "theme_color": "#ff6341",
+  "background_color": "#152039",
   "start_url": "/?source=pwa",
   "scope": "/",
-  "lang": "pt-BR",
+  "lang": "en-US",
   "icons": [
     {
       "src": "/logos/logo-128x128.png",

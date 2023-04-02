@@ -12,7 +12,7 @@ const Navbar = () => {
           <div className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 transform transition hover:scale-105 duration-1000 ease-in-out">
             <Image
               src="/logos/logo-about-insurances.webp"
-              alt="About Insurances Logo"
+              alt="logo about insurances"
               layout="fill"
               objectFit="cover"
               quality={100}

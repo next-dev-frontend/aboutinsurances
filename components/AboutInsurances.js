@@ -61,7 +61,7 @@ const AboutInsurances = () => {
             <Image
               className="rounded-sm mask mask-parallelogram-3"
               src="/backgrounds/bg-insurances.webp"
-              alt="Insurances Template"
+              alt="insurances template img"
               width={100}
               height={100}
               layout="responsive"
@@ -74,7 +74,7 @@ const AboutInsurances = () => {
               <Image
                 className="rounded-sm mask mask-parallelogram-3"
                 src="/templates/business-template2.webp"
-                alt="Business Plan Template"
+                alt="business plan template img"
                 width={100}
                 height={12}
                 layout="responsive"
@@ -88,7 +88,7 @@ const AboutInsurances = () => {
               <Image
                 className="rounded-sm mask mask-parallelogram-3"
                 src="/templates/kaspersky-template.webp"
-                alt="Kaspersky Template"
+                alt="Kaspersky Template img"
                 width={100}
                 height={100}
                 layout="responsive"

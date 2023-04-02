@@ -55,9 +55,9 @@ export default function Home() {
 
   return (
     <PageSeo
-      title="Consultoria e Educação Ambiental"
+      title="Ask Your Questions About Insurance and Agencies"
       titleTemplate="%s | About Insurances"
-      description="Aprenda a desenvolver sustentavelmente, visando a boa relação com a natureza e a sociedade! Custos diferenciados e consultoria de alta qualidade! Clique aqui e saiba mais."
+      description="Insurance information and tips website. Before contracting any insurance service, visit our website and clarify all your doubts on the subject."
       path="/"
     >
       <main>

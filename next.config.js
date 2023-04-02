@@ -140,7 +140,7 @@ module.exports = withImages(
             navigateFallback: '/offline.html',
             runtimeCaching: [
               {
-                urlPattern: /^https:\/\/api\.myapp\.com\/.*/,
+                urlPattern: /^https:\/\/aboutinsurances\.vercel\.app\/.*/,
                 handler: 'networkFirst'
               }
             ]

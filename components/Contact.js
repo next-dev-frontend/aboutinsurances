@@ -11,7 +11,7 @@ const Contact = () => {
               <div className="relative w-14 h-14 md:w-18 sm:h-18 lg:w-24 lg:h-24 transform transition hover:scale-105 duration-1000 ease-in-out">
                 <Image
                   src="/logos/logo-about-insurances.webp"
-                  alt="Logo About Insurances"
+                  alt="logo about insurances"
                   layout="fill"
                   objectFit="cover"
                   quality={100}
@@ -30,7 +30,7 @@ const Contact = () => {
                 <li>
                   <a
                     href="#home"
-                    title="Facebook da ConsultBio Jr."
+                    title="Facebook"
                     rel="noopener noreferrer"
                     target="_self"
                     className="text-color1 transition hover:text-color2"
@@ -48,7 +48,7 @@ const Contact = () => {
                 <li>
                   <a
                     href="#home"
-                    title="Instagram da ConsultBio Jr."
+                    title="Instagram"
                     rel="noopener noreferrer"
                     target="_self"
                     className="text-color1 transition hover:text-color2"
@@ -66,7 +66,7 @@ const Contact = () => {
                 <li>
                   <a
                     href="#home"
-                    title="Twitter da ConsultBio Jr."
+                    title="Twitter"
                     rel="noopener noreferrer"
                     target="_self"
                     className="text-color1 transition hover:text-color2"

@@ -31,7 +31,7 @@ export default function Termos() {
                 <div className="w-8 md:w-14 lg:w-16 h-auto">
                   <Image
                     src="../public/logos/logo-about-insurances.webp"
-                    alt="Logo About Insurances"
+                    alt="logo about insurances"
                     layout="intrinsic"
                     objectFit="cover"
                     priority

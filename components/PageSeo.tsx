@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo'
 
 function PageSeo({ title, titleTemplate, description, path, children }) {
-  const url = `https://about-insurances.vercel.app/${path}`
+  const url = `https://aboutinsurances.vercel.app/${path}`
   return (
     <div>
       <NextSeo
@@ -12,7 +12,7 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
         additionalMetaTags={[
           {
             property: 'dc:creator',
-            content: 'Matheus S. Lopes'
+            content: 'Lopes Matheus S.'
           },
           {
             name: 'application-name',

@@ -4,7 +4,7 @@ const chalk = require('chalk')
 const targetDirectory = 'public'
 
 sitemap({
-  baseUrl: 'https://consultbio-jr.vercel.app',
+  baseUrl: 'https://aboutinsurances.vercel.app',
   pagesDirectory: __dirname + '\\pages',
   ignoreIndexFiles: true,
   targetDirectory: targetDirectory,
