@@ -79,7 +79,7 @@ module.exports = withImages(
 
     pwa: {
       dest: 'public',
-      sw: 'service-worker.js',
+      sw: 'sw.js',
       register: true,
       skipWaiting: true,
       dynamicStartUrl: false,
