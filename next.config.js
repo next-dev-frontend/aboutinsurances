@@ -1,4 +1,3 @@
-const { GenerateSW } = require('workbox-webpack-plugin')
 const withImages = require('next-images')
 const withPWA = require('next-pwa')
 const crypto = require('crypto')
@@ -79,7 +78,7 @@ module.exports = withImages(
 
     pwa: {
       dest: 'public',
-      sw: 'sw-config.js',
+      sw: 'sw.js',
       register: true,
       skipWaiting: true,
       dynamicStartUrl: true,
@@ -123,32 +122,7 @@ module.exports = withImages(
       imageSizes: [16, 32, 48, 64, 96, 128, 256, 384]
     },
 
-    exportPathMap: async function (defaultPathMap) {
-      return defaultPathMap
-    },
-    webpack: function (config, { isServer }) {
-      if (!isServer) {
-        config.plugins.push(
-          new GenerateSW({
-            verbose: true,
-            staticFileGlobs: [
-              'static/**/*.{js,ts,tsx,html,css,webp,png,jpg,gif,svg,eot,ttf,woff}',
-              'manifest.json',
-              'offline.html'
-            ],
-            minify: true,
-            navigateFallback: '/offline.html',
-            runtimeCaching: [
-              {
-                urlPattern: /^https:\/\/aboutinsurances\.vercel\.app\/.*/,
-                handler: 'networkFirst'
-              }
-            ]
-          })
-        )
-      }
-      return config
-    },
+
 
     typescript: {
       ignoreBuildErrors: true
