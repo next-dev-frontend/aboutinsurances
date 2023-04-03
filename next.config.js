@@ -82,7 +82,7 @@ module.exports = withImages(
       sw: 'sw.js',
       register: true,
       skipWaiting: true,
-      dynamicStartUrl: true,
+      dynamicStartUrl: false,
       runtimeCaching: [
         {
           urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
