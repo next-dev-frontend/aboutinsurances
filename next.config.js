@@ -77,11 +77,11 @@ module.exports = withImages(
     },
 
     pwa: {
-      buildExcludes: [/middleware-manifest\.json$/],
       disable: process.env.NODE_ENV === 'development',
-      dest: 'public',
-      sw: 'sw-config.js',
+      dest: "public",
+      swSrc: 'service-worker.js',
       register: true,
+      skipWaiting: true,
       runtimeCaching: [
         {
           urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,

@@ -27,22 +27,6 @@ function MyApp({ Component, pageProps }) {
     })
   }, [])
 
-  //inicializa o service-work pwa
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/sw-config.js").then(
-          function (registration) {
-            console.log("Service Worker Registrado com Sucesso", registration.scope)
-          },
-          function (err) {
-            console.log("Falha ao Registrar Service Worker", err)
-          }
-        )
-      })
-    }
-  }, [])
-
 
   return (
     <>
