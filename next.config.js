@@ -77,11 +77,11 @@ module.exports = withImages(
     },
 
     pwa: {
+      buildExcludes: [/middleware-manifest\.json$/],
+      disable: process.env.NODE_ENV === 'development',
       dest: 'public',
-      sw: 'sw.js',
+      sw: 'sw-config.js',
       register: true,
-      skipWaiting: true,
-      dynamicStartUrl: false,
       runtimeCaching: [
         {
           urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
@@ -112,8 +112,6 @@ module.exports = withImages(
           }
         }
       ],
-      buildExcludes: [/middleware-manifest\.json$/],
-      disable: process.env.NODE_ENV === 'development'
     },
 
     images: {
