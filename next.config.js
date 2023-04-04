@@ -66,6 +66,8 @@ const securityHeaders = [
 module.exports = withImages(
   withPWA({
 
+    reactStrictMode: true,
+
     async headers() {
       return [
         {
@@ -77,12 +79,11 @@ module.exports = withImages(
 
     pwa: {
       dest: "public",
-      swSrc: 'service-worker.js',
-      register: true,
+      swSrc: 'sw.js',
+      register: false,
       skipWaiting: true,
     },
 
-    reactStrictMode: true,
 
     images: {
       formats: ['image/webp'],
