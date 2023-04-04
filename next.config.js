@@ -1,5 +1,6 @@
 const withImages = require('next-images')
 const withPWA = require('next-pwa')
+const { GenerateSW } = require('workbox-webpack-plugin')
 const crypto = require('crypto')
 const hash = crypto.createHash('sha256')
 const { nonce } = crypto.randomBytes(8).toString('base64')
@@ -65,7 +66,6 @@ const securityHeaders = [
 
 module.exports = withImages(
   withPWA({
-    reactStrictMode: true,
 
     async headers() {
       return [
@@ -77,9 +77,7 @@ module.exports = withImages(
     },
 
     pwa: {
-      disable: process.env.NODE_ENV === 'development',
       dest: "public",
-      swSrc: 'service-worker.js',
       register: true,
       skipWaiting: true,
       runtimeCaching: [
@@ -113,6 +111,8 @@ module.exports = withImages(
         }
       ],
     },
+
+    reactStrictMode: true,
 
     images: {
       formats: ['image/webp'],
