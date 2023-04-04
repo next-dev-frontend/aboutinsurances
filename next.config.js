@@ -1,6 +1,5 @@
 const withImages = require('next-images')
 const withPWA = require('next-pwa')
-const { GenerateSW } = require('workbox-webpack-plugin')
 const crypto = require('crypto')
 const hash = crypto.createHash('sha256')
 const { nonce } = crypto.randomBytes(8).toString('base64')
@@ -80,36 +79,6 @@ module.exports = withImages(
       dest: "public",
       register: true,
       skipWaiting: true,
-      runtimeCaching: [
-        {
-          urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'images',
-            expiration: {
-              maxEntries: 10,
-              maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
-            }
-          }
-        },
-        {
-          urlPattern: /^https:\/\/fonts\.googleapis\.com/,
-          handler: 'StaleWhileRevalidate',
-          options: {
-            cacheName: 'google-fonts-stylesheets'
-          }
-        },
-        {
-          urlPattern: /^https:\/\/fonts\.gstatic\.com/,
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'google-fonts-webfonts',
-            expiration: {
-              maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
-            }
-          }
-        }
-      ],
     },
 
     reactStrictMode: true,
