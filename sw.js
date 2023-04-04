@@ -1,21 +1,17 @@
-const CACHE_NAME = 'my-cache-v1';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/main.js',
-];
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-sw.js');
 
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-  );
-});
+workbox.setConfig({ debug: false });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
-  );
-});
+workbox.precaching.precacheAndRoute(
+  self.__WB_MANIFEST.concat([
+    {
+      url: '/',
+      revision: '1',
+    },
+  ])
+);
+
+workbox.routing.registerRoute(
+  ({ request }) => request.destination === 'document',
+  new workbox.strategies.CacheFirst()
+);
