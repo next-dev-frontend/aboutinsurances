@@ -3,12 +3,12 @@
   "short_name": "About Insurances",
   "description": "Insurance information and tips website. Before contracting any insurance service, visit our website and clarify all your doubts on the subject.",
   "display": "standalone",
-  "orientation": "Portrait-primary",
+  "orientation": "portrait",
   "purpose": "any maskable",
   "theme_color": "#ff6341",
   "background_color": "#152039",
   "start_url": "/?source=pwa",
-  "scope": "/",
+  "scope": ".",
   "lang": "en-US",
   "icons": [
     {

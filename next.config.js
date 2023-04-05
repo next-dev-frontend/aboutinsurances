@@ -9,17 +9,14 @@ const ContentSecurityPolicy = `
   base-uri 'self';
   object-src 'none';
   form-action 'self';
-  script-src-elem 'self' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
-  script-src 'self' https: 'unsafe-eval' 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest(
-  'base64'
-)}';
+  script-src-elem 'self' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com *.youtube.com/iframe_api https://www.youtube.com/s/player/03bec62d/www-widgetapi.vflset/www-widgetapi.js *.youtube.com;
+  script-src 'self' https: 'unsafe-eval' 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
   style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.fonts.googleapis.com https://fonts.googleapis.com;
   img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   media-src *;
-  frame-src 'self' https: http: 'unsafe-inline' https://www.google.com/maps/* *.google.com;
   connect-src 'self' 'unsafe-inline' *.fonts.googleapis.com https://fonts.googleapis.com *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
-`
+`;
 
 const securityHeaders = [
   // políticas de segurança
@@ -29,7 +26,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: '*'
+    value: 'https://.vercel.app'
   },
   {
     key: 'X-DNS-Prefetch-Control',
@@ -66,6 +63,24 @@ const securityHeaders = [
 module.exports = withImages(
   withPWA({
 
+    reactStrictMode: true,
+
+    pwa: {
+      dest: "public",
+      sw: 'sw.js',
+      register: true,
+      skipWaiting: true,
+      //buildExcludes: [/middleware-manifest\.json$/],
+      disable: process.env.NODE_ENV === 'development',
+    },
+
+    images: {
+      formats: ['image/webp'],
+      deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+      imageSizes: [16, 32, 48, 64, 96, 128, 256, 384]
+    },
+
+
     async headers() {
       return [
         {
@@ -74,28 +89,6 @@ module.exports = withImages(
         }
       ]
     },
-
-    reactStrictMode: true,
-
-    pwa: {
-      dest: "public",
-      generateInDevMode: true,
-      swSrc: '/sw.js',
-      sw: 'service-worker.js',
-      register: true,
-      skipWaiting: true,
-      dynamicStartUrl: true,
-      //buildExcludes: [/middleware-manifest\.json$/],
-      //disable: process.env.NODE_ENV === 'development',
-    },
-
-
-    images: {
-      formats: ['image/webp'],
-      deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-      imageSizes: [16, 32, 48, 64, 96, 128, 256, 384]
-    },
-
 
   })
 )

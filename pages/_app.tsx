@@ -28,8 +28,6 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
 
-
-
   return (
     <>
       <Head>
