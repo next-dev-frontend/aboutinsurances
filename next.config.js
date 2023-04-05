@@ -66,8 +66,6 @@ const securityHeaders = [
 module.exports = withImages(
   withPWA({
 
-    reactStrictMode: true,
-
     async headers() {
       return [
         {
@@ -77,11 +75,18 @@ module.exports = withImages(
       ]
     },
 
+    reactStrictMode: true,
+
     pwa: {
       dest: "public",
-      swSrc: 'sw.js',
-      register: false,
+      generateInDevMode: true,
+      swSrc: '/sw.js',
+      sw: 'service-worker.js',
+      register: true,
       skipWaiting: true,
+      dynamicStartUrl: true,
+      //buildExcludes: [/middleware-manifest\.json$/],
+      //disable: process.env.NODE_ENV === 'development',
     },
 
 
@@ -91,11 +96,6 @@ module.exports = withImages(
       imageSizes: [16, 32, 48, 64, 96, 128, 256, 384]
     },
 
-    typescript: {
-      ignoreBuildErrors: true
-    },
-    eslint: {
-      ignoreDuringBuilds: true
-    }
+
   })
 )

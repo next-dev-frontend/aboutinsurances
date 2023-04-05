@@ -7,7 +7,7 @@
   "purpose": "any maskable",
   "theme_color": "#ff6341",
   "background_color": "#152039",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "lang": "en-US",
   "icons": [
