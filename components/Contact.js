@@ -12,9 +12,10 @@ const Contact = () => {
                 <Image
                   src="/logos/logo-about-insurances.webp"
                   alt="logo about insurances"
-                  layout="fill"
+                  layout="responsive"
                   objectFit="cover"
-                  quality={100}
+                  width={500}
+                  height={500}
                 />
               </div>
             </a>
@@ -92,14 +93,15 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <div className="relative w-24 h-8 md:w-36 md:h-12">
+                    <div className="relative w-24 h-auto md:w-36 md:h-12">
                       <Image
                         src="/logos/logo-google.webp"
                         alt="Logo Site Seguro - Google"
                         title="Secure Site - Click to Verify!"
-                        layout="fill"
+                        layout="responsive"
                         objectFit="cover"
-                        quality={100}
+                        width={300}
+                        height={126}
                       />
                     </div>
                   </a>

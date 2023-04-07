@@ -56,14 +56,14 @@ const AboutInsurances = () => {
             </div>
           </div>
         </div>
-        <div className="float-right block w-sm lg:w-lg xl:w-xl md:w-1/2 px-4 md:px-8 p-8 pl-8 md:pl-4 xl:pl-2">
+        <div className="float-right block w-sm lg:w-lg xl:w-xl md:w-1/2 h-auto px-4 md:px-8 p-8 pl-8 md:pl-4 xl:pl-2">
           <div className="relative rounded-md shadow-xl p-2 max-w-full">
             <Image
-              className="rounded-sm mask mask-parallelogram-3"
+              className="rounded mask mask-parallelogram-3"
               src="/backgrounds/bg-insurances.webp"
               alt="insurances template img"
-              width={100}
-              height={100}
+              width={1080}
+              height={1080}
               layout="responsive"
               objectFit="cover"
             />
@@ -72,11 +72,11 @@ const AboutInsurances = () => {
           <a href="https://go.hotmart.com/X80760498R?src=aboutinsurances" rel="noopener noreferrer" target="_blank">
             <div className="relative rounded-md shadow-xl p-2 max-w-full">
               <Image
-                className="rounded-sm mask mask-parallelogram-3"
+                className="rounded mask mask-parallelogram-3"
                 src="/templates/business-template2.webp"
                 alt="business plan template img"
-                width={100}
-                height={12}
+                width={468}
+                height={60}
                 layout="responsive"
                 objectFit="cover"
               />
@@ -86,11 +86,11 @@ const AboutInsurances = () => {
           <a href="https://go.hotmart.com/A80579208O?src=aboutinsurances" rel="noopener noreferrer" target="_blank">
             <div className="relative rounded-md shadow-xl p-2 max-w-full">
               <Image
-                className="rounded-sm mask mask-parallelogram-3"
+                className="rounded mask mask-parallelogram-3"
                 src="/templates/kaspersky-template.webp"
                 alt="Kaspersky Template img"
-                width={100}
-                height={100}
+                width={1200}
+                height={1200}
                 layout="responsive"
                 objectFit="cover"
               />

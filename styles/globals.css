@@ -72,7 +72,7 @@ a {
 /*Animações*/
 [data-anime] {
   opacity: 0;
-  transition: 1.5s;
+  transition: 1s;
 }
 
 [data-anime='up'] {
@@ -92,7 +92,7 @@ a {
 }
 
 [data-anime='blur'] {
-  transition: all 2s cubic-bezier(0.71, 0, 0.33, 1.56);
+  transition: all 1s cubic-bezier(0.71, 0, 0.33, 1.56);
 }
 
 [data-anime].animate {
