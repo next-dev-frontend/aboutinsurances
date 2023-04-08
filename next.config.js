@@ -12,7 +12,7 @@ const nonce = require('crypto').randomBytes(16).toString('base64')
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com 'nonce-${nonce}';
+  script-src 'nonce-{random-nonce}' 'sha256-{base64-encoded-hash-of-allowed-script}' https://www.google-analytics.com/analytics.js;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src 'self' data: https://www.google-analytics.com;
   font-src 'self' https://fonts.gstatic.com;
