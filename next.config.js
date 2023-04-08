@@ -26,14 +26,14 @@ const ContentSecurityPolicy = `
   trusted-types ${JSON.stringify({
   'default': ['self'],
   'script': ["'nonce-" + nonce + "'", "'strict-dynamic'"],
-})};
+}) + '"'};
 `;
 
 const securityHeaders = [
   // políticas de segurança
   {
     key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\n/g, '')
+    value: ContentSecurityPolicy
   },
   {
     key: 'Access-Control-Allow-Origin',
