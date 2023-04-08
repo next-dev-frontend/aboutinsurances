@@ -7,12 +7,17 @@ const withPWA = require('next-pwa')({
   dynamicStartUrl: true,
   disable: process.env.NODE_ENV === 'development',
 });
-const nonce = require('crypto').randomBytes(16).toString('base64')
+const crypto = require('crypto-js');
+// Gera um valor aleatório para o nonce
+const nonce = crypto.lib.WordArray.random(16).toString(crypto.enc.Base64);
+// Calcula o hash do script permitido
+const script = `console.log('Este é um exemplo de script permitido.');`;
+const hash = crypto.SHA256(script).toString(crypto.enc.Base64)
 
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'nonce-{random-nonce}' 'sha256-{base64-encoded-hash-of-allowed-script}' https://www.google-analytics.com/analytics.js;
+  script-src 'nonce-${nonce}' 'sha256-${hash}' https://www.google-analytics.com/analytics.js;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src 'self' data: https://www.google-analytics.com;
   font-src 'self' https://fonts.gstatic.com;
