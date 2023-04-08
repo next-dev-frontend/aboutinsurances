@@ -17,23 +17,19 @@ const ContentSecurityPolicy = `
   object-src 'none';
   form-action 'self';
   script-src-elem 'self' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
-  script-src 'self' https: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}' 'unsafe-eval';
+  script-src 'self' https: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
   style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.fonts.googleapis.com https://fonts.googleapis.com;
   img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   media-src *;
   connect-src 'self' 'unsafe-inline' *.fonts.googleapis.com https://fonts.googleapis.com *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
-  trusted-types ${JSON.stringify({
-  'default': ['self'],
-  'script': ["'nonce-" + nonce + "'", "'strict-dynamic'"],
-}) + '"'};
 `;
 
 const securityHeaders = [
   // políticas de segurança
   {
     key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy
+    value: ContentSecurityPolicy.replace(/\n/g, '')
   },
   {
     key: 'Access-Control-Allow-Origin',
@@ -72,9 +68,9 @@ const securityHeaders = [
 
 
 module.exports = withImages(withPWA({
-
   reactStrictMode: true,
   swcMinify: true,
+  distDir: 'build',
 
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
