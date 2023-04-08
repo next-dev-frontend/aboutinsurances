@@ -23,7 +23,10 @@ const ContentSecurityPolicy = `
   media-src *;
   connect-src 'self' 'unsafe-inline' *.fonts.googleapis.com https://fonts.googleapis.com *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
-  trusted-types ${JSON.stringify({ 'default': ["'self'"], 'script': ["'nonce-" + nonce + "'", "'strict-dynamic'"] })};
+  trusted-types ${JSON.stringify({
+  'default': ['self'],
+  'script': ["'nonce-" + nonce + "'", "'strict-dynamic'"],
+})};
 `;
 
 const securityHeaders = [
