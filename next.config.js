@@ -7,32 +7,28 @@ const withPWA = require('next-pwa')({
   dynamicStartUrl: true,
   disable: process.env.NODE_ENV === 'development',
 });
-const crypto = require('crypto-js');
-// Gera um valor aleatório para o nonce
-const nonce = crypto.lib.WordArray.random(16).toString(crypto.enc.Base64);
+const gaTrackingId = process.env.NEXT_PUBLIC_GA_ID; // seu ID de acompanhamento do Google Analytics
+const googleAnalyticsScript = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${gaTrackingId}');
+`;
+const crypto = require('crypto');
+const { nonce } = crypto.randomBytes(16).toString('base64');
+const script = `
+  'nonce-${nonce}'
+  ${googleAnalyticsScript}
+`;
+const hash = crypto.createHash('sha256').update(script).digest('base64');
 
-// Calcula o hash do script permitido
-const script = `(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'G-FFC6EB1GNB', 'auto');
-  ga('send', 'pageview');`;
-const hash = crypto.SHA256(script).toString(crypto.enc.Base64);
-
-
-// Define a política de segurança de conteúdo
 const ContentSecurityPolicy = `
-  default-src 'self' https://www.google-analytics.com/analytics.js https://www.googletagmanager.com https://www.google.com https://www.gstatic.com;
-  script-src 'nonce-${nonce}' 'sha256-${hash}' https://www.google-analytics.com/analytics.js https://www.googletagmanager.com https://www.google.com https://www.gstatic.com 'unsafe-inline';
-  script-src-elem 'self';
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  img-src 'self' data: https://www.google-analytics.com;
-  font-src 'self' https://fonts.gstatic.com;
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com 'sha256-${hash}';
+  style-src 'self' 'unsafe-inline';
+  img-src * blob: data: https: http:;
   connect-src 'self' https://www.google-analytics.com;
-  base-uri 'self';
-  form-action 'self';
-  object-src 'none';
+  font-src 'self';
 `;
 
 
