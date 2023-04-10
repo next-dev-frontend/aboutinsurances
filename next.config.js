@@ -25,7 +25,6 @@ const hash = crypto.SHA256(script).toString(crypto.enc.Base64);
 const ContentSecurityPolicy = `
   default-src 'self' https://www.googletagmanager.com;
   script-src 'nonce-${nonce}' 'sha256-${hash}' https://www.google-analytics.com/analytics.js https://www.googletagmanager.com https://www.google.com https://www.gstatic.com 'unsafe-inline';
-  script-src-elem 'self' 'nonce-${nonce}' 'sha256-${hash}' https://www.google-analytics.com/analytics.js https://www.googletagmanager.com https://www.google.com https://www.gstatic.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src 'self' data: https://www.google-analytics.com;
   font-src 'self' https://fonts.gstatic.com;
