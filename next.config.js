@@ -24,8 +24,9 @@ const hash = crypto.SHA256(script).toString(crypto.enc.Base64);
 // Define a política de segurança de conteúdo
 const ContentSecurityPolicy = `
   default-src 'self' https://www.googletagmanager.com;
-  script-src 'nonce-${nonce}' 'sha256-${hash}' https://www.google-analytics.com/analytics.js https://www.googletagmanager.com https://www.google.com https://www.gstatic.com 'unsafe-inline';
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  script-src 'nonce-${nonce}' 'sha256-${hash}' https://www.google-analytics.com/analytics.js https://www.googletagmanager.com https://www.google.com https://www.gstatic.com;
+  script-src-elem 'self';
+  style-src 'self' https://fonts.googleapis.com;
   img-src 'self' data: https://www.google-analytics.com;
   font-src 'self' https://fonts.gstatic.com;
   connect-src 'self' https://www.google-analytics.com;
