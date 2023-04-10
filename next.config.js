@@ -7,9 +7,21 @@ const withPWA = require('next-pwa')({
   dynamicStartUrl: true,
   disable: process.env.NODE_ENV === 'development',
 });
+const fs = require('fs');
+const path = require('path');
 const crypto = require('crypto');
 
-//criar hash para google analytics
+//hash e nonce para /_next/static/chunks/main-4d28554435b92d82.js
+const filePath = path.resolve(__dirname, './.next/static/chunks/main-4d28554435b92d82.js');
+const fileContent = fs.readFileSync(filePath, 'utf8');
+const hash = crypto.createHash('sha256').update(fileContent).digest('base64');
+const mainNonce = crypto.randomBytes(16).toString('base64');
+const mainScript = `
+  'nonce-${mainNonce}'
+`;
+const mainHash = `sha256-${hash}`;
+
+//hash e nonce para google analytics
 const gaTrackingId = process.env.NEXT_PUBLIC_GA_ID; // seu ID de acompanhamento do Google Analytics
 const googleAnalyticsScript = `
   window.dataLayer = window.dataLayer || [];
@@ -45,8 +57,8 @@ const gtmHash = crypto.createHash('sha256').update(gtmScript).digest('base64');
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com 'strict-dynamic' 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}'; 
-  script-src-elem 'self' https://www.googletagmanager.com https://www.google-analytics.com 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}';
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com 'strict-dynamic' 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}' ${mainHash}; 
+  script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}' ${mainHash};
   style-src 'self' 'unsafe-inline';
   object-src 'none';
   img-src * blob: data: https: http:;
