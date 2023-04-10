@@ -9,6 +9,8 @@ const withPWA = require('next-pwa')({
 });
 const crypto = require('crypto');
 const { nonce } = crypto.randomBytes(16).toString('base64');
+
+//criar hash para google analytics
 const gaTrackingId = process.env.NEXT_PUBLIC_GA_ID; // seu ID de acompanhamento do Google Analytics
 const googleAnalyticsScript = `
   window.dataLayer = window.dataLayer || [];
@@ -16,16 +18,34 @@ const googleAnalyticsScript = `
   gtag('js', new Date());
   gtag('config', '${gaTrackingId}');
 `;
-const script = `
+const gaScript = `
   'nonce-${nonce}'
   ${googleAnalyticsScript}
 `;
-const hash = crypto.createHash('sha256').update(script).digest('base64');
+const gaHash = crypto.createHash('sha256').update(gaScript).digest('base64');
+
+
+//criar hash para google tag manager
+const gtmTrackingId = process.env.NEXT_PUBLIC_GTM_ID; // seu ID de acompanhamento do Google Analytics
+const googleTagManagerScript = `
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','${gtmTrackingId}');
+`;
+const gtmScript = `
+  'nonce-${nonce}'
+  ${googleTagManagerScript}
+`;
+const gtmHash = crypto.createHash('sha256').update(gtmScript).digest('base64');
+
+
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'strict-dynamic' 'sha256-${hash}';
-  script-src-elem 'self' https://www.googletagmanager.com https://www.google-analytics.com 'sha256-${hash}';
+  script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'strict-dynamic' 'sha256-${gaHash}' 'sha256-${gtmHash}';
+  script-src-elem 'self' https://www.googletagmanager.com https://www.google-analytics.com 'sha256-${gaHash}' 'sha256-${gtmHash}';
   style-src 'self' 'unsafe-inline';
   object-src 'none';
   img-src * blob: data: https: http:;
