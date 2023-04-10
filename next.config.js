@@ -8,7 +8,6 @@ const withPWA = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development',
 });
 const crypto = require('crypto');
-const { nonce } = crypto.randomBytes(16).toString('base64');
 
 //criar hash para google analytics
 const gaTrackingId = process.env.NEXT_PUBLIC_GA_ID; // seu ID de acompanhamento do Google Analytics
@@ -18,8 +17,9 @@ const googleAnalyticsScript = `
   gtag('js', new Date());
   gtag('config', '${gaTrackingId}');
 `;
+const gaNonce = crypto.randomBytes(16).toString('base64');
 const gaScript = `
-  'nonce-${nonce}'
+  'nonce-${gaNonce}'
   ${googleAnalyticsScript}
 `;
 const gaHash = crypto.createHash('sha256').update(gaScript).digest('base64');
@@ -34,8 +34,9 @@ const googleTagManagerScript = `
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','${gtmTrackingId}');
 `;
+const gtmNonce = crypto.randomBytes(16).toString('base64');
 const gtmScript = `
-  'nonce-${nonce}'
+  'nonce-${gtmNonce}'
   ${googleTagManagerScript}
 `;
 const gtmHash = crypto.createHash('sha256').update(gtmScript).digest('base64');
