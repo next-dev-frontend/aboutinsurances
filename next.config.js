@@ -45,8 +45,8 @@ const gtmHash = crypto.createHash('sha256').update(gtmScript).digest('base64');
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'strict-dynamic' 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}'; 
-  script-src-elem 'self' https://www.googletagmanager.com https://www.google-analytics.com 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}';
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com 'strict-dynamic' 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}'; 
+  script-src-elem 'self' https://www.googletagmanager.com https://www.google-analytics.com 'strict-dynamic' 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}';
   style-src 'self' 'unsafe-inline';
   object-src 'none';
   img-src * blob: data: https: http:;
