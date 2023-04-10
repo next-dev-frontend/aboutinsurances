@@ -29,7 +29,7 @@ const ContentSecurityPolicy = `
   style-src 'self' 'unsafe-inline';
   object-src 'none';
   img-src * blob: data: https: http:;
-  connect-src 'self' https://www.google-analytics.com;
+  connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
   font-src 'self';
   base-uri 'none';
 `;
