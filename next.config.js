@@ -25,7 +25,7 @@ const hash = crypto.createHash('sha256').update(script).digest('base64');
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'strict-dynamic' 'sha256-${hash}';
-  script-src-elem 'self' https://www.googletagmanager.com https://www.google-analytics.com 'nonce-${nonce}' 'sha256-${hash}';
+  script-src-elem 'self' https://www.googletagmanager.com https://www.google-analytics.com 'sha256-${hash}';
   style-src 'self' 'unsafe-inline';
   object-src 'none';
   img-src * blob: data: https: http:;
