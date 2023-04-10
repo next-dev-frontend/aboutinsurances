@@ -7,15 +7,17 @@ const withPWA = require('next-pwa')({
   dynamicStartUrl: true,
   disable: process.env.NODE_ENV === 'development',
 });
-const express = require('express');
-const helmet = require('helmet');
 const crypto = require('crypto-js');
-const app = express();
 // Gera um valor aleatório para o nonce
 const nonce = crypto.lib.WordArray.random(16).toString(crypto.enc.Base64);
 
 // Calcula o hash do script permitido
-const script = `console.log('Este é um exemplo de script permitido.');`;
+const script = `(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'G-FFC6EB1GNB', 'auto');
+  ga('send', 'pageview');`;
 const hash = crypto.SHA256(script).toString(crypto.enc.Base64);
 
 
@@ -33,21 +35,6 @@ const ContentSecurityPolicy = `
   object-src 'none';
 `;
 
-// Adiciona o middleware do helmet com a política de segurança de conteúdo
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: [`'nonce-${nonce}'`, `'sha256-${hash}'`, 'https://www.google-analytics.com/analytics.js'],
-    styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
-    imgSrc: ["'self'", 'data:', 'https://www.google-analytics.com'],
-    fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-    connectSrc: ["'self'", 'https://www.google-analytics.com'],
-    baseUri: ["'self'"],
-    formAction: ["'self'"],
-    objectSrc: ["'none'"],
-    requireTrustedTypesFor: ['script'] // opcional
-  },
-}));
 
 const securityHeaders = [
   // políticas de segurança
@@ -106,6 +93,15 @@ module.exports = withImages(withPWA({
       {
         source: '/(.*)', // aplicar em todas as rotas
         headers: securityHeaders,
+      },
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Set-Cookie',
+            value: 'HttpOnly; Secure; SameSite=Strict',
+          },
+        ],
       },
     ];
   },
