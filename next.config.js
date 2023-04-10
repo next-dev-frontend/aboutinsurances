@@ -59,7 +59,7 @@ const gtmHash = crypto.createHash('sha256').update(gtmScript).digest('base64');
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' https://aboutinsurances.vercel.app/_next/static/chunks/main-4d28554435b92d82.js https://www.googletagmanager.com https://www.google-analytics.com 'strict-dynamic' 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'nonce-${mainNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}' 'sha256-${mainHash}'}; 
-  script-src-elem 'self' https://aboutinsurances.vercel.app/_next/static/chunks/main-4d28554435b92d82.js https://www.googletagmanager.com https://www.google-analytics.com 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'nonce-${mainNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}' 'sha256-${mainHash}';
+  script-src-elem 'self' https://aboutinsurances.vercel.app/_next/static/chunks/main-4d28554435b92d82.js https://www.googletagmanager.com https://www.google-analytics.com 'nonce-${gaNonce}' 'nonce-${gtmNonce}' 'nonce-${mainNonce}' 'sha256-${gaHash}' 'sha256-${gtmHash}' 'sha256-${mainHash}' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   object-src 'none';
   img-src * blob: data: https: http:;
