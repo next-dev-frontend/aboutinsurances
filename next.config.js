@@ -7,6 +7,8 @@ const withPWA = require('next-pwa')({
   dynamicStartUrl: true,
   disable: process.env.NODE_ENV === 'development',
 });
+const crypto = require('crypto');
+const { nonce } = crypto.randomBytes(16).toString('base64');
 const gaTrackingId = process.env.NEXT_PUBLIC_GA_ID; // seu ID de acompanhamento do Google Analytics
 const googleAnalyticsScript = `
   window.dataLayer = window.dataLayer || [];
@@ -14,8 +16,6 @@ const googleAnalyticsScript = `
   gtag('js', new Date());
   gtag('config', '${gaTrackingId}');
 `;
-const crypto = require('crypto');
-const { nonce } = crypto.randomBytes(16).toString('base64');
 const script = `
   'nonce-${nonce}'
   ${googleAnalyticsScript}
@@ -24,7 +24,7 @@ const hash = crypto.createHash('sha256').update(script).digest('base64');
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com 'nonce-${nonce}' 'sha256-${hash}';
+  script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'nonce-${nonce}' 'sha256-${hash}';
   style-src 'self' 'unsafe-inline';
   object-src 'none';
   img-src * blob: data: https: http:;
