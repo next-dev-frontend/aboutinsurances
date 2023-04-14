@@ -8,14 +8,14 @@ const Contact = () => {
         <div className="order-1 col-span-full md:col-span-1 py-5 md:py-6 px-6">
           <div className="bg-opacity-0 mx-auto max-w-xl flex flex-col space-y-5">
             <a href="#home">
-              <div className="relative w-14 h-14 md:w-18 sm:h-18 lg:w-24 lg:h-24 transform transition hover:scale-105 duration-1000 ease-in-out">
+              <div className="relative w-14 md:w-18 lg:w-24 h-auto transform transition hover:scale-105 duration-1000 ease-in-out">
                 <Image
                   src="/logos/logo-about-insurances.webp"
                   alt="logo about insurances"
                   layout="responsive"
                   objectFit="cover"
-                  width={500}
-                  height={500}
+                  width={512}
+                  height={512}
                 />
               </div>
             </a>
@@ -93,7 +93,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <div className="relative w-24 h-auto md:w-36 md:h-12">
+                    <div className="relative w-24 md:w-36 h-auto">
                       <Image
                         src="/logos/logo-google.webp"
                         alt="Logo Site Seguro - Google"

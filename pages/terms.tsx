@@ -28,12 +28,14 @@ export default function Termos() {
 
             <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none">
               <div className="w-auto px-4 lg:px-8 pt-2 lg:pt-3">
-                <div className="w-8 md:w-14 lg:w-16 h-auto">
+                <div className="relative w-8 md:w-14 lg:w-16 h-auto">
                   <Image
                     src="../public/logos/logo-about-insurances.webp"
                     alt="logo about insurances"
-                    layout="intrinsic"
+                    layout="responsive"
                     objectFit="cover"
+                    width={512}
+                    height={512}
                     priority
                   />
                 </div>

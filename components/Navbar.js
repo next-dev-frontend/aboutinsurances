@@ -55,7 +55,7 @@ const Navbar = () => {
     >
       <div className="text-color2 whitespace-nowrap w-full container mx-auto flex flex-wrap xl:flex-nowrap items-center justify-between py-2 px-2 pl-4 pr-8">
         <a href="#home" className="pl-1 pt-2">
-          <div className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 transform transition hover:scale-105 duration-1000 ease-in-out">
+          <div className="relative w-10 sm:w-12 lg:w-14 h-auto transform transition hover:scale-105 duration-1000 ease-in-out">
             <Image
               src="/logos/logo-about-insurances.webp"
               alt="logo about insurances"
@@ -63,6 +63,7 @@ const Navbar = () => {
               objectFit="cover"
               width={512}
               height={512}
+              priority
             />
           </div>
         </a>
