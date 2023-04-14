@@ -61,9 +61,8 @@ const Navbar = () => {
               alt="logo about insurances"
               layout="responsive"
               objectFit="cover"
-              width={500}
-              height={500}
-              priority
+              width={512}
+              height={512}
             />
           </div>
         </a>
