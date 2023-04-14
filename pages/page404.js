@@ -11,7 +11,6 @@ export default function page404() {
         alt="background img insurances"
         layout="fill"
         objectFit="cover"
-        quality={100}
         loading="eager"
         priority
       />
