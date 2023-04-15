@@ -2,10 +2,7 @@ import Image from 'next/image'
 
 export default function page500() {
   return (
-    <section
-      id="home"
-      className="relative flex flex-wrap flex-shrink md:flex-shrink-0 items-center justify-center m-auto bg-no-repeat w-full max-w-full h-96 md:h-screen"
-    >
+    <section id="home" className="relative flex flex-wrap flex-shrink md:flex-shrink-0 items-center justify-center m-auto bg-no-repeat w-full max-w-full h-96 md:h-screen">
       <Image
         src="../public/backgrounds/bg3-insurances.webp"
         alt="background img insurances"

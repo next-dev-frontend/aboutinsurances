@@ -55,14 +55,12 @@ const Navbar = () => {
     >
       <div className="text-color2 whitespace-nowrap w-full container mx-auto flex flex-wrap xl:flex-nowrap items-center justify-between py-2 px-2 pl-4 pr-8">
         <a href="#home" className="pl-1 pt-2">
-          <div className="relative w-10 sm:w-12 lg:w-14 h-auto">
+          <div className="w-10 sm:w-12 lg:w-14 h-auto">
             <Image
-              src="/logos/logo-about-insurances.webp"
+              src="../public/logos/logo-about-insurances.webp"
               alt="logo about insurances"
-              layout="responsive"
+              layout="intrinsic"
               objectFit="cover"
-              width={300}
-              height={300}
               priority
             />
           </div>
