@@ -49,10 +49,7 @@ const Navbar = () => {
 
 
   return (
-    <nav
-      id="header"
-      className="select-none flex-shrink md:flex-shrink-0 bg-white bg-no-repeat w-full max-w-full z-30 border-color1 border-opacity-70 border-b-4"
-    >
+    <nav id="header" className="select-none flex-shrink md:flex-shrink-0 bg-white bg-no-repeat w-full max-w-full z-30 border-color1 border-opacity-70 border-b-4">
       <div className="text-color2 whitespace-nowrap w-full container mx-auto flex flex-wrap xl:flex-nowrap items-center justify-between py-2 px-2 pl-4 pr-8">
         <a href="#home" className="pl-1 pt-2">
           <div className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 transform transition hover:scale-105 duration-1000 ease-in-out">
