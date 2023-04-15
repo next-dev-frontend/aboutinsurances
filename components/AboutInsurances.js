@@ -56,8 +56,8 @@ const AboutInsurances = () => {
             </div>
           </div>
         </div>
-        <div className="float-right block w-sm lg:w-lg xl:w-xl md:w-1/2 h-auto px-4 md:px-8 p-8 pl-8 md:pl-4 xl:pl-2">
-          <div className="relative rounded-md shadow-xl p-2 max-w-full">
+        <div className="float-right block w-full lg:w-lg xl:w-xl md:w-1/2 h-auto px-4 md:px-8 p-8 pl-8 md:pl-4 xl:pl-2">
+          <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
             <Image
               className="rounded mask mask-parallelogram-3"
               src="/backgrounds/bg-insurances.webp"
@@ -70,7 +70,7 @@ const AboutInsurances = () => {
           </div>
 
           <a href="https://go.hotmart.com/X80760498R?src=aboutinsurances" rel="noopener noreferrer" target="_blank" role="button">
-            <div className="relative rounded-md shadow-xl p-2 w-48 h-48 max-w-full">
+            <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
               <Image
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/business-template2.webp"
@@ -84,7 +84,7 @@ const AboutInsurances = () => {
           </a>
 
           <a href="https://go.hotmart.com/A80579208O?src=aboutinsurances" rel="noopener noreferrer" target="_blank" role="button">
-            <div className="relative rounded-md shadow-xl p-2 w-64 h-64 max-w-full">
+            <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
               <Image
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/kaspersky-template.webp"
