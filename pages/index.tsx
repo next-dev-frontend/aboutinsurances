@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic'
-const PageSeo = dynamic(() => import('../components/PageSeo'), { loading: () => <p>Carregando...</p>, ssr: false })
+const PageSeo = dynamic(() => import('../components/PageSeo'))
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
-const BgParallax2 = dynamic(() => import('../components/BgParallax2'), { loading: () => <p>Carregando...</p>, ssr: false })
-const NavBar = dynamic(() => import('../components/Navbar'), { loading: () => <p>Carregando...</p>, ssr: false })
-const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Carregando...</p>, ssr: false })
-const AboutInsurances = dynamic(() => import('../components/AboutInsurances'), { loading: () => <p>Carregando...</p>, ssr: false })
-const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Carregando...</p>, ssr: false })
+const BgParallax2 = dynamic(() => import('../components/BgParallax2'))
+const NavBar = dynamic(() => import('../components/Navbar'))
+const SideBar = dynamic(() => import('../components/SideBar'))
+const AboutInsurances = dynamic(() => import('../components/AboutInsurances'))
+const Footer = dynamic(() => import('../components/Footer'))
 
 export default function Home() {
   return (

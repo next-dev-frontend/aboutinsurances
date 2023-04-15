@@ -69,8 +69,8 @@ const AboutInsurances = () => {
             />
           </div>
 
-          <a href="https://go.hotmart.com/X80760498R?src=aboutinsurances" rel="noopener noreferrer" target="_blank">
-            <div className="relative rounded-md shadow-xl p-2 max-w-full">
+          <a href="https://go.hotmart.com/X80760498R?src=aboutinsurances" rel="noopener noreferrer" target="_blank" role="button">
+            <div className="relative rounded-md shadow-xl p-2 w-48 h-48 max-w-full">
               <Image
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/business-template2.webp"
@@ -83,8 +83,8 @@ const AboutInsurances = () => {
             </div>
           </a>
 
-          <a href="https://go.hotmart.com/A80579208O?src=aboutinsurances" rel="noopener noreferrer" target="_blank">
-            <div className="relative rounded-md shadow-xl p-2 max-w-full">
+          <a href="https://go.hotmart.com/A80579208O?src=aboutinsurances" rel="noopener noreferrer" target="_blank" role="button">
+            <div className="relative rounded-md shadow-xl p-2 w-64 h-64 max-w-full">
               <Image
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/kaspersky-template.webp"
