@@ -62,6 +62,8 @@ const AboutInsurances = () => {
               className="rounded mask mask-parallelogram-3"
               src="/backgrounds/bg-insurances.webp"
               alt="insurances template img"
+              width={1080}
+              height={1080}
               layout="responsive"
               objectFit="cover"
             />
@@ -73,6 +75,8 @@ const AboutInsurances = () => {
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/business-template2.webp"
                 alt="business plan template img"
+                width={468}
+                height={60}
                 layout="responsive"
                 objectFit="cover"
               />
@@ -85,6 +89,8 @@ const AboutInsurances = () => {
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/kaspersky-template.webp"
                 alt="Kaspersky Template img"
+                width={1200}
+                height={1200}
                 layout="responsive"
                 objectFit="cover"
               />

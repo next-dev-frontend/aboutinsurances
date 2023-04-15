@@ -14,6 +14,8 @@ const Contact = () => {
                   alt="logo about insurances"
                   layout="responsive"
                   objectFit="cover"
+                  width={512}
+                  height={512}
                 />
               </div>
             </a>
@@ -98,6 +100,8 @@ const Contact = () => {
                         title="Secure Site - Click to Verify!"
                         layout="responsive"
                         objectFit="cover"
+                        width={300}
+                        height={126}
                       />
                     </div>
                   </a>

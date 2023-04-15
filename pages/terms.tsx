@@ -34,6 +34,8 @@ export default function Termos() {
                     alt="logo about insurances"
                     layout="responsive"
                     objectFit="cover"
+                    width={512}
+                    height={512}
                     priority
                   />
                 </div>

@@ -57,7 +57,7 @@ const Navbar = () => {
         <a href="#home" className="pl-1 pt-2">
           <div className="relative w-10 sm:w-12 lg:w-14 h-auto">
             <Image
-              src="/logos/logo-192x192.png"
+              src="/logos/logo-about-insurances.webp"
               alt="logo about insurances"
               layout="responsive"
               objectFit="cover"
