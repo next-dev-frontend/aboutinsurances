@@ -60,7 +60,8 @@ const Navbar = () => {
               objectFit="cover"
               width={512}
               height={512}
-              quality={70}
+              quality={65}
+              priority
             />
           </div>
         </a>
