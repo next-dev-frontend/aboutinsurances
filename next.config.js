@@ -7,18 +7,22 @@ const withPWA = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development',
 });
 
+const crypto = require('crypto');
+const hash = crypto.createHash('sha256');
+const { nonce } = crypto.randomBytes(8).toString('base64');
+
 const ContentSecurityPolicy = `
-default-src 'self';
-script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google-analytics.com/analytics.js;
-script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com;
-style-src 'self' 'unsafe-inline';
-img-src * blob: data: https: http:;
-connect-src 'self' https://www.google-analytics.com;
-font-src 'self';
-base-uri 'none';
-worker-src 'self';
-form-action 'self';
-frame-ancestors 'none';
+  default-src 'self';
+  base-uri 'self';
+  object-src 'none';
+  form-action 'self';
+  script-src-elem 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
+  script-src 'self' https: 'unsafe-eval' 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
+  style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.fonts.googleapis.com https://fonts.googleapis.com;
+  img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
+  media-src *;
+  connect-src 'self' 'unsafe-inline' *.fonts.googleapis.com https://fonts.googleapis.com *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com;
+  font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
 `;
 
 
