@@ -1,4 +1,4 @@
-import React from 'react'
+import * as gtag from '../lib/gtag';
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
@@ -16,7 +16,7 @@ class MyDocument extends Document {
           <NextScript />
           <noscript
             dangerouslySetInnerHTML={{
-              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPBQXC" height="0" width="0" style="display: none; visibility: hidden;" /> `,
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtag.GA_TRACKING_ID}" height="0" width="0" style="display: none; visibility: hidden;" /> `,
             }}
           />
         </body>
