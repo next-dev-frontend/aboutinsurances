@@ -9,7 +9,7 @@ function BgParallax1() {
           alt="background insurances"
           layout="fill"
           objectFit="cover"
-          quality={65}
+          priority
         />
         <div className="select-none sticky h-max max-w-3xl text-white bg-gray-900 bg-opacity-40">
           <h2 className="sticky p-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">
