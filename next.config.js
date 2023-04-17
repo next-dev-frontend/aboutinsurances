@@ -8,15 +8,19 @@ const withPWA = require('next-pwa')({
 });
 
 const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com; 
-  script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com;
-  style-src 'self' 'unsafe-inline';
-  object-src 'none';
-  img-src * blob: data: https: http:;
-  connect-src 'self' https://www.google-analytics.com;
-  font-src 'self';
-  base-uri 'none';
+default-src 'self';
+script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google-analytics.com/analytics.js;
+script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com;
+style-src 'self' 'unsafe-inline';
+img-src * blob: data: https: http:;
+connect-src 'self' https://www.google-analytics.com;
+font-src 'self';
+base-uri 'none';
+worker-src 'self';
+form-action 'self';
+frame-ancestors 'none';
+require-trusted-types-for 'script';
+require-sri-for script;
 `;
 
 
