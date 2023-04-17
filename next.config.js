@@ -19,7 +19,6 @@ base-uri 'none';
 worker-src 'self';
 form-action 'self';
 frame-ancestors 'none';
-require-trusted-types-for 'script';
 require-sri-for script;
 `;
 
