@@ -6,26 +6,18 @@ import Head from 'next/head';
 import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
-import * as gtag from '../lib/gtag';
-import Script from "next/script";
-
+import { initGA, logPageView } from '../analytics';
 
 const MyApp = ({ Component, pageProps }) => {
   
-  // componente google analytics
-  const router = useRouter();
+  //google analytics
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
     }
-    router.events.on('routeChangeComplete', handleRouteChange);
-    router.events.on('hashChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-      router.events.off('hashChangeComplete', handleRouteChange);
-    }
-  }, [router.events]);
-
+    logPageView();
+  }, []);
 
     //registrar service-worker
     useEffect(() => {
@@ -49,24 +41,7 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       </Head>
       <DefaultSeo {...SEO} />
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-        }}
-      />
+     
       <Component {...pageProps} />
     </>
   )
