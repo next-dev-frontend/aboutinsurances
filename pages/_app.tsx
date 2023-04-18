@@ -8,6 +8,12 @@ import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 import * as gtag from '../lib/gtag'
 import Analytics from '../components/Analytics'
+import dynamic from 'next/dynamic'
+const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
+const BgParallax2 = dynamic(() => import('../components/BgParallax2'))
+const NavBar = dynamic(() => import('../components/Navbar'))
+const SideBar = dynamic(() => import('../components/SideBar'))
+const Footer = dynamic(() => import('../components/Footer'))
 
 const MyApp = ({ Component, pageProps }) => {
   
@@ -45,7 +51,12 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       </Head>
       <DefaultSeo {...SEO} />     
+      <NavBar />
+      <BgParallax1 />
       <Component {...pageProps} />
+      <BgParallax2 />
+      <SideBar />
+      <Footer />
       <Analytics />
     </>
   )
