@@ -6,18 +6,22 @@ import Head from 'next/head';
 import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
-import { initGA, logPageView } from '../analytics';
+import * as gtag from '../lib/gtag'
+import Analytics from '../components/Analytics'
 
 const MyApp = ({ Component, pageProps }) => {
   
-  //google analytics
+  const router = useRouter()
+
   useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      initGA();
-      window.GA_INITIALIZED = true;
+    const handleRouteChange = url => {
+      gtag.pageview(url)
     }
-    logPageView();
-  }, []);
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
     //registrar service-worker
     useEffect(() => {
@@ -42,6 +46,7 @@ const MyApp = ({ Component, pageProps }) => {
       </Head>
       <DefaultSeo {...SEO} />     
       <Component {...pageProps} />
+      <Analytics />
     </>
   )
 }
