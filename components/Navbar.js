@@ -52,15 +52,17 @@ const Navbar = () => {
     <nav id="header" className="select-none flex-shrink md:flex-shrink-0 bg-white bg-no-repeat w-full max-w-full z-30 border-color1 border-opacity-70 border-b-4">
       <div className="text-color2 whitespace-nowrap w-full container mx-auto flex flex-wrap xl:flex-nowrap items-center justify-between py-2 px-2 pl-4 pr-8">
         <a href="/" className="pl-1 pt-2">
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 overflow-hidden">
-            <Image
-              src="/logos/logo-about-insurances.webp"
-              alt="logo about insurances"
-              layout="fill"
-              objectFit="cover"
-              loading='lazy'
-            />
-          </div>
+        <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 overflow-hidden">
+  <Image
+    src="/logos/logo-about-insurances.webp"
+    alt="logo about insurances"
+    width={200}
+    height={200}
+    layout="responsive"
+    objectFit="cover"
+    loading='lazy'
+  />
+</div>
         </a>
         <div className="block xl:hidden pt-2 tab">
           <button

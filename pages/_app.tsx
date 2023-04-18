@@ -23,26 +23,7 @@ const Footer = dynamic(() => import('../components/Footer'), {
 
 const MyApp = ({ Component, pageProps }) => {
   
-  //google analytics
-  const router = useRouter();
-
-  //responsável por registrar uma função handleRouteChange que é executada toda vez que há uma mudança de rota no aplicativo, utilizando o objeto router do Next.js. Essa função, por sua vez, chama o método pageview do arquivo gtag.js, que é responsável por enviar a informação de página visualizada para o Google Analytics. Este useEffect só é executado uma vez, quando o componente é montado, graças à dependência [].
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
-
-  //responsável por chamar a função initGA do arquivo initGA.tsx, que é responsável por carregar o script do Google Analytics no aplicativo e configurá-lo para que possa ser usado pelo método pageview do gtag.js. Este useEffect também só é executado uma vez, quando o componente é montado, graças à dependência [].
-  useEffect(() => {
-    initGA();
-  }, []);
-
-  //registrar service-worker
+   //registrar service-worker
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -56,6 +37,25 @@ const MyApp = ({ Component, pageProps }) => {
       });
     }
   }, []);
+
+ //google analytics
+ const router = useRouter();
+
+ //responsável por registrar uma função handleRouteChange que é executada toda vez que há uma mudança de rota no aplicativo, utilizando o objeto router do Next.js. Essa função, por sua vez, chama o método pageview do arquivo gtag.js, que é responsável por enviar a informação de página visualizada para o Google Analytics. Este useEffect só é executado uma vez, quando o componente é montado, graças à dependência [].
+ useEffect(() => {
+   const handleRouteChange = (url) => {
+     gtag.pageview(url);
+   };
+   router.events.on('routeChangeComplete', handleRouteChange);
+   return () => {
+     router.events.off('routeChangeComplete', handleRouteChange);
+   };
+ }, [router.events]);
+
+ //responsável por chamar a função initGA do arquivo initGA.tsx, que é responsável por carregar o script do Google Analytics no aplicativo e configurá-lo para que possa ser usado pelo método pageview do gtag.js. Este useEffect também só é executado uma vez, quando o componente é montado, graças à dependência [].
+ useEffect(() => {
+   initGA();
+ }, []);
 
 
   return (
