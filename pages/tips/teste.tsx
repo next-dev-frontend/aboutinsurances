@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 const PageSeo = dynamic(() => import('../../components/PageSeo'))
 
-export default function Home() {
+export default function teste() {
   return (
     <PageSeo
       title="Ask Your Questions About Insurance and Agencies"

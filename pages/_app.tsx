@@ -6,13 +6,13 @@ import Head from 'next/head';
 import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
-import * as gtag from '../lib/gtag'
 import dynamic from 'next/dynamic'
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
 const BgParallax2 = dynamic(() => import('../components/BgParallax2'))
 const NavBar = dynamic(() => import('../components/Navbar'))
 const SideBar = dynamic(() => import('../components/SideBar'))
 const Footer = dynamic(() => import('../components/Footer'))
+import * as gtag from '../lib/gtag'
 const Analytics = dynamic(() => import('../components/Analytics'))
 
 const MyApp = ({ Component, pageProps }) => {
