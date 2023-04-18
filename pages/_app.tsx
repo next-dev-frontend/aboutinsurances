@@ -7,13 +7,13 @@ import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 import * as gtag from '../lib/gtag'
-import Analytics from '../components/Analytics'
 import dynamic from 'next/dynamic'
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
 const BgParallax2 = dynamic(() => import('../components/BgParallax2'))
 const NavBar = dynamic(() => import('../components/Navbar'))
 const SideBar = dynamic(() => import('../components/SideBar'))
 const Footer = dynamic(() => import('../components/Footer'))
+const Analytics = dynamic(() => import('../components/Analytics'))
 
 const MyApp = ({ Component, pageProps }) => {
   
@@ -29,20 +29,20 @@ const MyApp = ({ Component, pageProps }) => {
     }
   }, [router.events])
 
-    //registrar service-worker
-    useEffect(() => {
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-              console.log('Service worker registered:', registration);
-            })
-            .catch(error => {
-              console.log('Service worker registration failed:', error);
-            });
-        });
-      }
-    }, []);
+  //registrar service-worker
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('Service worker registered:', registration);
+          })
+          .catch(error => {
+            console.log('Service worker registration failed:', error);
+          });
+      });
+    }
+  }, []);
 
 
   return (
