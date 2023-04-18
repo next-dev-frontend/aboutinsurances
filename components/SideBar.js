@@ -12,7 +12,7 @@ const SideBar = () => {
       <div className="px-4 py-6">
         <nav aria-label="Main Nav" className="mt-6 flex flex-col space-y-1 items-center">
           <a
-            href="#"
+            href="/tips/teste.tsx"
             className="flex items-center gap-2 rounded-lg px-4 py-2 text-color1 hover:bg-gray-100 hover:text-color2"
           >
             <span className="text-lg md:text-xl lg:text-2xl font-medium underline"> Billing </span>
