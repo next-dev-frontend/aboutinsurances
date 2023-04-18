@@ -7,12 +7,19 @@ import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 import dynamic from 'next/dynamic'
-import * as gtag from '../lib/gtag'
-const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
-const BgParallax2 = dynamic(() => import('../components/BgParallax2'))
 const NavBar = dynamic(() => import('../components/Navbar'))
-const SideBar = dynamic(() => import('../components/SideBar'))
-const Footer = dynamic(() => import('../components/Footer'))
+const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
+const BgParallax2 = dynamic(() => import('../components/BgParallax2'), {
+  loading: () => <p>Loading BgParallax2...</p>,
+})
+const SideBar = dynamic(() => import('../components/SideBar'), {
+  loading: () => <p>Loading SideBar...</p>,
+})
+const Footer = dynamic(() => import('../components/Footer'), {
+  loading: () => <p>Loading Footer...</p>,
+})
+
+import * as gtag from '../lib/gtag'
 const Analytics = dynamic(() => import('../components/Analytics'), {
   ssr: false,
   loading: () => <p>Loading Google Analytics...</p>,
