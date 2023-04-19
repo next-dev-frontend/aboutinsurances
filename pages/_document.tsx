@@ -10,7 +10,7 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/logos/logo-128x128.png" />
           <link rel="icon" href="/favicon.ico"></link>
           <meta name="theme-color" content="#ff6341" />
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}></script>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GTM_CONTAINER_ID}`}></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
