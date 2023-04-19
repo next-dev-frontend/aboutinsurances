@@ -8,7 +8,7 @@ const Contact = () => {
         <div className="order-1 col-span-full md:col-span-1 py-5 md:py-6 px-6">
           <div className="bg-opacity-0 mx-auto max-w-xl flex flex-col space-y-5">
             <a href="#home">
-              <div className="relative w-14 md:w-18 lg:w-24 h-auto transform transition hover:scale-105 duration-1000 ease-in-out">
+              <div className="relative w-14 md:w-18 lg:w-24 h-auto">
                 <Image
                   src="/logos/logo-about-insurances.webp"
                   alt="logo about insurances"
@@ -87,7 +87,7 @@ const Contact = () => {
           <form className="bg-opacity-0 rounded mx-auto max-w-xl space-y-4">
             <div className="w-full">
               <ul className="flex mx-auto w-max h-full bg-white border-2 border-light-green rounded p-2 items-center">
-                <li className="transform transition hover:scale-110 duration-500 ease-in-out">
+                <li>
                   <a
                     href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fconsultbio-jr.vercel.app%2F&hl=pt_BR"
                     rel="noopener noreferrer"
