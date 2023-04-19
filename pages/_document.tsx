@@ -1,3 +1,4 @@
+import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
@@ -9,16 +10,14 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/logos/logo-128x128.png" />
           <link rel="icon" href="/favicon.ico"></link>
           <meta name="theme-color" content="#ff6341" />
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${'G-FFC6EB1GNB'}`} />
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${'G-FFC6EB1GNB'}', {
-                  page_path: window.location.pathname,
-                });
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
               `,
             }}
           />

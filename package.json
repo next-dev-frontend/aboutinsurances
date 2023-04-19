@@ -8,6 +8,7 @@
     "lint": "eslint --fix . ; prettier --write ."
   },
   "dependencies": {
+    "@types/react-ga": "^2.3.0",
     "depcheck": "^1.4.3",
     "next": "^12.2.2",
     "next-images": "^1.8.4",

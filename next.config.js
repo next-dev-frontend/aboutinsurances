@@ -21,7 +21,7 @@ const ContentSecurityPolicy = `
   style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.fonts.googleapis.com https://fonts.googleapis.com;
   img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   media-src *;
-  connect-src 'self' 'unsafe-inline' *.fonts.googleapis.com https://fonts.googleapis.com *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com;
+  connect-src 'self' 'unsafe-inline' *.fonts.googleapis.com https://fonts.googleapis.com *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com https://analytics.google.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
 `;
 
@@ -74,6 +74,7 @@ const securityHeaders = [
 
 module.exports = withImages(withPWA({
   reactStrictMode: true,
+  poweredByHeader: false,
   distDir: '.next',
 
   images: {
@@ -89,7 +90,6 @@ module.exports = withImages(withPWA({
       },
     ];
   },
-
 
   typescript: {
     ignoreBuildErrors: true,

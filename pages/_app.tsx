@@ -1,12 +1,12 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
-import { initGA, logPageView } from '../utils/GoogleAnalytics';
+import { AppProps } from 'next/app';
+import { initGA, logPageView } from '../utils/analytics';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
@@ -20,8 +20,13 @@ const Footer = dynamic(() => import('../components/Footer'), {
   loading: () => <p>Loading Footer...</p>,
 })
 
-const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
+if (process.env.NODE_ENV === 'production') {
+  initGA();
+}
+
+function MyApp({ Component, pageProps }: AppProps) {
   
+  //google analytics
   useEffect(() => {
     if (!window.GA_INITIALIZED) {
       initGA();
@@ -54,7 +59,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       <DefaultSeo {...SEO} />     
       <NavBar />
       <BgParallax1 />
-      <Component {...pageProps} />
+      <Component {...pageProps} onComponentDidMount={logPageView} />
       <BgParallax2 />
       <SideBar />
       <Footer />
