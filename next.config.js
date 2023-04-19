@@ -16,7 +16,7 @@ const ContentSecurityPolicy = `
   base-uri 'self';
   object-src 'none';
   form-action 'self';
-  script-src-elem 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
+  script-src-elem 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://www.googleadservices.com;
   script-src 'self' https: 'unsafe-eval' 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
   style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.fonts.googleapis.com https://fonts.googleapis.com;
   img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
