@@ -17,16 +17,17 @@ const gtmScriptHash = crypto
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' www.googletagmanager.com 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'unsafe-eval' 'strict-dynamic' 'unsafe-inline';
+  script-src 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'unsafe-eval' 'unsafe-inline';
+  script-src-elem 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'unsafe-eval' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
-  img-src 'self' www.googletagmanager.com data:;
+  img-src 'self' https://www.googletagmanager.com data:;
   connect-src 'self' vitals.vercel-insights.com;
   font-src 'self';
   object-src 'none';
   base-uri 'self';
   form-action 'self';
   frame-ancestors 'none';
-  frame-src www.googletagmanager.com;
+  frame-src https://www.googletagmanager.com;
 `;
 
 const securityHeaders = [
