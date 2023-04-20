@@ -70,6 +70,10 @@ a {
   will-change: color;
 }
 
+button {
+  will-change: color;
+}
+
 /*Animações*/
 [data-anime] {
   opacity: 0;

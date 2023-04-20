@@ -8,23 +8,26 @@ const withPWA = require('next-pwa')({
 });
 
 const crypto = require('crypto');
-const hash = crypto.createHash('sha256');
-const { nonce } = crypto.randomBytes(8).toString('base64');
+
+const nonce = crypto.randomBytes(16).toString('base64');
+const gtmScriptHash = crypto
+  .createHash('sha256')
+  .update(`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;var h=d.getElementsByTagName(s)[0];h.parentNode.insertBefore(j,h);})(window,document,'script','dataLayer','GTM-MWPBQXC');`)
+  .digest('base64');
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  base-uri 'self';
+  script-src 'self' www.googletagmanager.com 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'unsafe-eval';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' www.googletagmanager.com data:;
+  connect-src 'self';
+  font-src 'self';
   object-src 'none';
+  base-uri 'self';
   form-action 'self';
-  script-src-elem 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://www.googleadservices.com https://www.google.com.br/ads/ga-audiences;
-  script-src 'self' https: 'unsafe-eval' 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}' https://www.google.com.br/ads/ga-audiences;
-  style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.fonts.googleapis.com https://fonts.googleapis.com;
-  img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://googleads.g.doubleclick.net/pagead/* https://www.google.com.br/ads/* https://www.google.com.br/ads/ga-audiences;
-  media-src *;
-  connect-src 'self' 'unsafe-inline' *.fonts.googleapis.com https://fonts.googleapis.com *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com https://analytics.google.com https://stats.g.doubleclick.net;
-  font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
+  frame-ancestors 'none';
+  frame-src www.googletagmanager.com;
 `;
-
 
 const securityHeaders = [
   // políticas de segurança
@@ -63,7 +66,7 @@ const securityHeaders = [
   },
   {// política de referência
     key: 'Referrer-Policy',
-    value: 'same-origin'
+    value: 'strict-origin-when-cross-origin'
   },
   {
     key: 'Set-Cookie',

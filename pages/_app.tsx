@@ -5,8 +5,6 @@ import Head from 'next/head';
 import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
-import { AppProps } from 'next/app';
-import { initGA, logPageView } from '../utils/analytics';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
@@ -20,21 +18,10 @@ const Footer = dynamic(() => import('../components/Footer'), {
   loading: () => <p>Loading Footer...</p>,
 })
 
-if (process.env.NODE_ENV === 'production') {
-  initGA();
-}
 
-function MyApp({ Component, pageProps }: AppProps) {
+
+function MyApp({ Component, pageProps }) {
   
-  //google analytics
-  useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      initGA();
-      window.GA_INITIALIZED = true;
-    }
-    logPageView();
-  }, []);
-
    //registrar service-worker
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -59,7 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <DefaultSeo {...SEO} />     
       <NavBar />
       <BgParallax1 />
-      <Component {...pageProps} onComponentDidMount={logPageView} />
+      <Component {...pageProps} />
       <BgParallax2 />
       <SideBar />
       <Footer />
