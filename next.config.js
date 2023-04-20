@@ -17,10 +17,10 @@ const gtmScriptHash = crypto
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' www.googletagmanager.com 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'unsafe-eval';
+  script-src 'self' www.googletagmanager.com 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'unsafe-eval' 'strict-dynamic' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   img-src 'self' www.googletagmanager.com data:;
-  connect-src 'self';
+  connect-src 'self' vitals.vercel-insights.com;
   font-src 'self';
   object-src 'none';
   base-uri 'self';
