@@ -21,7 +21,7 @@ const ContentSecurityPolicy = `
   script-src-elem 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'unsafe-eval' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   img-src 'self' https://www.googletagmanager.com data:;
-  connect-src 'self' vitals.vercel-insights.com;
+  connect-src 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ vitals.vercel-insights.com;
   font-src 'self';
   object-src 'none';
   base-uri 'self';
