@@ -22,7 +22,7 @@ const gtmScriptHash = crypto
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'sha256-${gtagScriptHash}' 'strict-dynamic' 'unsafe-inline';
+  script-src 'self' https: http: 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'sha256-${gtagScriptHash}' 'strict-dynamic' 'unsafe-inline';
   script-src-elem 'self' 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'sha256-${gtagScriptHash}' 'strict-dynamic';
   style-src 'self' 'unsafe-inline';
   img-src 'self' https://www.googletagmanager.com data:;
