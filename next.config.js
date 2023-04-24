@@ -16,18 +16,18 @@ const gtmScriptHash = crypto
   .digest('base64');
 
 const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'unsafe-eval' 'unsafe-inline';
-  script-src-elem 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'unsafe-eval' 'unsafe-inline';
-  style-src 'self' 'unsafe-inline';
-  img-src 'self' https://www.googletagmanager.com data:;
-  connect-src 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ vitals.vercel-insights.com;
-  font-src 'self';
-  object-src 'none';
-  base-uri 'self';
-  form-action 'self';
-  frame-ancestors 'none';
-  frame-src https://www.googletagmanager.com;
+default-src 'self'; 
+script-src 'strict-dynamic' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'nonce-${nonce}' 'sha256-${gtmScriptHash}'; 
+script-src-elem 'strict-dynamic' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'nonce-${nonce}' 'sha256-${gtmScriptHash}'; 
+style-src 'self' 'unsafe-inline'; 
+img-src 'self' https://www.googletagmanager.com data:; 
+connect-src 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ vitals.vercel-insights.com; 
+font-src 'self'; 
+object-src 'none'; 
+base-uri 'self'; 
+form-action 'self'; 
+frame-ancestors 'none'; 
+frame-src https://www.googletagmanager.com;
 `;
 
 const securityHeaders = [
