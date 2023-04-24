@@ -29,7 +29,7 @@ const gtagScriptHash = crypto
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src https: http: 'nonce-${nonce}' 'sha256-${selfScriptHash}' 'sha256-${gtmScriptHash}' 'sha256-${gtagScriptHash}' 'strict-dynamic' 'unsafe-inline';
+  script-src https: http: 'nonce-${nonce}' 'sha256-${selfScriptHash}' 'sha256-${gtmScriptHash}' 'sha256-${gtagScriptHash}' 'strict-dynamic' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ https://aboutinsurances.vercel.app 'unsafe-inline';
   script-src-elem 'nonce-${nonce}' 'sha256-${selfScriptHash}' 'sha256-${gtmScriptHash}' 'sha256-${gtagScriptHash}' 'strict-dynamic' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ https://aboutinsurances.vercel.app 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   img-src 'self' https://www.googletagmanager.com data:;
