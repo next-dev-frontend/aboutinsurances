@@ -17,8 +17,8 @@ const gtmScriptHash = crypto
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'strict-dynamic';
-  script-src-elem 'self' 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'strict-dynamic';
+  script-src 'self' 'nonce-${nonce}' 'sha256-${gtmScriptHash}' https://www.googletagmanager.com/gtag/ 'strict-dynamic';
+  script-src-elem 'self' 'nonce-${nonce}' 'sha256-${gtmScriptHash}' https://www.googletagmanager.com/gtag/ 'strict-dynamic';
   style-src 'self' 'unsafe-inline';
   img-src 'self' https://www.googletagmanager.com data:;
   connect-src 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ vitals.vercel-insights.com;
