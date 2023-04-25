@@ -13,7 +13,7 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'nonce-${nonce}' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'strict-dynamic' 'unsafe-inline';
   script-src-elem 'self' 'nonce-${nonce}' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'unsafe-inline';
-  style-src 'self' 'nonce-${nonce}' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'strict-dynamic';
+  style-src 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'unsafe-inline';
   img-src 'self' https://www.googletagmanager.com data:;
   connect-src 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ vitals.vercel-insights.com;
   font-src 'self';
