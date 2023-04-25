@@ -10,22 +10,11 @@ const withPWA = require('next-pwa')({
 const crypto = require('crypto');
 
 const nonce = crypto.randomBytes(16).toString('base64');
-const gtmScriptHash = crypto
-  .createHash('sha256')
-  .update(`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;var h=d.getElementsByTagName(s)[0];h.parentNode.insertBefore(j,h);})(window,document,'script','dataLayer','GTM-MWPBQXC');`)
-  .digest('base64');
-
-const gtagScriptUrl = 'https://www.googletagmanager.com/gtag/';
-const gtagScriptHash = crypto
-  .createHash('sha256')
-  .update(gtagScriptUrl)
-  .digest('base64');
-
   
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'sha256-${gtagScriptHash}' 'strict-dynamic' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ https://aboutinsurances.vercel.app 'unsafe-inline';
-  script-src-elem 'nonce-${nonce}' 'sha256-${gtmScriptHash}' 'sha256-${gtagScriptHash}' 'strict-dynamic' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ https://aboutinsurances.vercel.app 'unsafe-inline';
+  script-src 'self' 'nonce-${nonce}' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'unsafe-inline';
+  script-src-elem 'self' 'nonce-${nonce}' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   img-src 'self' https://www.googletagmanager.com data:;
   connect-src 'self' https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ vitals.vercel-insights.com;
