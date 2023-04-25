@@ -56,8 +56,8 @@ const Navbar = () => {
           <Image
             src="/logos/logo-about-insurances.webp"
             alt="logo about insurances"
-            width={200}
-            height={200}
+            width={192}
+            height={192}
             layout="responsive"
             objectFit="cover"
             loading='lazy'
