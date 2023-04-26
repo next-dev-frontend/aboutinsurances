@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
+import Script from "next/script";
 import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
@@ -50,6 +51,25 @@ function MyApp({ Component, pageProps }) {
       <BgParallax2 />
       <SideBar />
       <Footer />
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+
     </>
   )
 }
