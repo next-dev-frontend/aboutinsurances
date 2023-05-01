@@ -14,23 +14,15 @@ const scriptUrls = [
   'https://www.google-analytics.com/analytics.js',
 ];
 
-const scriptGtag = `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
-  page_path: window.location.pathname,
-});`;
-
 const crypto = require('crypto');
 const nonce = crypto.randomBytes(16).toString('base64');
 const gtagHash = crypto.createHash('sha256').update('https://www.googletagmanager.com/gtag/').digest('base64');
 const gaHash = crypto.createHash('sha256').update('https://www.google-analytics.com/analytics.js').digest('base64');
-const scriptGtaghash = crypto.createHash('sha256').update(scriptGtag).digest('base64');
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' https: ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'sha256-${scriptGtaghash}' 'strict-dynamic' 'unsafe-inline';
-  script-src-elem 'self' https: ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'sha256-${scriptGtaghash}' 'unsafe-eval' 'unsafe-inline';
+  script-src 'self' https: ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'strict-dynamic' 'unsafe-inline';
+  script-src-elem 'self' https: ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'unsafe-eval' 'unsafe-inline';
   style-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'unsafe-inline';
   img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com data:;
   connect-src 'self' ${scriptUrls.join(' ')} vitals.vercel-insights.com;
