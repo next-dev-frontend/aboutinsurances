@@ -24,14 +24,6 @@ const Footer = dynamic(() => import('../components/Footer'), {
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   
-  useEffect(() => {
-    if (!window['GA_INITIALIZED']) {
-      initGA()
-      window['GA_INITIALIZED'] = true
-    }
-    logPageView()
-  }, [])
-
    //registrar service-worker
   useEffect(() => {
     if ('serviceWorker' in navigator) {
