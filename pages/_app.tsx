@@ -1,11 +1,12 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { DefaultSeo } from 'next-seo';
+import { AppProps } from 'next/app'
 import Head from 'next/head';
-import Script from "next/script";
 import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
+import { initGA, logPageView } from '../utils/analytics'
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
@@ -21,8 +22,16 @@ const Footer = dynamic(() => import('../components/Footer'), {
 
 
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   
+  useEffect(() => {
+    if (!window['GA_INITIALIZED']) {
+      initGA()
+      window['GA_INITIALIZED'] = true
+    }
+    logPageView()
+  }, [])
+
    //registrar service-worker
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -51,24 +60,7 @@ function MyApp({ Component, pageProps }) {
       <BgParallax2 />
       <SideBar />
       <Footer />
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-        }}
-      />
+     
 
     </>
   )
