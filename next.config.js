@@ -22,7 +22,7 @@ const ContentSecurityPolicy = `
   img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   media-src *;
   frame-src 'self' https: http: 'unsafe-inline';
-  connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com;
+  connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://www.googletagmanager.com/gtag vitals.vercel-insights.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
 `;
 
@@ -34,7 +34,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: "*"
+    value: "*.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://www.googletagmanager.com/gtag vitals.vercel-insights.com"
   },
   {
     key: 'X-DNS-Prefetch-Control',
