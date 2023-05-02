@@ -18,7 +18,7 @@ const ContentSecurityPolicy = `
   form-action 'self';
   script-src-elem 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   script-src 'self' https: http: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
-  style-src 'self' 'nonce-${nonce}' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://analytics.google.com/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ vitals.vercel-insights.com;
+  style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.google.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   frame-src 'self' https: http: 'unsafe-inline';
   connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://analytics.google.com/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ vitals.vercel-insights.com;
