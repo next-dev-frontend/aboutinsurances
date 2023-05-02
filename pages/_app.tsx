@@ -69,10 +69,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <BgParallax2 />
       <SideBar />
       <Footer />
-      <Script
-              strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-          />
       <GoogleAnalyticsScript />
 
     </>
