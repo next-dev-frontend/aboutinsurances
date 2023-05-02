@@ -13,6 +13,9 @@ const scriptUrls = [
   'https://www.tagmanager.google.com',
   'https://www.googletagmanager.com/gtag/',
   'https://www.google-analytics.com/analytics.js',
+  '*.googletagmanager.com',
+  '*.tagmanager.google.com',
+  '*.google-analytics.com;',
 ];
 
 const scriptGtag = `window.dataLayer = window.dataLayer || [];
@@ -30,8 +33,8 @@ const scriptGtaghash = crypto.createHash('sha256').update(scriptGtag).digest('ba
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' https: ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'sha256-${scriptGtaghash}' 'strict-dynamic' 'unsafe-inline';
-  script-src-elem 'self' https: ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'sha256-${scriptGtaghash}' 'unsafe-eval';
+  script-src 'self' https: http: ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'sha256-${scriptGtaghash}' 'strict-dynamic' 'unsafe-inline';
+  script-src-elem 'self' ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'sha256-${scriptGtaghash}' 'unsafe-eval' 'unsafe-inline';
   style-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'unsafe-inline';
   img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com data:;
   connect-src 'self' ${scriptUrls.join(' ')} vitals.vercel-insights.com;
