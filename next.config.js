@@ -7,43 +7,23 @@ const withPWA = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development',
 });
 
-const scriptUrls = [
-  'vitals.vercel-insights.com',
-  'https://www.google-analytics.com',
-  'https://www.googletagmanager.com/',
-  'https://www.tagmanager.google.com',
-  'https://www.googletagmanager.com/gtag/',
-  'https://www.google-analytics.com/analytics.js',
-  '*.googletagmanager.com',
-  '*.tagmanager.google.com',
-  '*.google-analytics.com;',
-];
-
-const scriptGtag = `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
-  page_path: window.location.pathname,
-});`;
-
 const crypto = require('crypto');
-const nonce = crypto.randomBytes(16).toString('base64');
-const gtagHash = crypto.createHash('sha256').update('https://www.googletagmanager.com/gtag/').digest('base64');
-const gaHash = crypto.createHash('sha256').update('https://www.google-analytics.com/analytics.js').digest('base64');
-const scriptGtaghash = crypto.createHash('sha256').update(scriptGtag).digest('base64');
+const hash = crypto.createHash('sha256');
+const nonce = crypto.randomBytes(8).toString('base64');
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' https: http: ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'sha256-${scriptGtaghash}' 'strict-dynamic' 'unsafe-inline';
-  script-src-elem 'self' ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'sha256-${scriptGtaghash}' 'unsafe-eval' 'unsafe-inline';
-  style-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ vitals.vercel-insights.com 'unsafe-inline';
-  img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com vitals.vercel-insights.com data:;
-  connect-src 'self' ${scriptUrls.join(' ')} vitals.vercel-insights.com;
-  font-src 'self';
-  object-src 'none';
   base-uri 'self';
+  object-src 'none';
   form-action 'self';
-  frame-ancestors 'self' https://www.googletagmanager.com;
+  script-src-elem 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
+  script-src 'self' https: http: 'unsafe-inline' 'unsafe-eval' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
+  style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com;
+  img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
+  media-src *;
+  frame-src 'self' https: http: 'unsafe-inline';
+  connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com vitals.vercel-insights.com;
+  font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
 `;
 
 const securityHeaders = [
