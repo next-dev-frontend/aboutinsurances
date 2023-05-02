@@ -21,7 +21,20 @@ class MyDocument extends Document {
         <body className="scrollbar scrollbar-thumb-color2 scrollbar-track-color1 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
           <NextScript />
-          <GoogleAnalytics />
+          <Script
+            id="ga-tracking"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
+          page_path: window.location.pathname,
+        }); 
+      `,
+            }}
+          />
         </body>
       </Html>
     )
