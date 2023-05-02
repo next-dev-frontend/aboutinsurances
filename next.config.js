@@ -8,6 +8,7 @@ const withPWA = require('next-pwa')({
 });
 
 const scriptUrls = [
+  'vitals.vercel-insights.com',
   'https://www.google-analytics.com',
   'https://www.googletagmanager.com/',
   'https://www.tagmanager.google.com',
@@ -35,8 +36,8 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' https: http: ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'sha256-${scriptGtaghash}' 'strict-dynamic' 'unsafe-inline';
   script-src-elem 'self' ${scriptUrls.join(' ')} 'nonce-${nonce}' 'sha256-${gtagHash}' 'sha256-${gaHash}' 'sha256-${scriptGtaghash}' 'unsafe-eval' 'unsafe-inline';
-  style-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ 'unsafe-inline';
-  img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com data:;
+  style-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ vitals.vercel-insights.com 'unsafe-inline';
+  img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com vitals.vercel-insights.com data:;
   connect-src 'self' ${scriptUrls.join(' ')} vitals.vercel-insights.com;
   font-src 'self';
   object-src 'none';
