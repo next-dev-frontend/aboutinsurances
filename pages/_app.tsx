@@ -8,8 +8,6 @@ import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 import * as gtag from '../lib/gtag';
-import GoogleAnalyticsScript from '../components/GoogleAnalyticsScript';
-import Script from "next/script";
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
@@ -22,7 +20,7 @@ const SideBar = dynamic(() => import('../components/SideBar'), {
 const Footer = dynamic(() => import('../components/Footer'), {
   loading: () => <p>Loading Footer...</p>,
 })
-
+const GoogleAnalyticsScript = dynamic(() => import('../components/GoogleAnalyticsScript'))
 
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -70,7 +68,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <SideBar />
       <Footer />
       <GoogleAnalyticsScript />
-
     </>
   )
 }
