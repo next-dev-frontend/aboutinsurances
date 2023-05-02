@@ -10,18 +10,11 @@ import 'tailwindcss/tailwind.css';
 import * as gtag from '../lib/gtag';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
-const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
-const BgParallax2 = dynamic(() => import('../components/BgParallax2'), {
-  loading: () => <p>Loading BgParallax2...</p>,
-})
-const SideBar = dynamic(() => import('../components/SideBar'), {
-  loading: () => <p>Loading SideBar...</p>,
-})
-const Footer = dynamic(() => import('../components/Footer'), {
-  loading: () => <p>Loading Footer...</p>,
-})
-const GoogleAnalyticsScript = dynamic(() => import('../components/GoogleAnalyticsScript'))
-
+const BgParallax1 = dynamic(() => import('../components/BgParallax1'), {loading: () => <p>Loading BgParallax1...</p>,})
+const BgParallax2 = dynamic(() => import('../components/BgParallax2'), {loading: () => <p>Loading BgParallax2...</p>,})
+const SideBar = dynamic(() => import('../components/SideBar'), {loading: () => <p>Loading SideBar...</p>,})
+const Footer = dynamic(() => import('../components/Footer'), {loading: () => <p>Loading Footer...</p>,})
+const GoogleAnalyticsScript = dynamic(() => import('../components/GoogleAnalyticsScript'), {loading: () => <p>Loading Google Analytics...</p>,})
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   
