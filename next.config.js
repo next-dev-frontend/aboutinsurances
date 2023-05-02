@@ -17,12 +17,12 @@ const ContentSecurityPolicy = `
   object-src 'none';
   form-action 'self';
   script-src-elem 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
-  script-src 'self' https: http: 'unsafe-inline' 'unsafe-eval' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
-  style-src 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com;
+  script-src 'self' https: http: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
+  style-src 'self' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://analytics.google.com/ https://www.googletagmanager.com/gtag;
   img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   media-src *;
   frame-src 'self' https: http: 'unsafe-inline';
-  connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://www.googletagmanager.com/gtag vitals.vercel-insights.com;
+  connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://analytics.google.com/ https://www.googletagmanager.com/gtag vitals.vercel-insights.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
 `;
 
