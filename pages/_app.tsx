@@ -8,6 +8,7 @@ import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 import * as gtag from '../lib/gtag';
+import GoogleAnalyticsScript from '../components/GoogleAnalyticsScript';
 import Script from "next/script";
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
@@ -72,20 +73,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
               strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
           />
-          <Script
-           id="ga-tracking"
-           strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
-                  page_path: window.location.pathname,
-                });
-              `,
-            }}
-          />
+      <GoogleAnalyticsScript />
 
     </>
   )
