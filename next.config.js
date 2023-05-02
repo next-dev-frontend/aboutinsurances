@@ -18,10 +18,10 @@ const ContentSecurityPolicy = `
   form-action 'self';
   script-src-elem 'self' 'unsafe-inline' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   script-src 'self' https: http: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com 'sha256-${hash.digest('base64')}';
-  style-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.googletagmanager.com/gtag/ vitals.vercel-insights.com 'unsafe-inline';
-  img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
+  style-src 'self' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://analytics.google.com/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ vitals.vercel-insights.com;
+  img-src 'self' data: blob: 'unsafe-inline' *.gstatic.com *.google.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com;
   frame-src 'self' https: http: 'unsafe-inline';
-  connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://analytics.google.com/ https://www.googletagmanager.com/gtag vitals.vercel-insights.com;
+  connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://analytics.google.com/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ vitals.vercel-insights.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
 `;
 
@@ -33,7 +33,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: "*.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://www.googletagmanager.com/gtag vitals.vercel-insights.com"
+    value: "*.gstatic.com *google.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ vitals.vercel-insights.com"
   },
   {
     key: 'X-DNS-Prefetch-Control',
