@@ -1,12 +1,14 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { useRouter } from "next/router";
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
 import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
-import { initGA, logPageView } from '../utils/analytics'
+import * as gtag from '../lib/gtag';
+import Script from "next/script";
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
@@ -24,13 +26,19 @@ const Footer = dynamic(() => import('../components/Footer'), {
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   
+  // componente google analytics
+  const router = useRouter();
   useEffect(() => {
-    if (!window['GA_INITIALIZED']) {
-      initGA()
-      window['GA_INITIALIZED'] = true
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
     }
-    logPageView()
-  }, [])
+    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on('hashChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off('hashChangeComplete', handleRouteChange);
+    }
+  }, [router.events]);
 
    //registrar service-worker
   useEffect(() => {
@@ -60,7 +68,24 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <BgParallax2 />
       <SideBar />
       <Footer />
-     
+      <Script
+              strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+          />
+          <Script
+           id="ga-tracking"
+           strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          />
 
     </>
   )
