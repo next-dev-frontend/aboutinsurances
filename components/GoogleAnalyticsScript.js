@@ -2,11 +2,7 @@ import Script from 'next/script';
 
 const GoogleAnalyticsScript = () => {
   return (
-<>
-    <Script
-    strategy="afterInteractive"
-  src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-/>
+
     <Script
       id="ga-tracking"
       strategy="afterInteractive"
@@ -21,8 +17,7 @@ const GoogleAnalyticsScript = () => {
         `,
       }}
     />
-
-</>   
+ 
   );
 };
 

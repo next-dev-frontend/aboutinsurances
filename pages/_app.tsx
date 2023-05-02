@@ -1,4 +1,5 @@
 import React from 'react';
+import Script from 'next/script';
 import { useEffect } from 'react';
 import { useRouter } from "next/router";
 import { DefaultSeo } from 'next-seo';
@@ -18,20 +19,6 @@ const GoogleAnalyticsScript = dynamic(() => import('../components/GoogleAnalytic
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   
-  // componente google analytics
-  const router = useRouter();
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
-    }
-    router.events.on('routeChangeComplete', handleRouteChange);
-    router.events.on('hashChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-      router.events.off('hashChangeComplete', handleRouteChange);
-    }
-  }, [router.events]);
-
    //registrar service-worker
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -47,6 +34,20 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     }
   }, []);
 
+  // componente google analytics
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    }
+    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on('hashChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off('hashChangeComplete', handleRouteChange);
+    }
+  }, [router.events]);
+
 
   return (
     <>
@@ -60,6 +61,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <BgParallax2 />
       <SideBar />
       <Footer />
+      <Script
+    strategy="afterInteractive"
+  src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+/>
       <GoogleAnalyticsScript />
     </>
   )
