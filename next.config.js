@@ -64,6 +64,10 @@ const securityHeaders = [
     key: 'Referrer-Policy',
     value: 'strict-origin-when-cross-origin'
   },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; Secure; SameSite=Strict'
+  }
 ];
 
 
