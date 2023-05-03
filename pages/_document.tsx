@@ -17,11 +17,11 @@ class MyDocument extends Document {
             strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
           />
+          <GoogleAnalytics />
         </Head>
         <body className="scrollbar scrollbar-thumb-color2 scrollbar-track-color1 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
           <NextScript />
-          <GoogleAnalytics />
         </body>
       </Html>
     )
