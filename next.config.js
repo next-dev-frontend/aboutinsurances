@@ -64,6 +64,14 @@ const securityHeaders = [
     key: 'Referrer-Policy',
     value: 'same-origin'
   },
+  {
+    key: 'Set-Cookie',
+    value: 'SameSite=None; Secure; Domain=.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'SameSite=None; Secure; Domain=.analytics.google.com; Path=/'
+  },
 ];
 
 
