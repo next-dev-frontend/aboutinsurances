@@ -19,9 +19,9 @@ const ContentSecurityPolicy = `
   script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com;
   script-src 'self' https: http: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com 'sha256-${hash.digest('base64')}';
   style-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com;
-  img-src 'self' data: blob: 'unsafe-inline' https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://www.google.com.br/ads;
+  img-src 'self' data: blob: 'unsafe-inline' https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://www.google.com.br/ads/;
   frame-src 'self' https: http: 'unsafe-inline';
-  connect-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/ https://www.google.com.br/ads https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ vitals.vercel-insights.com;
+  connect-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/ https://www.google.com.br/ads/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ vitals.vercel-insights.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
 `;
 
@@ -33,7 +33,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: "https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ vitals.vercel-insights.com"
+    value: "https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ https://www.google.com.br/ads/ vitals.vercel-insights.com"
   },
   {
     key: 'X-DNS-Prefetch-Control',
