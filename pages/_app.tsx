@@ -1,5 +1,4 @@
 import React from 'react';
-import Script from 'next/script';
 import { useEffect } from 'react';
 import { useRouter } from "next/router";
 import { DefaultSeo } from 'next-seo';
@@ -15,7 +14,6 @@ const BgParallax1 = dynamic(() => import('../components/BgParallax1'), { loading
 const BgParallax2 = dynamic(() => import('../components/BgParallax2'), { loading: () => <p>Loading BgParallax2...</p>, })
 const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading SideBar...</p>, })
 const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Loading Footer...</p>, })
-const GoogleAnalyticsScript = dynamic(() => import('../components/GoogleAnalyticsScript'), { loading: () => <p>Loading Google Analytics...</p>, })
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 
@@ -61,24 +59,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <BgParallax2 />
       <SideBar />
       <Footer />
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-      />
-      <Script
-        id="ga-tracking"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
-            page_path: window.location.pathname,
-          });
-        `,
-        }}
-      />
     </>
   )
 }
