@@ -11,6 +11,10 @@ class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico"></link>
           <meta name="theme-color" content="#ff6341" />
           <script
+            defer
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+          />
+          <script
             id="ga-tracking"
             defer
             dangerouslySetInnerHTML={{
