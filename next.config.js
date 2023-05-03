@@ -16,12 +16,12 @@ const ContentSecurityPolicy = `
   base-uri 'self';
   object-src 'none';
   form-action 'self';
-  script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/;
-  script-src 'self' https: http: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/ 'sha256-${hash.digest('base64')}';
-  style-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/;
-  img-src 'self' data: blob: 'unsafe-inline' https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/ https://www.google.com.br/ads/;
+  script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/g/;
+  script-src 'self' https: http: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/g/ 'sha256-${hash.digest('base64')}';
+  style-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/g/;
+  img-src 'self' data: blob: 'unsafe-inline' https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/g/ https://www.google.com.br/ads/;
   frame-src 'self' https: http: 'unsafe-inline';
-  connect-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ https://www.google.com.br/ads/ https://analytics.google.com/ vitals.vercel-insights.com;
+  connect-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/g/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ https://www.google.com.br/ads/ https://analytics.google.com/ vitals.vercel-insights.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
 `;
 
@@ -33,7 +33,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: "https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ https://www.google.com.br/ads/ vitals.vercel-insights.com"
+    value: "https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://analytics.google.com/g/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ https://www.google.com.br/ads/ vitals.vercel-insights.com"
   },
   {
     key: 'X-DNS-Prefetch-Control',
@@ -66,7 +66,7 @@ const securityHeaders = [
   },
   {
     key: 'Set-Cookie',
-    value: 'HttpOnly; Secure; SameSite=none'
+    value: 'HttpOnly; Secure; SameSite=None'
   }
 ];
 
