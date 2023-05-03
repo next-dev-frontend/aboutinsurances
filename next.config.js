@@ -33,7 +33,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: "https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ https://www.google.com.br/ads/ .analytics.google.com/ .google.com/ vitals.vercel-insights.com"
+    value: "https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com vitals.vercel-insights.com"
   },
   {
     key: 'X-DNS-Prefetch-Control',
@@ -63,14 +63,6 @@ const securityHeaders = [
   {// política de referência
     key: 'Referrer-Policy',
     value: 'same-origin'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'Secure; SameSite=None; Domain=.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'Secure; SameSite=None; Domain=.analytics.google.com/; Path=/'
   },
 ];
 
