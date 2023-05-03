@@ -15,7 +15,7 @@ const BgParallax1 = dynamic(() => import('../components/BgParallax1'), { loading
 const BgParallax2 = dynamic(() => import('../components/BgParallax2'), { loading: () => <p>Loading BgParallax2...</p>, })
 const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading SideBar...</p>, })
 const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Loading Footer...</p>, })
-
+const GoogleAnalyticsScript = dynamic(() => import('../components/GoogleAnalyticsScript'), { loading: () => <p>Loading Google Analytics...</p>, })
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 
@@ -53,33 +53,32 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-        <DefaultSeo {...SEO} />
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-        />
-        <Script
-          id="ga-tracking"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
-          page_path: window.location.pathname,
-        }); 
-      `,
-          }}
-        />
       </Head>
+      <DefaultSeo {...SEO} />
       <NavBar />
       <BgParallax1 />
       <Component {...pageProps} />
       <BgParallax2 />
       <SideBar />
       <Footer />
-
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+      />
+      <Script
+        id="ga-tracking"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+          });
+        `,
+        }}
+      />
     </>
   )
 }
