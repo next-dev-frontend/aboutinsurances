@@ -1,4 +1,5 @@
 import React from 'react';
+import Script from 'next/script';
 import { useEffect } from 'react';
 import { useRouter } from "next/router";
 import { DefaultSeo } from 'next-seo';
@@ -53,6 +54,24 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <DefaultSeo {...SEO} />
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+        />
+        <Script
+          id="ga-tracking"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
+          page_path: window.location.pathname,
+        }); 
+      `,
+          }}
+        />
       </Head>
       <NavBar />
       <BgParallax1 />
