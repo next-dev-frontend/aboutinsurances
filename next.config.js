@@ -33,7 +33,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: "https://www.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.tagmanager.google.com https://www.google-analytics.com https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net/ https://www.google.com.br/ads/ vitals.vercel-insights.com"
+    value: "*"
   },
   {
     key: 'X-DNS-Prefetch-Control',
