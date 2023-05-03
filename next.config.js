@@ -66,7 +66,7 @@ const securityHeaders = [
   },
   {
     key: 'Set-Cookie',
-    value: 'Secure; SameSite=None'
+    value: 'HttpOnly; Secure; SameSite=Strict'
   },
 ];
 
