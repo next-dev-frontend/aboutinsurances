@@ -21,7 +21,7 @@ const ContentSecurityPolicy = `
   style-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
   img-src 'self' data: blob: 'unsafe-inline' https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://*.google.com.br/ads/;
   frame-src 'self' https: http: 'unsafe-inline';
-  connect-src 'self' 'unsafe-inline' https://*.gstatic.com https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://analytics.google.com https://analytics.google.com/g https://www.google.com.br/ads/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net https://www.google.com.br https://www.google.com vitals.vercel-insights.com;
+  connect-src 'self' 'unsafe-inline' https://*.gstatic.com https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://analytics.google.com https://analytics.google.com/g https://www.google.com.br/ads/ https://www.googletagmanager.com/gtag https://stats.g.doubleclick.net https://www.google.com.br https://www.google.com .analytics.google.com/ .google.com/ vitals.vercel-insights.com;
   font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
 `;
 
