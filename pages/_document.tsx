@@ -1,4 +1,5 @@
 import React from 'react';
+import Script from 'next/script';
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
@@ -10,13 +11,13 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/logos/logo-128x128.png" />
           <link rel="icon" href="/favicon.ico"></link>
           <meta name="theme-color" content="#ff6341" />
-          <script
-            defer
+          <Script
+            strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
           />
-          <script
+          <Script
             id="ga-tracking"
-            defer
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
               window.dataLayer = window.dataLayer || [];
