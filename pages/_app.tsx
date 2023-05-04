@@ -35,7 +35,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   // componente google analytics
   const router = useRouter();
   useEffect(() => {
-    const handleRouteChange = (url: any) => {
+    const handleRouteChange = (url) => {
       gtag.pageview(url);
     }
     router.events.on('routeChangeComplete', handleRouteChange);
