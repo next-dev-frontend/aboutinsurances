@@ -19,7 +19,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   //registrar service-worker
   useEffect(() => {
-    if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator && 'userAgentData' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
           .then(registration => {
