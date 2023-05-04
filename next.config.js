@@ -66,11 +66,42 @@ const securityHeaders = [
   },
   {
     key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.google.com; Path=/, HttpOnly; SameSite=None; Secure; Domain=.google.com.br; Path=/, HttpOnly; SameSite=None; Secure; Domain=.analytics.google.com; Path=/, HttpOnly; SameSite=None; Secure; Domain=.analytics.google.com/g; Path=/'
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.google.com.br; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.analytics.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=analytics.google.com; Path=/'
+  },
+
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=accounts.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.search.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=mail.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=mail-ads.google.com; Path=/'
   },
 
 
 ];
+
+
 
 
 module.exports = withImages(withPWA({
