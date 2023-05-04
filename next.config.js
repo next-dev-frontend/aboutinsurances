@@ -62,7 +62,7 @@ const securityHeaders = [
   },
   {// política de referência
     key: 'Referrer-Policy',
-    value: 'strict-origin-when-cross-origin'
+    value: 'origin-when-cross-origin'
   },
   {
     key: 'Set-Cookie',
