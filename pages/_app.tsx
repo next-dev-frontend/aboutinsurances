@@ -19,7 +19,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   //registrar service-worker
   useEffect(() => {
-    if ('serviceWorker' in navigator && 'userAgentData' in navigator) {
+    if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
           .then(registration => {
@@ -35,7 +35,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   // componente google analytics
   const router = useRouter();
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: any) => {
       gtag.pageview(url);
     }
     router.events.on('routeChangeComplete', handleRouteChange);

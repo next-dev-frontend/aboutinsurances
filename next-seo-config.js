@@ -1,7 +1,7 @@
 export default {
   openGraph: {
     type: 'website',
-    locate: 'en_US',
+    locate: 'en',
     url: 'https://aboutinsurances.vercel.app',
     site_name: 'About Insurances',
     images: [

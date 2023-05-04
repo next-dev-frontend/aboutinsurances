@@ -4,7 +4,8 @@ const urlsToCache = [
   '/offline',
   '/manifest.json',
   '/favicon.ico',
-  '/logo-about-insurances.webp'
+  '/logo-about-insurances.webp',
+  '/logo-144x144.png',
 ];
 
 self.addEventListener('install', event => {
