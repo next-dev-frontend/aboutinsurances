@@ -66,18 +66,12 @@ const securityHeaders = [
   },
   {
     key: 'Set-Cookie',
-    value: 'SameSite=None; Secure; Domain=.google.com; Path=/'
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.google.com; Path=/'
   },
   {
     key: 'Set-Cookie',
-    value: 'SameSite=None; Secure; Domain=.analytics.google.com; Path=/'
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.analytics.google.com; Path=/'
   },
-  {
-    key: 'Set-Cookie',
-    value: 'SameSite=None; Secure; Domain=https://analytics.google.com/g/collect?v=2&tid=G-FFC6EB1GNB&gtm=45je3510&_p=1708397032&cid=599903688.1683156722&ul=pt-br&sr=1920x1080&uaa=x86&uab=64&uafvl=Chromium%3B112.0.5615.139%7CGoogle%2520Chrome%3B112.0.5615.139%7CNot%253AA-Brand%3B99.0.0.0&uamb=0&uam=&uap=Windows&uapv=10.0.0&uaw=0&_s=1&dp=%2F&sid=1683156721&sct=1&seg=1&dl=https%3A%2F%2Faboutinsurances.vercel.app%2F&dt=Ask%20Your%20Questions%20About%20Insurance%20and%20Agencies%20%7C%20About%20Insurances&en=page_view&_ee=1; Path=/'
-  },
-
-
 
 
 ];
