@@ -80,6 +80,10 @@ const securityHeaders = [
     key: 'Set-Cookie',
     value: 'HttpOnly; SameSite=None; Secure; Domain=https://analytics.google.com; Path=/'
   },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=https://analytics.google.com/g/collect; Path=/'
+  },
 
   {
     key: 'Set-Cookie',
