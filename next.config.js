@@ -84,23 +84,11 @@ const securityHeaders = [
     key: 'Set-Cookie',
     value: 'HttpOnly; SameSite=None; Secure; Domain=https://analytics.google.com/g/collect; Path=/'
   },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=https://www.googletagmanager.com/gtag/js; Path=/'
+  },
 
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=accounts.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.search.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=mail.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=mail-ads.google.com; Path=/'
-  },
 
 
 ];
