@@ -84,6 +84,66 @@ const securityHeaders = [
     key: 'Set-Cookie',
     value: 'HttpOnly; SameSite=None; Secure; Domain=https://analytics.google.com/g/collect; Path=/'
   },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=accounts.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.search.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=search.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.analytics.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=analytics.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=mail.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=mail-ads.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=drive.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=ogs.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.chrome.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.translate.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=translate.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=contacts.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.tagassistant.google.com; Path=/'
+  },
+  {
+    key: 'Set-Cookie',
+    value: 'HttpOnly; SameSite=None; Secure; Domain=.ads.google.com; Path=/'
+  },
 
 
 ];
