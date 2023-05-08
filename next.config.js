@@ -33,7 +33,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: "https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js vitals.vercel-insights.com"
+    value: "https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js https://analytics.google.com/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com"
   },
   {
     key: 'X-DNS-Prefetch-Control',
@@ -66,83 +66,11 @@ const securityHeaders = [
   },
   {
     key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.google.com.br; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=https://www.analytics.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=https://analytics.google.com; Path=/'
+    value: 'HttpOnly; SameSite=None; Secure; Domain=https://www.google.com.br/ads/ga-audiences; Path=/'
   },
   {
     key: 'Set-Cookie',
     value: 'HttpOnly; SameSite=None; Secure; Domain=https://analytics.google.com/g/collect; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=accounts.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.search.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=search.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.analytics.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=analytics.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=mail.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=mail-ads.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=drive.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=ogs.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.chrome.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.translate.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=translate.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=contacts.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.tagassistant.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.ads.google.com; Path=/'
   },
 
 
