@@ -1,13 +1,11 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useRouter } from "next/router";
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
 import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
-import * as gtag from '../lib/gtag';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'), { loading: () => <p>Loading BgParallax1...</p>, })
@@ -31,21 +29,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       });
     }
   }, []);
-
-  // componente google analytics
-  const router = useRouter();
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
-    }
-    router.events.on('routeChangeComplete', handleRouteChange);
-    router.events.on('hashChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-      router.events.off('hashChangeComplete', handleRouteChange);
-    }
-  }, [router.events]);
-
 
   return (
     <>
