@@ -11,13 +11,12 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/logos/logo-128x128.png" />
           <link rel="icon" href="/favicon.ico"></link>
           <meta name="theme-color" content="#ff6341" />
-          <Script
-            strategy="beforeInteractive"
+          <script
+            async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
           />
-          <Script
-            id="ga-tracking"
-            strategy="beforeInteractive"
+          <script
+            async
             dangerouslySetInnerHTML={{
               __html: `
               window.dataLayer = window.dataLayer || [];
