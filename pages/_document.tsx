@@ -1,6 +1,7 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import Analytics from '../components/Analytics';
+import dynamic from 'next/dynamic'
+const Analytics = dynamic(() => import('../components/Analytics'))
 
 class MyDocument extends Document {
   render() {
