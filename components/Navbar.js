@@ -54,13 +54,14 @@ const Navbar = () => {
         <a href="/" className="pl-1 pt-2">
           <div className="relative w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 overflow-hidden">
             <Image
-              src="/logos/logo-144x144.png"
+              src="/logos/logo-about-insurances.webp"
               alt="logo about insurances"
-              width={144}
-              height={144}
+              width={96}
+              height={96}
               layout="responsive"
               objectFit="cover"
-              loading='lazy'
+              as="image"
+              priority
             />
           </div>
         </a>
