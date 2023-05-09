@@ -66,19 +66,7 @@ const securityHeaders = [
   },
   {
     key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=https://www.google.com.br/ads/ga-audiences; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'SameSite=None; Secure; Domain=https://analytics.google.com/g/collect; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.analytics.google.com; Path=/'
-  },
-  {
-    key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure; Domain=.google.com; Path=/'
+    value: 'HttpOnly; SameSite=None; Secure;'
   },
 
 
