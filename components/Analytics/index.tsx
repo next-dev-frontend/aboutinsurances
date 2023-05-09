@@ -4,7 +4,7 @@ import Script from 'next/script'
 const Analytics = () => (
   <>
     <Script
-      strategy="beforeInteractive"
+      strategy="afterInteractive"
       src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
     />
     <Script
