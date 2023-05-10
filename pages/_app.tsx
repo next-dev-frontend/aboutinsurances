@@ -12,6 +12,8 @@ const BgParallax1 = dynamic(() => import('../components/BgParallax1'), { loading
 const BgParallax2 = dynamic(() => import('../components/BgParallax2'), { loading: () => <p>Loading BgParallax2...</p>, })
 const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading SideBar...</p>, })
 const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Loading Footer...</p>, })
+const Analytics = dynamic(() => import('../components/Analytics'))
+
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 
@@ -36,6 +38,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       </Head>
       <DefaultSeo {...SEO} />
+      <Analytics />
       <NavBar />
       <BgParallax1 />
       <Component {...pageProps} />

@@ -1,7 +1,6 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import dynamic from 'next/dynamic'
-const Analytics = dynamic(() => import('../components/Analytics'))
+
 
 class MyDocument extends Document {
   render() {
@@ -14,9 +13,10 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#ff6341" />
         </Head>
         <body className="scrollbar scrollbar-thumb-color2 scrollbar-track-color1 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
+
           <Main />
           <NextScript />
-          <Analytics />
+
         </body>
       </Html>
     )

@@ -8,7 +8,6 @@ const withPWA = require('next-pwa')({
 });
 
 const crypto = require('crypto');
-const hash = crypto.createHash('sha256');
 const nonce = crypto.randomBytes(8).toString('base64');
 
 const ContentSecurityPolicy = `
@@ -17,7 +16,7 @@ const ContentSecurityPolicy = `
   object-src 'none';
   form-action 'self';
   script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-  script-src 'self' https: http: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
+  script-src 'self' https: 'unsafe-inline' 'unsafe-eval' 'nonce-${nonce}' 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
   style-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
   img-src 'self' data: blob: 'unsafe-inline' https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://www.googletagmanager.com/gtag/js https://*.tagmanager.google.com https://*.google-analytics.com https://*.google.com.br/ads/;
   frame-src 'self' https: http: 'unsafe-inline';
@@ -62,13 +61,12 @@ const securityHeaders = [
   },
   {// política de referência
     key: 'Referrer-Policy',
-    value: 'same-origin'
+    value: 'strict-origin-when-cross-origin'
   },
   {
     key: 'Set-Cookie',
-    value: 'HttpOnly; SameSite=None; Secure;'
+    value: 'HttpOnly; SameSite=None; Secure; Domain=*.google.com; Path=/'
   },
-
 
 ];
 
