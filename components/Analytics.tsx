@@ -3,10 +3,6 @@ import React, { useState, useEffect } from 'react';
 const Analytics = () => (
   <>
     <script
-      defer
-      src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-    />
-    <script
       dangerouslySetInnerHTML={{
         __html: `
               window.dataLayer = window.dataLayer || [];
@@ -23,7 +19,7 @@ const Analytics = () => (
 );
 
 const CookiePopup = ({ onClose }) => (
-  <div>
+  <div className='z-10 bg-color1'>
     <h1>Este site usa cookies</h1>
     <p>Este site usa cookies para melhorar sua experiência de usuário. Ao continuar navegando no site, você concorda com o uso de cookies.</p>
     <button onClick={onClose}>Aceitar</button>

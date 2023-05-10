@@ -1,7 +1,6 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-
 class MyDocument extends Document {
   render() {
     return (
@@ -13,10 +12,8 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#ff6341" />
         </Head>
         <body className="scrollbar scrollbar-thumb-color2 scrollbar-track-color1 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
-
           <Main />
           <NextScript />
-
         </body>
       </Html>
     )
