@@ -2,10 +2,17 @@ import React, { useState, useEffect } from 'react';
 
 
 const CookiePopup = ({ onClose }) => (
-  <div className='bg-color1'>
-    <h1>Este site usa cookies</h1>
-    <p>Este site usa cookies para melhorar sua experiência de usuário. Ao continuar navegando no site, você concorda com o uso de cookies.</p>
-    <button onClick={onClose}>Aceitar</button>
+  <div className='modal bg-white border-4 rounded border-color1'>
+    <p className='text-center font-bold'>This site uses cookies</p>
+    <br />
+    <p>This website uses cookies to improve your user experience. By continuing to browse the site, you agree to the use of cookies.</p>
+    <br />
+    <div className="flex justify-center">
+      <button className='bg-color2 border-2 rounded border-color1 text-lg p-4 cursor-pointer' onClick={onClose}>Accepted</button>
+    </div>
+    <span className='absolute top-0 right-0 mt-4 mr-4 text-xl cursor-pointer' onClick={onClose} >
+      &times;
+    </span>
   </div>
 );
 

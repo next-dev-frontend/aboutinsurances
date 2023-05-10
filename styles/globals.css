@@ -8,12 +8,14 @@
   font-weight: 400;
   font-display: block;
 }
+
 @font-face {
   font-family: 'GlacialBold';
   src: url('/fonts/GlacialIndifference-Bold.woff2') format('woff2');
   font-weight: 400;
   font-display: block;
 }
+
 @font-face {
   font-family: 'GlacialItalic';
   src: url('/fonts/GlacialIndifference-Italic.ttf') format('ttf');
@@ -24,11 +26,13 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
+
 html,
 body,
 h1,
@@ -44,6 +48,7 @@ ul {
   padding: 0;
   font-family: 'GlacialRegular';
 }
+
 h1,
 h2,
 h3,
@@ -72,6 +77,16 @@ a {
 
 button {
   will-change: color;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  max-width: 400px;
+  z-index: 9999;
 }
 
 /*Animações*/
