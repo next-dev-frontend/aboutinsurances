@@ -37,6 +37,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       </Head>
+      <Analytics />
       <DefaultSeo {...SEO} />
       <NavBar />
       <BgParallax1 />
@@ -44,7 +45,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <BgParallax2 />
       <SideBar />
       <Footer />
-      <Analytics />
     </>
   )
 }
