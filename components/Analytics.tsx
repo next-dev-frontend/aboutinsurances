@@ -1,18 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-const Analytics = () => (
-  <script type="text/javascript">
-    {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
-      cookie_flags: 'SameSite=None;Secure',
-      page_path: location.pathname,
-    });
-  `}
-  </script>
-);
 
 const CookiePopup = ({ onClose }) => (
   <div className='bg-color1'>
@@ -30,7 +17,7 @@ const App = () => {
       // Carrega o script do Analytics quando o usuário aceita os cookies
       const script = document.createElement('script');
       script.src = `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`;
-      script.defer = true;
+      script.async = true;
       document.body.appendChild(script);
     }
   }, [showCookiePopup]);
@@ -42,7 +29,7 @@ const App = () => {
   return (
     <div>
       {showCookiePopup && <CookiePopup onClose={handleCloseCookiePopup} />}
-      {!showCookiePopup && <Analytics />}
+      {!showCookiePopup}
       {/* Renderiza o Analytics somente após o usuário aceitar os cookies */}
     </div>
   );
