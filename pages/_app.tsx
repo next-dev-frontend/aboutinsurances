@@ -7,13 +7,12 @@ import SEO from '../next-seo-config';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 import dynamic from 'next/dynamic'
-const Analytics = dynamic(() => import('../components/Analytics'))
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'), { loading: () => <p>Loading BgParallax1...</p>, })
 const BgParallax2 = dynamic(() => import('../components/BgParallax2'), { loading: () => <p>Loading BgParallax2...</p>, })
 const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading SideBar...</p>, })
 const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Loading Footer...</p>, })
-
+const Analytics = dynamic(() => import('../components/Analytics'))
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 
@@ -37,7 +36,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       </Head>
-      <Analytics />
       <DefaultSeo {...SEO} />
       <NavBar />
       <BgParallax1 />
@@ -45,6 +43,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <BgParallax2 />
       <SideBar />
       <Footer />
+      <Analytics />
     </>
   )
 }

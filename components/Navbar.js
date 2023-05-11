@@ -56,7 +56,8 @@ const Navbar = () => {
             <Image
               src="/logos/logo-about-insurances.webp"
               alt="logo about insurances"
-              layout="fill"
+              width={44}
+              height={44}
               priority
             />
           </div>
