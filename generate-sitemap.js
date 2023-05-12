@@ -1,5 +1,4 @@
 const sitemap = require('nextjs-sitemap-generator');
-
 const targetDirectory = 'public';
 
 sitemap({
@@ -17,7 +16,7 @@ sitemap({
   ignoredPaths: [
     'api',
     'fallback'
-  ],
+  ]
 });
 
 console.log(`Sitemap generated and available at /${targetDirectory}`);
