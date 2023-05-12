@@ -1,5 +1,4 @@
 const sitemap = require('nextjs-sitemap-generator');
-const chalk = import('chalk');
 
 const targetDirectory = 'public';
 
@@ -19,16 +18,6 @@ sitemap({
     'api',
     'fallback'
   ],
-  sitemapStylesheet: [
-    {
-      type: "text/css",
-      styleFile: "/test/styles.css"
-    },
-    {
-      type: "text/xsl",
-      styleFile: "test/test/styles.xls"
-    }
-  ]
 });
 
 console.log(`Sitemap generated and available at /${targetDirectory}`);
