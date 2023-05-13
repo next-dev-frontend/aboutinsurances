@@ -81,11 +81,11 @@ button {
 
 .modal {
   position: fixed;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  transform: translate(-30%, -30%);
+  transform: translate(-50%, -50%);
   padding: 20px;
-  max-width: 400px;
+  width: 80%;
   z-index: 9999;
 }
 
