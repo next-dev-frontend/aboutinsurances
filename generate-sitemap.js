@@ -12,7 +12,11 @@ sitemap({
       priority: '1',
       changefreq: 'daily',
     },
-  }
+  },
+  ignoredPaths: [
+    'api',
+    'fallback'
+  ],
 });
 
 console.log(`Sitemap generated and available at /${targetDirectory}`);
