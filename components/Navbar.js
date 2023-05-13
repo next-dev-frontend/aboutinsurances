@@ -58,6 +58,7 @@ const Navbar = () => {
               alt="logo about insurances"
               width={64}
               height={64}
+              quality={100}
               priority
             />
           </div>
