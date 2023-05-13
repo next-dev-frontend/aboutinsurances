@@ -17,6 +17,13 @@ sitemap({
   ignoredPaths: [
     'api',
     'fallback'
+  ],
+  sitemapStylesheet: [
+    {
+      type: "text/css",
+      styleFile: "/globals.css"
+    },
+
   ]
 });
 
