@@ -17,7 +17,7 @@ const ContentSecurityPolicy = `
   form-action 'self';
   script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
   script-src 'self' https: 'unsafe-inline' 'unsafe-eval' 'nonce-${nonce}' 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-  style-src 'self' https: 'unsafe-eval' 'nonce-${nonce}' 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
+  style-src 'self' https: 'unsafe-hashes' 'unsafe-eval' 'nonce-${nonce}' 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
   img-src 'self' data: blob: 'unsafe-inline' https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://www.googletagmanager.com/gtag/js https://*.tagmanager.google.com https://*.google-analytics.com https://*.google.com.br/ads/;
   frame-src 'self' https: http: 'unsafe-inline';
   connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com;
