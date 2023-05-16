@@ -3,8 +3,8 @@ import ls from 'local-storage';
 
 const CookiePopup = ({ onClose }) => (
   <>
-    <div className='modal bg-color2 border-4 rounded border-color1'>
-      <p className='text-center font-bold'>This site uses cookies</p>
+    <div className='modal bg-color3 border-4 rounded border-white'>
+      <p className='text-center font-bold text-white'>This site uses cookies</p>
       <br />
       <p>This website uses cookies to improve your user experience. By continuing to browse the site, you agree to the use of cookies.</p>
       <br />
