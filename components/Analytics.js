@@ -11,9 +11,6 @@ const CookiePopup = ({ onClose }) => (
       <div className="flex justify-center">
         <button className='bg-white border-2 rounded border-color1 text-lg p-4 cursor-pointer' onClick={onClose}>Accepted</button>
       </div>
-      <span className='absolute top-0 right-0 mt-4 mr-4 text-xl cursor-pointer' onClick={onClose} >
-        &times;
-      </span>
     </div>
   </>
 );
