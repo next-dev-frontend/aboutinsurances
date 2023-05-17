@@ -10,7 +10,7 @@ function BgParallax1() {
           layout="fill"
           objectFit="cover"
           priority
-          as="image"
+          as="image/webp"
         />
         <div className="select-none sticky h-max max-w-3xl text-white bg-gray-900 bg-opacity-40">
           <h2 className="sticky p-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">

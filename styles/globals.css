@@ -88,34 +88,3 @@ button {
   max-width: 400px;
   z-index: 9999;
 }
-
-/*Animações*/
-[data-anime] {
-  opacity: 0;
-  transition: 1s;
-}
-
-[data-anime='up'] {
-  transform: translate3d(0, 100%, 0);
-}
-
-[data-anime='down'] {
-  transform: translate3d(0, -100%, 0);
-}
-
-[data-anime='left'] {
-  transform: translate3d(-100%, 0, 0);
-}
-
-[data-anime='right'] {
-  transform: translate3d(50px, 0, 0);
-}
-
-[data-anime='blur'] {
-  transition: all 1s cubic-bezier(0.71, 0, 0.33, 1.56);
-}
-
-[data-anime].animate {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}

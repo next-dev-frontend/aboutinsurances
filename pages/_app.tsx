@@ -1,11 +1,11 @@
+import "../styles/globals.css";
+import "tailwindcss/tailwind.css";
 import React from 'react';
 import { useEffect } from 'react';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
 import SEO from '../next-seo-config';
-import '../styles/globals.css';
-import 'tailwindcss/tailwind.css';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BgParallax1 = dynamic(() => import('../components/BgParallax1'), { loading: () => <p>Loading BgParallax1...</p>, })
