@@ -1,19 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ls from 'local-storage';
 
-const CookiePopup = ({ onClose }) => (
-  <>
-    <div className='modal bg-color3 border-4 rounded border-color1'>
-      <p className='text-center font-bold text-color1'>This site uses cookies</p>
-      <br />
-      <p className='text-white'>This website uses cookies to improve your user experience. By continuing to browse the site, you agree to the use of cookies.</p>
-      <br />
-      <div className="flex justify-center">
-        <button className='bg-white border-4 rounded border-color1 text-lg p-4 cursor-pointer' onClick={onClose}>Accepted</button>
+const CookiePopup = ({ onClose }) => {
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    const button = buttonRef.current;
+    if (button) {
+      button.addEventListener('click', onClose);
+    }
+
+    return () => {
+      if (button) {
+        button.removeEventListener('click', onClose);
+      }
+    };
+  }, [onClose]);
+
+  return (
+    <div className='fixed bottom-0 p-20 flex items-center justify-center z-50'>
+      <div className='modal p-4 bg-color3 border-4 rounded border-color1'>
+        <p className='text-center font-bold text-color1'>This site uses cookies</p>
+        <br />
+        <p className='text-white'>This website uses cookies to improve your user experience. By continuing to browse the site, you agree to the use of cookies.</p>
+        <br />
+        <div className="flex justify-center">
+          <button ref={buttonRef} className='bg-white border-4 rounded border-color1 text-lg p-4 cursor-pointer'>Accepted</button>
+        </div>
       </div>
     </div>
-  </>
-);
+  );
+};
 
 const App = () => {
   const [isClient, setIsClient] = useState(false);

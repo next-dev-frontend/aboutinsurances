@@ -1,70 +1,68 @@
-import { useEffect } from 'react';
-import Image from 'next/image'
+import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 const Navbar = () => {
+  const navMenuDivRef = useRef(null);
+  const navMenuRef = useRef(null);
+  const navItem1Ref = useRef(null);
+  const navItem2Ref = useRef(null);
 
-  //ações na navbar
   useEffect(() => {
-    const navMenuDiv = document.getElementById('nav-content')
-    const navMenu = document.getElementById('nav-toggle')
-    const navItem1 = document.getElementById('nav-item1')
-    const navItem2 = document.getElementById('nav-item2')
+    const navMenuDiv = navMenuDivRef.current;
+    const navMenu = navMenuRef.current;
+    const navItem1 = navItem1Ref.current;
+    const navItem2 = navItem2Ref.current;
 
-    document.onclick = check
-
-    function check(e) {
-      const target = (e && e.target) || (event && event.srcElement)
+    const check = (e) => {
+      const target = e.target || e.srcElement;
 
       if (checkParent(target, navMenuDiv)) {
         if (checkParent(target, navItem1) || checkParent(target, navItem2)) {
-          navMenuDiv.classList.add('hidden')
+          navMenuDiv.classList.add('hidden');
         } else {
-          navMenuDiv.classList.remove('hidden')
+          navMenuDiv.classList.remove('hidden');
         }
       } else {
-        //verifica se clique foi no botão menu
         if (checkParent(target, navMenu)) {
           if (navMenuDiv.classList.contains('hidden')) {
-            navMenuDiv.classList.remove('hidden')
+            navMenuDiv.classList.remove('hidden');
           } else {
-            navMenuDiv.classList.add('hidden')
+            navMenuDiv.classList.add('hidden');
           }
         } else {
-          // clique no link externo e no menu externo para ocultar menu
-          navMenuDiv.classList.add('hidden')
+          navMenuDiv.classList.add('hidden');
         }
       }
-    }
+    };
 
-    function checkParent(t, elm) {
+    const checkParent = (t, elm) => {
       while (t.parentNode) {
-        if (t == elm) {
-          return true
+        if (t === elm) {
+          return true;
         }
-        t = t.parentNode
+        t = t.parentNode;
       }
-      return false
-    }
-  }, [])
+      return false;
+    };
 
+    document.addEventListener('click', check);
+
+    return () => {
+      document.removeEventListener('click', check);
+    };
+  }, []);
 
   return (
     <nav id="header" className="select-none flex-shrink md:flex-shrink-0 bg-white bg-no-repeat w-full max-w-full z-30 border-color1 border-opacity-70 border-b-4">
       <div className="text-color2 whitespace-nowrap w-full container mx-auto flex flex-wrap xl:flex-nowrap items-center justify-between py-2 px-2 pl-4 pr-8">
         <a href="/" className="pl-1 pt-2">
           <div className="relative w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 overflow-hidden">
-            <Image
-              src="/logos/logo-about-insurances.webp"
-              alt="logo about insurances"
-              width={80}
-              height={80}
-              priority
-            />
+            <Image src="/logos/logo-about-insurances.webp" alt="logo about insurances" width={80} height={80} priority />
           </div>
         </a>
         <div className="block xl:hidden pt-2 tab">
           <button
-            id="nav-toggle"
+            ref={navMenuRef}
             className="flex items-center p-1 focus:outline-none transform transition hover:scale-110 duration-1000 ease-in-out"
           >
             <svg
@@ -79,7 +77,7 @@ const Navbar = () => {
         </div>
 
         <div
-          id="nav-content"
+          ref={navMenuDivRef}
           className="hidden sticky text-xs text-color1 xl:flex w-full items-center h-full pt-4 lg:pt-1"
         >
           <ul className="sticky w-full xl:flex justify-end items-center">
@@ -87,6 +85,7 @@ const Navbar = () => {
               <a
                 href="/terms"
                 id="nav-item1"
+                ref={navItem1Ref}
                 className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-color2 before:transition hover:before:scale-100"
               >
                 TERMS & CONDITIONS / COOKIES
@@ -96,6 +95,7 @@ const Navbar = () => {
               <a
                 href="/policy"
                 id="nav-item2"
+                ref={navItem2Ref}
                 className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-color2 before:transition hover:before:scale-100"
               >
                 PRIVACY POLICY
@@ -105,7 +105,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

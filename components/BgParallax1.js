@@ -1,23 +1,11 @@
-import Image from 'next/image';
-
 function BgParallax1() {
   return (
     <section>
-      <div className="relative flex bg-center items-center justify-center bg-fixed bg-cover bg-no-repeat w-full max-w-full h-96 md:h-screen">
-        <Image
-          src="/backgrounds/bg2-insurances.webp"
-          alt="background insurances"
-          layout="fill"
-          objectFit="cover"
-          width={1080}
-          height={768}
-          priority
-          as="image/webp"
-        />
-        <div className="select-none sticky h-max max-w-3xl text-white bg-gray-900 bg-opacity-40">
-          <h2 className="sticky p-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">
+      <div className="bg-[url('/backgrounds/bg1-insurances.webp')] py-20 px-8 bg-center flex items-center justify-center bg-fixed bg-cover bg-no-repeat w-full max-w-full h-96 md:h-screen">
+        <div className="select-none sticky h-max max-w-3xl text-white bg-gray-900 bg-opacity-30">
+          <h1 className="sticky bg-light-green bg-opacity-80 p-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">
             Security doesn't come with luck. You have to be prepared.
-          </h2>
+          </h1>
           <div className="sticky bg-white h-1 flex flex-col w-full"></div>
         </div>
       </div>
