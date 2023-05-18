@@ -3,7 +3,7 @@ import Image from 'next/image';
 function BgParallax1() {
   return (
     <section>
-      <div className="relative py-20 px-8 bg-center flex items-center justify-center bg-fixed bg-cover bg-no-repeat w-full max-w-full h-96 md:h-screen">
+      <div className="relative flex bg-center items-center justify-center bg-fixed bg-cover bg-no-repeat w-full max-w-full h-96 md:h-screen">
         <Image
           src="/backgrounds/bg2-insurances.webp"
           alt="background insurances"

@@ -7,8 +7,9 @@ const Contact = () => {
       <div className="grid grid-cols-2">
         <div className="order-1 col-span-full md:col-span-1 py-5 md:py-6 px-6">
           <div className="bg-opacity-0 mx-auto max-w-xl flex flex-col space-y-5">
-            <a href="#home">
-              <div className="relative w-14 md:w-18 lg:w-24 h-auto">
+
+            <div className="relative w-14 md:w-18 lg:w-24 h-auto">
+              <a href="#home">
                 <Image
                   src="/logos/logo-about-insurances.webp"
                   alt="logo about insurances"
@@ -17,8 +18,9 @@ const Contact = () => {
                   width={512}
                   height={512}
                 />
-              </div>
-            </a>
+              </a>
+            </div>
+
             <p className="text-sm md:text-md lg:text-lg text-light-gray pb-8">
               Insurance information and tips website. Before contracting any insurance service, visit our website and
               clarify all your doubts on the subject. We try to bring you the most frequently mentioned questions and
