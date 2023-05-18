@@ -9,6 +9,8 @@ function BgParallax1() {
           alt="background insurances"
           layout="fill"
           objectFit="cover"
+          width={1080}
+          height={768}
           priority
           as="image/webp"
         />
