@@ -8,27 +8,31 @@ const withPWA = require('next-pwa')({
 });
 
 const crypto = require('crypto');
-const nonce = crypto.randomBytes(16).toString('base64');
+const nonce = crypto.randomBytes(8).toString('base64');
+
+let prod = process.env.NODE_ENV == "production"
 
 const ContentSecurityPolicy = `
-  default-src 'self';
-  base-uri 'self';
-  object-src 'none';
-  form-action 'self';
-  script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-  script-src 'self' https: 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-  style-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
-  img-src 'self' data: blob: 'unsafe-inline' https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://www.googletagmanager.com/gtag/js https://*.tagmanager.google.com https://*.google-analytics.com https://*.google.com.br/ads/;
-  frame-src 'self' https: http: 'unsafe-inline';
-  connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com;
-  font-src 'self' https://fonts.gstatic.com;
+base-uri 'none';  
+connect-src 'self' 'unsafe-inline' ${prod ? "" : "webpack://*"} *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com;
+default-src 'self';
+font-src 'self';
+form-action 'self';  
+frame-ancestors 'none';
+frame-src 'none';
+img-src 'self' data: blob: 'unsafe-inline' https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://www.googletagmanager.com/gtag/js https://*.tagmanager.google.com https://*.google-analytics.com https://*.google.com.br/ads/;  
+manifest-src 'self';
+object-src 'none';
+script-src 'self' https: 'unsafe-inline' ${prod ? "" : "'unsafe-eval'"} 'nonce-${nonce}' 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
+script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
+style-src 'self' data: ${prod ? "'nonce-${nonce}'" : ""} ${prod ? "" : "'unsafe-inline'"} https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
+worker-src 'self';  
 `;
 
 const securityHeaders = [
-  // políticas de segurança
   {
     key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\n/g, '')
+    value: `${ContentSecurityPolicy.replace(/\n/g, '')}`
   },
   {
     key: 'Access-Control-Allow-Origin',
@@ -79,7 +83,6 @@ const securityHeaders = [
     key: 'Set-Cookie',
     value: 'HttpOnly; SameSite=None; Secure; Domain=https://www.google.com.br/ads/ga-audiences; Path=/'
   },
-
 ];
 
 
@@ -104,7 +107,7 @@ module.exports = withImages(withPWA({
   },
 
   env: {
-    nonce: crypto.randomBytes(16).toString('base64'),
+    nonce: crypto.randomBytes(8).toString('base64'),
   },
 
   typescript: {
