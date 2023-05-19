@@ -14,7 +14,6 @@ class MyDocument extends Document {
           <Script
             id="ga-tracking"
             strategy="afterInteractive"
-            crossOrigin="anonymous"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
