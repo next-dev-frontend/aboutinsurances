@@ -25,7 +25,7 @@ manifest-src 'self';
 object-src 'none';
 script-src 'self' https: 'unsafe-inline' ${prod ? "" : "'unsafe-eval'"} 'nonce-${nonce}' 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
 script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-style-src 'self' data: ${prod ? "'nonce-${nonce}'" : ""} ${prod ? "" : "'unsafe-inline'"} https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
+style-src 'self' data: 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
 worker-src 'self';  
 `;
 
