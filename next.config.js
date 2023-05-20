@@ -110,6 +110,7 @@ module.exports = withImages(withPWA({
   //exportar nonce utilizando env  
   env: {
     nonceStyleSrc,
+    nonceScriptSrc,
   },
 
   typescript: {
