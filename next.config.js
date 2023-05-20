@@ -8,7 +8,8 @@ const withPWA = require('next-pwa')({
 });
 
 const crypto = require('crypto');
-const nonce = crypto.randomBytes(8).toString('base64');
+const nonceScriptSrc = crypto.randomBytes(8).toString('base64');
+const nonceStyleSrc = crypto.randomBytes(8).toString('base64');
 
 let prod = process.env.NODE_ENV == "production"
 
@@ -23,9 +24,9 @@ frame-src 'none';
 img-src 'self' data: blob: 'unsafe-inline' https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://www.googletagmanager.com/gtag/js https://*.tagmanager.google.com https://*.google-analytics.com https://*.google.com.br/ads/;  
 manifest-src 'self';
 object-src 'none';
-script-src 'self' https: 'unsafe-inline' ${prod ? "" : "'unsafe-eval'"} 'nonce-${nonce}' 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
+script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' ${prod ? "" : "'unsafe-eval'"} 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
 script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-style-src 'self' data: 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
+style-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
 worker-src 'self';  
 `;
 
@@ -106,8 +107,9 @@ module.exports = withImages(withPWA({
     ];
   },
 
+  //exportar nonce utilizando env  
   env: {
-    nonce: crypto.randomBytes(8).toString('base64'),
+    nonceStyleSrc,
   },
 
   typescript: {

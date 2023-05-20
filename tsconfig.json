@@ -24,8 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    "/globals.d.ts",
-    "generate-sitemap.cjs"
+    "/globals.d.ts"
   ],
   "exclude": [
     "node_modules"
