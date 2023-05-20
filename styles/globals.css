@@ -6,19 +6,19 @@
   font-family: 'GlacialRegular';
   src: url('/fonts/GlacialIndifference-Regular.woff2') format('woff2');
   font-weight: 400;
-  font-display: block;
+  font-display: optional;
 }
 
 @font-face {
   font-family: 'GlacialBold';
   src: url('/fonts/GlacialIndifference-Bold.woff2') format('woff2');
   font-weight: 400;
-  font-display: block;
+  font-display: optional;
 }
 
 @font-face {
   font-family: 'GlacialItalic';
   src: url('/fonts/GlacialIndifference-Italic.ttf') format('ttf');
   font-weight: 400;
-  font-display: block;
+  font-display: optional;
 }
