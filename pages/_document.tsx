@@ -1,12 +1,21 @@
 import React from 'react';
 import Script from 'next/script';
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+const nonceScriptSrc = process.env.nonceScriptSrc;
+const nonceStyleSrc = process.env.nonceStyleSrc;
 
 class MyDocument extends Document {
+
   render() {
+
+    const isProduction = process.env.NODE_ENV === "production";
+    const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/styles/globals.css" : "http://localhost:3000/styles/globals.css";
+
     return (
       <Html lang="en">
         <Head>
+          <link rel="stylesheet" nonce={nonceStyleSrc} href={cssFileUrl} type='text/html' />
+          <link rel="stylesheet" nonce={nonceStyleSrc} href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" />
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/logos/logo-128x128.png" type="image/png" />
           <link rel="icon" href="/favicon.ico"></link>
@@ -25,6 +34,7 @@ class MyDocument extends Document {
                 });
               `,
             }}
+            nonce={nonceScriptSrc}
           />
         </Head>
         <body className="scrollbar scrollbar-thumb-[#ff6341] scrollbar-track-[#142039] overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">

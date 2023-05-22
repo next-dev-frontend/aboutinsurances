@@ -8,10 +8,23 @@ const withPWA = require('next-pwa')({
 });
 
 const crypto = require('crypto');
-const nonceScriptSrc = crypto.randomBytes(8).toString('base64');
-const nonceStyleSrc = crypto.randomBytes(8).toString('base64');
+const nonceScriptSrc = crypto.randomBytes(16).toString('base64');
+const nonceStyleSrc = crypto.randomBytes(16).toString('base64');
 
-let prod = process.env.NODE_ENV == "production"
+const isProduction = process.env.NODE_ENV === "production";
+const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/styles/globals.css" : "http://localhost:3000/styles/globals.css";
+
+let cspStyleSrc = `'self' ${cssFileUrl} https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
+
+if (!isProduction) {
+  // Adiciona 'unsafe-inline' em style-src, durante o desenvolvimento
+  cspStyleSrc += " 'unsafe-inline'";
+} else {
+  cspStyleSrc += " 'nonce-${nonceStyleSrc}'";
+}
+
+
+
 
 const ContentSecurityPolicy = `
 base-uri 'self';  
@@ -24,9 +37,9 @@ frame-src 'none';
 img-src 'self' data: blob: 'unsafe-inline' https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://www.googletagmanager.com/gtag/js https://*.tagmanager.google.com https://*.google-analytics.com https://*.google.com.br/ads/;  
 manifest-src 'self';
 object-src 'none';
-script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' ${prod ? "" : "'unsafe-eval'"} 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
+script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' ${isProduction ? "" : "'unsafe-eval'"} 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
 script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-style-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
+style-src ${cspStyleSrc};
 worker-src 'self';  
 `;
 
@@ -109,8 +122,8 @@ module.exports = withImages(withPWA({
 
   //exportar nonce utilizando env  
   env: {
-    nonceStyleSrc,
     nonceScriptSrc,
+    nonceStyleSrc,
   },
 
   typescript: {
