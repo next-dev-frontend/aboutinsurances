@@ -9,7 +9,7 @@ class MyDocument extends Document {
   render() {
 
     const isProduction = process.env.NODE_ENV === "production";
-    const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/styles/globals.css" : "http://localhost:3000/styles/globals.css";
+    const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/*" : "http://localhost:3000/styles/globals.css";
 
     return (
       <Html lang="en">
