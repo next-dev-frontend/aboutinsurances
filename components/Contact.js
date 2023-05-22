@@ -36,7 +36,7 @@ const Contact = () => {
                     title="Facebook"
                     rel="noopener noreferrer"
                     target="_self"
-                    className="text-color1 transition hover:text-color2"
+                    className="text-[#142039] transition hover:text-[#ff6341]"
                   >
                     <span className="sr-only">Facebook</span>
                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -54,7 +54,7 @@ const Contact = () => {
                     title="Instagram"
                     rel="noopener noreferrer"
                     target="_self"
-                    className="text-color1 transition hover:text-color2"
+                    className="text-[#142039] transition hover:text-[#ff6341]"
                   >
                     <span className="sr-only">Instagram</span>
                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -72,7 +72,7 @@ const Contact = () => {
                     title="Twitter"
                     rel="noopener noreferrer"
                     target="_self"
-                    className="text-color1 transition hover:text-color2"
+                    className="text-[#142039] transition hover:text-[#ff6341]"
                   >
                     <span className="sr-only">Twitter</span>
                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

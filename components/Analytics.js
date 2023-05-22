@@ -19,13 +19,13 @@ const CookiePopup = ({ onClose }) => {
 
   return (
     <div className='fixed bottom-0 p-20 flex items-center w-full justify-center z-50'>
-      <div className='modal p-4 bg-color1 border-4 rounded border-color3'>
+      <div className='modal p-4 bg-[#142039] border-4 rounded border-[#27ae60]'>
         <p className='text-center font-bold text-white'>This site uses cookies</p>
         <br />
         <p className='text-white'>This website uses cookies to improve your user experience. By continuing to browse the site, you agree to the use of cookies.</p>
         <br />
         <div className="flex justify-center">
-          <button ref={buttonRef} className='bg-color3 border-4 rounded border-white text-lg p-4 cursor-pointer'>Accepted</button>
+          <button ref={buttonRef} className='bg-[#27ae60] border-4 rounded border-white text-lg p-4 cursor-pointer'>Accepted</button>
         </div>
       </div>
     </div>

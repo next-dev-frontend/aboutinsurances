@@ -7,7 +7,7 @@ function BgParallax2() {
       <div className="absolute inset-0 z-[-1]">
         <div>
           <Image
-            src="/backgrounds/bg1-insurances.webp"
+            src="/backgrounds/bg6-insurances.webp"
             alt="Background Image"
             layout="fill"
             objectFit="cover"
@@ -16,9 +16,10 @@ function BgParallax2() {
       </div>
       <div className="absolute inset-0"></div>
       <div className="select-none sticky h-max max-w-3xl text-white bg-gray-900 bg-opacity-30">
-        <h2 className="sticky bg-color1 bg-opacity-80 p-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">
-          Security doesn't come with luck. You have to be prepared.
+        <h2 className="sticky bg-[#ff6341] bg-opacity-80 p-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">
+          "Security is not the end goal. It's a starting point."
         </h2>
+        <p className="text-3xl">- Wendy Kopp</p>
         <div className="sticky bg-white h-1 flex flex-col w-full"></div>
       </div>
     </div>

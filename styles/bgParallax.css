@@ -1,0 +1,22 @@
+.parallax-container {
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax-content {
+  position: relative;
+  transform-style: preserve-3d;
+  height: 100vh;
+  transform: translateZ(-2px) scale(3);
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}

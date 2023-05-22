@@ -53,8 +53,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav id="header" className="select-none fixed flex-shrink md:flex-shrink-0 bg-white bg-no-repeat w-full max-w-full z-30 border-color1 border-opacity-70 border-b-4">
-      <div className="text-color2 whitespace-nowrap w-full container mx-auto flex flex-wrap xl:flex-nowrap items-center justify-between py-2 px-2 pl-4 pr-8">
+    <nav id="header" className="select-none fixed flex-shrink md:flex-shrink-0 bg-white bg-no-repeat w-full max-w-full z-30 border-[#142039] border-opacity-70 border-b-4">
+      <div className="text-[#ff6341] whitespace-nowrap w-full container mx-auto flex flex-wrap xl:flex-nowrap items-center justify-between py-2 px-2 pl-4 pr-8">
         <a href="/" className="pl-1 pt-2">
           <div className="relative w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 overflow-hidden">
             <Image src="/logos/logo-about-insurances.webp" alt="logo about insurances" width={80} height={80} priority />
@@ -66,7 +66,7 @@ const Navbar = () => {
             className="flex items-center p-1 focus:outline-none transform transition hover:scale-110 duration-1000 ease-in-out"
           >
             <svg
-              className="fill-current h-5 w-5 hover:text-color1"
+              className="fill-current h-5 w-5 hover:text-[#142039]"
               viewBox="0 0 18 18"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -78,7 +78,7 @@ const Navbar = () => {
 
         <div
           ref={navMenuDivRef}
-          className="hidden sticky text-xs text-color1 xl:flex w-full items-center h-full pt-4 lg:pt-1"
+          className="hidden sticky text-xs text-[#142039] xl:flex w-full items-center h-full pt-4 lg:pt-1"
         >
           <ul className="sticky w-full xl:flex justify-end items-center">
             <li className="sticky px-4 p-4">
@@ -86,7 +86,7 @@ const Navbar = () => {
                 href="/terms"
                 id="nav-item1"
                 ref={navItem1Ref}
-                className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-color2 before:transition hover:before:scale-100"
+                className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
               >
                 TERMS & CONDITIONS / COOKIES
               </a>
@@ -96,7 +96,7 @@ const Navbar = () => {
                 href="/policy"
                 id="nav-item2"
                 ref={navItem2Ref}
-                className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-color2 before:transition hover:before:scale-100"
+                className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
               >
                 PRIVACY POLICY
               </a>
