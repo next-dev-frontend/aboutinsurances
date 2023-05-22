@@ -18,13 +18,10 @@ let cspStyleSrc = `'self' ${cssFileUrl} https://cdn.jsdelivr.net/npm/tailwindcss
 
 if (!isProduction) {
   // Adiciona 'unsafe-inline' em style-src, durante o desenvolvimento
-  cspStyleSrc += " 'unsafe-inline'";
+  cspStyleSrc += ` 'unsafe-inline'`;
 } else {
-  cspStyleSrc += " 'nonce-${nonceStyleSrc}'";
+  cspStyleSrc += ` 'nonce-${nonceStyleSrc}'`;
 }
-
-
-
 
 const ContentSecurityPolicy = `
 base-uri 'self';  
