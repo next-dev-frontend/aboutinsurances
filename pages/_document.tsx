@@ -21,7 +21,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" nonce={nonceStyleSrc} href={cssFileUrl} type='text/html' />
           <link rel="manifest" nonce={nonceStyleSrc} href={manifestUrl} />
           <link rel="apple-touch-icon" nonce={nonceStyleSrc} href={logoAppleUrl} type="image/png" />
-          <link rel="icon" nonce={nonceStyleSrc} href={faviconUrl}></link>
+          <link rel="icon" nonce={nonceStyleSrc} href={faviconUrl} />
           <meta name="theme-color" content="#ff6341" />
           <Script
             id="ga-tracking"

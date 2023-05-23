@@ -57,7 +57,12 @@ const Navbar = () => {
       <div className="text-[#ff6341] whitespace-nowrap w-full container mx-auto flex flex-wrap xl:flex-nowrap items-center justify-between py-2 px-2 pl-4 pr-8">
         <a href="/" className="pl-1 pt-2">
           <div className="relative w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 overflow-hidden">
-            <Image src="/logos/logo-about-insurances.webp" alt="logo about insurances" width={80} height={80} priority />
+            <Image
+              src="/logos/logo-about-insurances.webp"
+              alt="logo about insurances"
+              width={80}
+              height={80}
+              priority />
           </div>
         </a>
         <div className="block xl:hidden pt-2 tab">
