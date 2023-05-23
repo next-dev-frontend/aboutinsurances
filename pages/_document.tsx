@@ -9,7 +9,6 @@ class MyDocument extends Document {
   render() {
 
     const isProduction = process.env.NODE_ENV === "production";
-    const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/styles/globals.css" : "http://localhost:3000/styles/globals.css";
     const manifestUrl = isProduction ? "https://aboutinsurances.vercel.app/manifest.json" : "http://localhost:3000/manifest.json";
     const logoAppleUrl = isProduction ? "https://aboutinsurances.vercel.app/logos/logo-144x144.png" : "http://localhost:3000/logos/logo-144x144.png";
     const faviconUrl = isProduction ? "https://aboutinsurances.vercel.app/favicon.ico" : "http://localhost:3000/favicon.ico";
@@ -17,10 +16,10 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="stylesheet" nonce={nonceStyleSrc} href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" type='text/css' />
-          <link rel="stylesheet" nonce={nonceStyleSrc} href={cssFileUrl} type='text/css' />
+          <link rel="stylesheet" nonce={nonceStyleSrc} href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" />
+          <link rel="stylesheet" type='text/css' nonce={nonceStyleSrc} href='/styles/globals.css' />
           <link rel="manifest" nonce={nonceStyleSrc} href={manifestUrl} />
-          <link rel="apple-touch-icon" nonce={nonceStyleSrc} href={logoAppleUrl} type="image/png" />
+          <link rel="apple-touch-icon" type="image/png" nonce={nonceStyleSrc} href={logoAppleUrl} />
           <link rel="icon" nonce={nonceStyleSrc} href={faviconUrl} />
           <meta name="theme-color" content="#ff6341" />
           <Script
@@ -42,7 +41,7 @@ class MyDocument extends Document {
         </Head>
         <body className="scrollbar scrollbar-thumb-[#ff6341] scrollbar-track-[#142039] overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
-          <NextScript nonce={nonceScriptSrc} />
+          <NextScript />
         </body>
       </Html>
     )
