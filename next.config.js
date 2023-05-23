@@ -12,7 +12,7 @@ const nonceScriptSrc = crypto.randomBytes(16).toString('base64');
 const nonceStyleSrc = crypto.randomBytes(16).toString('base64');
 
 const isProduction = process.env.NODE_ENV === "production";
-const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/styles/globals.css" : "http://localhost:3000/styles/globals.css";
+const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/styles/globals.css https://aboutinsurances.vercel.app/manifest.json" : "http://localhost:3000/styles/globals.css http://localhost:3000/manifest.json";
 
 let cspStyleSrc = `'self' ${cssFileUrl} https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
 

@@ -9,14 +9,15 @@ class MyDocument extends Document {
   render() {
 
     const isProduction = process.env.NODE_ENV === "production";
-    const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/*" : "http://localhost:3000/styles/globals.css";
+    const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/styles/globals.css" : "http://localhost:3000/styles/globals.css";
+    const manifestUrl = isProduction ? "https://aboutinsurances.vercel.app/manifest.json" : "http://localhost:3000/manifest.json";
 
     return (
       <Html lang="en">
         <Head>
           <link rel="stylesheet" nonce={nonceStyleSrc} href={cssFileUrl} type='text/html' />
           <link rel="stylesheet" nonce={nonceStyleSrc} href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" />
-          <link rel="manifest" href="/manifest.json" />
+          <link rel="manifest" nonce={nonceStyleSrc} href={manifestUrl} />
           <link rel="apple-touch-icon" href="/logos/logo-128x128.png" type="image/png" />
           <link rel="icon" href="/favicon.ico"></link>
           <meta name="theme-color" content="#ff6341" />
