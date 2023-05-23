@@ -12,12 +12,13 @@ const nonceScriptSrc = crypto.randomBytes(16).toString('base64');
 const nonceStyleSrc = crypto.randomBytes(16).toString('base64');
 
 const isProduction = process.env.NODE_ENV === "production";
-
 const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/favicon.ico https://aboutinsurances.vercel.app/workbox-588899ac.js https://aboutinsurances.vercel.app/styles/globals.css https://aboutinsurances.vercel.app/manifest.json https://aboutinsurances.vercel.app/logos/logo-144x144.png" : "http://localhost:3000/workbox-588899ac.js http://localhost:3000/styles/globals.css http://localhost:3000/manifest.json http://localhost:3000/logos/logo-144x144.png https://aboutinsurances.vercel.app/favicon.ico https://localhost:3000/workbox-588899ac.js";
 
-let cspStyleSrc = `'self' ${cssFileUrl} https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
+let cspStyleSrc = `'self' data: ${cssFileUrl} https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
 if (!isProduction) {
   cspStyleSrc += ` 'unsafe-inline'`;
+} else {
+  cspStyleSrc += ` 'nonce-${nonceStyleSrc}'`;
 }
 
 const ContentSecurityPolicy = `
@@ -33,7 +34,7 @@ manifest-src 'self';
 object-src 'none';
 script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' ${isProduction ? "" : "'unsafe-eval'"} 'strict-dynamic' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
 script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-style-src ${cspStyleSrc} nonce-${nonceStyleSrc} data:;
+style-src ${cspStyleSrc};
 `;
 
 const securityHeaders = [
