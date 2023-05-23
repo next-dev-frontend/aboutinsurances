@@ -18,7 +18,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="stylesheet" nonce={nonceStyleSrc} href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" />
-          <link rel="stylesheet" nonce={nonceStyleSrc} href={cssFileUrl} type='text/css' />
+          <link rel="stylesheet" nonce={nonceStyleSrc} href={cssFileUrl} />
           <link rel="manifest" nonce={nonceStyleSrc} href={manifestUrl} />
           <link rel="apple-touch-icon" nonce={nonceStyleSrc} href={logoAppleUrl} type="image/png" />
           <link rel="icon" nonce={nonceStyleSrc} href={faviconUrl} />
