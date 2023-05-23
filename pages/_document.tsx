@@ -42,7 +42,7 @@ class MyDocument extends Document {
         </Head>
         <body className="scrollbar scrollbar-thumb-[#ff6341] scrollbar-track-[#142039] overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
-          <NextScript />
+          <NextScript nonce={nonceScriptSrc} />
         </body>
       </Html>
     )
