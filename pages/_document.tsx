@@ -11,6 +11,7 @@ class MyDocument extends Document {
     const isProduction = process.env.NODE_ENV === "production";
     const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/styles/globals.css" : "http://localhost:3000/styles/globals.css";
     const manifestUrl = isProduction ? "https://aboutinsurances.vercel.app/manifest.json" : "http://localhost:3000/manifest.json";
+    const logoAppleUrl = isProduction ? "https://aboutinsurances.vercel.app/logos/logo-144x144.png" : "http://localhost:3000/logos/logo-144x144.png";
 
     return (
       <Html lang="en">
@@ -18,7 +19,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" nonce={nonceStyleSrc} href={cssFileUrl} type='text/html' />
           <link rel="stylesheet" nonce={nonceStyleSrc} href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" />
           <link rel="manifest" nonce={nonceStyleSrc} href={manifestUrl} />
-          <link rel="apple-touch-icon" href="/logos/logo-128x128.png" type="image/png" />
+          <link rel="apple-touch-icon" href={logoAppleUrl} type="image/png" />
           <link rel="icon" href="/favicon.ico"></link>
           <meta name="theme-color" content="#ff6341" />
           <Script
