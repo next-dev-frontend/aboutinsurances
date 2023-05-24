@@ -14,7 +14,7 @@ const nonceStyleSrc = crypto.randomBytes(16).toString('base64');
 const isProduction = process.env.NODE_ENV === "production";
 const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/*" : "http://localhost:3000/*";
 
-let cspStyleSrc = `'self' data: ${cssFileUrl} https://aboutinsurances.vercel.app/favicon.ico https://aboutinsurances.vercel.app/logos/logo-144x144.png https://aboutinsurances.vercel.app/manifest.json https://aboutinsurances.vercel.app/styles/globals.css https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
+let cspStyleSrc = `'self' data: ${cssFileUrl} https://aboutinsurances.vercel.app/workbox-588899ac.js https://aboutinsurances.vercel.app/manifest.json https://aboutinsurances.vercel.app/styles/globals.css https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
 if (!isProduction) {
   cspStyleSrc += ` 'unsafe-inline'`;
 } else {
