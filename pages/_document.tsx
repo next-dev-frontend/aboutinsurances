@@ -16,6 +16,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link rel="stylesheet" href="../styles/globals.css" nonce={nonceStyleSrc} />
+          <link rel="stylesheet" href="tailwindcss/tailwind.css" nonce={nonceStyleSrc} />
           <link rel="manifest" nonce={nonceStyleSrc} href={manifestUrl} />
           <link rel="apple-touch-icon" type="image/png" nonce={nonceStyleSrc} href={logoAppleUrl} />
           <link rel="icon" nonce={nonceStyleSrc} href={faviconUrl} />
@@ -39,7 +41,7 @@ class MyDocument extends Document {
         </Head>
         <body className="scrollbar scrollbar-thumb-[#ff6341] scrollbar-track-[#142039] overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
-          <NextScript />
+          <NextScript nonce={nonceStyleSrc} />
         </body>
       </Html>
     )
