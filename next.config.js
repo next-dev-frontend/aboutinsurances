@@ -24,7 +24,7 @@ if (!isProduction) {
 const ContentSecurityPolicy = `
 base-uri 'self';  
 connect-src 'self' 'unsafe-inline' https://aboutinsurances.vercel.app/* https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com;
-default-src 'none';
+default-src 'self';
 font-src 'self';
 form-action 'self';  
 frame-ancestors 'none';
