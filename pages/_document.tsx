@@ -16,8 +16,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="stylesheet" href="../styles/globals.css" nonce={nonceStyleSrc} />
-          <link rel="stylesheet" href="tailwindcss/tailwind.css" nonce={nonceStyleSrc} />
           <link rel="manifest" nonce={nonceStyleSrc} href={manifestUrl} />
           <link rel="apple-touch-icon" type="image/png" nonce={nonceStyleSrc} href={logoAppleUrl} />
           <link rel="icon" nonce={nonceStyleSrc} href={faviconUrl} />

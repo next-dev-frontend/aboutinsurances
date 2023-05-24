@@ -1,3 +1,5 @@
+import "../styles/globals.css";
+import "tailwindcss/tailwind.css";
 import React from 'react';
 import { useEffect } from 'react';
 import { DefaultSeo } from 'next-seo';
