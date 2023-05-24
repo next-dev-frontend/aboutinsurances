@@ -12,9 +12,8 @@ const nonceScriptSrc = crypto.randomBytes(16).toString('base64');
 const nonceStyleSrc = crypto.randomBytes(16).toString('base64');
 
 const isProduction = process.env.NODE_ENV === "production";
-const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/*" : "http://localhost:3000/*";
 
-let cspStyleSrc = `'self' data: ${cssFileUrl} https://aboutinsurances.vercel.app/sw.js https://aboutinsurances.vercel.app/workbox-588899ac.js https://aboutinsurances.vercel.app/manifest.json https://aboutinsurances.vercel.app/styles/globals.css https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
+let cspStyleSrc = `'self' data: https://aboutinsurances.vercel.app/sw.js https://aboutinsurances.vercel.app/workbox-588899ac.js https://aboutinsurances.vercel.app/manifest.json https://aboutinsurances.vercel.app/styles/globals.css https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
 if (!isProduction) {
   cspStyleSrc += ` 'unsafe-inline'`;
 } else {
@@ -24,7 +23,7 @@ if (!isProduction) {
 const ContentSecurityPolicy = `
 base-uri 'self';  
 connect-src 'self' 'unsafe-inline' https://aboutinsurances.vercel.app/* https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com;
-default-src 'self';
+default-src 'none';
 font-src 'self';
 form-action 'self';  
 frame-ancestors 'none';
@@ -34,7 +33,8 @@ manifest-src 'self';
 object-src 'none';
 script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' ${isProduction ? "" : "'unsafe-eval'"} 'strict-dynamic' https://aboutinsurances.vercel.app/* https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
 script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-style-src-elem ${cspStyleSrc};
+style-src 'self' data: ${cspStyleSrc} https://aboutinsurances.vercel.app/sw.js https://aboutinsurances.vercel.app/workbox-588899ac.js https://aboutinsurances.vercel.app/manifest.json https://aboutinsurances.vercel.app/styles/globals.css https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
+style-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com;
 `;
 
 const securityHeaders = [
