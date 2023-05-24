@@ -15,11 +15,11 @@ const isProduction = process.env.NODE_ENV === "production";
 const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/*" : "http://localhost:3000/*";
 
 let cspStyleSrc = `'self' data: ${cssFileUrl} https://aboutinsurances.vercel.app/sw.js https://aboutinsurances.vercel.app/workbox-588899ac.js https://aboutinsurances.vercel.app/manifest.json https://aboutinsurances.vercel.app/styles/globals.css https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
-//if (!isProduction) {
-//  cspStyleSrc += ` 'unsafe-inline'`;
-//} else {
-//  cspStyleSrc += ` 'nonce-${nonceStyleSrc}'`;
-//}
+if (!isProduction) {
+  cspStyleSrc += ` 'unsafe-inline'`;
+} else {
+  cspStyleSrc += ` 'nonce-${nonceStyleSrc}'`;
+}
 
 const ContentSecurityPolicy = `
 base-uri 'self';  
@@ -34,8 +34,8 @@ manifest-src 'self';
 object-src 'none';
 script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' ${isProduction ? "" : "'unsafe-eval'"} 'strict-dynamic' https://aboutinsurances.vercel.app/* https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
 script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-style-src ${cspStyleSrc};
-style-src-elem 'self' nonce-${nonceStyleSrc} ${cspStyleSrc} 'unsafe-inline';
+style-src 'self' data:;
+style-src-elem ${cspStyleSrc};
 `;
 
 const securityHeaders = [
