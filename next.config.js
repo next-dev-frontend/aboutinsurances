@@ -14,7 +14,7 @@ const nonceStyleSrc = crypto.randomBytes(16).toString('base64');
 const isProduction = process.env.NODE_ENV === "production";
 const cssFileUrl = isProduction ? "https://aboutinsurances.vercel.app/*" : "http://localhost:3000/*";
 
-let cspStyleSrc = `'self' data: ${cssFileUrl} https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
+let cspStyleSrc = `'self' data: ${cssFileUrl} https://aboutinsurances.vercel.app/favicon.ico https://aboutinsurances.vercel.app/logos/logo-144x144.png https://aboutinsurances.vercel.app/manifest.json https://aboutinsurances.vercel.app/styles/globals.css https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com`;
 if (!isProduction) {
   cspStyleSrc += ` 'unsafe-inline'`;
 } else {
@@ -44,7 +44,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: 'https://aboutinsurances.vercel.app https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js https://analytics.google.com/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com'
+    value: 'https://aboutinsurances.vercel.app/* https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js https://analytics.google.com/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com'
   },
   {
     key: 'X-DNS-Prefetch-Control',
