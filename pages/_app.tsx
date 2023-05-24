@@ -1,5 +1,3 @@
-import "../styles/globals.css";
-import "tailwindcss/tailwind.css";
 import React from 'react';
 import { useEffect } from 'react';
 import { DefaultSeo } from 'next-seo';
@@ -39,6 +37,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <DefaultSeo {...SEO} />
       <NavBar />
       <BgParallax1 />
+      <link rel="stylesheet" href="../styles/globals.css" nonce={process.env.nonceStyleSrc} />
+      <link rel="stylesheet" href="tailwindcss/tailwind.css" nonce={process.env.nonceStyleSrc} />
       <Component {...pageProps} />
       <BgParallax2 />
       <SideBar />
