@@ -7,18 +7,10 @@ const withPWA = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development',
 });
 
-const crypto = require('crypto');
-const fs = require('fs');
-const path = require('path');
-
 const isProduction = process.env.NODE_ENV === "production";
-const globalsCSSPath = isProduction ? 'https://aboutinsurances.vercel.app/styles/globals.css' : 'http://localhost:3000/styles/globals.css';
-
+const crypto = require('crypto');
 const nonceScriptSrc = crypto.randomBytes(16).toString('base64');
-const tailwindCSSContent = fs.readFileSync(path.resolve(__dirname, 'styles/globals.css'), 'utf-8');
-const hashStyleElem = crypto.createHash('sha256').update(tailwindCSSContent).digest('base64');
-
-
+const nonceStyleSrc = crypto.randomBytes(16).toString('base64');
 
 const ContentSecurityPolicy = `
 base-uri 'self';  
@@ -33,8 +25,7 @@ manifest-src 'self';
 object-src 'none';
 script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' ${isProduction ? "" : "'unsafe-eval'"} 'strict-dynamic' https://aboutinsurances.vercel.app/* https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
 script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-style-src 'self' ${isProduction ? `''` : "'unsafe-inline'"};
-style-src-elem 'self' ${isProduction ? `'sha256-${hashStyleElem}'` : "'unsafe-inline'"};
+style-src 'self' 'unsafe-inline' data:;
 `;
 
 const securityHeaders = [
@@ -118,6 +109,7 @@ module.exports = withImages(withPWA({
   //exportar nonce utilizando env  
   env: {
     nonceScriptSrc,
+    nonceStyleSrc,
   },
 
   typescript: {

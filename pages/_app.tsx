@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
 import React from 'react';
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
@@ -17,8 +16,6 @@ const Analytics = dynamic(() => import('../components/Analytics'))
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 
-  const router = useRouter();
-
   //registrar service-worker
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -32,19 +29,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           });
       });
     }
-
-    const handleRouteChange = () => {
-      const nonce = generateNonce();
-      const styleElements = document.querySelectorAll('style[nonce=""]');
-      styleElements.forEach((style) => {
-        style.setAttribute('nonce', nonce);
-      });
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-
   }, []);
 
 
@@ -65,14 +49,3 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   )
 }
 export default MyApp
-
-function generateNonce() {
-  const nonceChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let nonce = '';
-
-  for (let i = 0; i < 32; i++) {
-    nonce += nonceChars.charAt(Math.floor(Math.random() * nonceChars.length));
-  }
-
-  return nonce;
-}
