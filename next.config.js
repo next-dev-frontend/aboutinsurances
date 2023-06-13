@@ -15,7 +15,7 @@ const nonceScriptSrc = crypto.randomBytes(16).toString('base64');
 
 const ContentSecurityPolicy = `
 base-uri 'self';  
-connect-src 'self' 'unsafe-inline' *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com;
+connect-src 'self' 'unsafe-inline' webpack://* *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com;
 default-src 'none';
 font-src 'self';
 form-action 'self';  
@@ -40,7 +40,7 @@ const securityHeaders = [
   },
   {
     key: 'Permissions-Policy',
-    value: 'camera=(); battery=(); geolocation=(); microphone=()'
+    value: 'camera=(), geolocation=(), microphone=()'
   },
   {
     key: 'X-Content-Type-Options',
