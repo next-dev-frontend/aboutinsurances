@@ -39,8 +39,8 @@ const securityHeaders = [
     value: `${ContentSecurityPolicy.replace(/\n/g, '')}`
   },
   {
-    key: 'Feature-Policy',
-    value: "accelerometer 'none'; autoplay 'none'; camera 'none'; encrypted-media 'none'; fullscreen 'self'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none';  picture-in-picture 'none'; sync-xhr 'none'; usb 'none'"
+    key: 'Permissions-Policy',
+    value: 'camera=(); battery=(); geolocation=(); microphone=()'
   },
   {
     key: 'X-Content-Type-Options',
