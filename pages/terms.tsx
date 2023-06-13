@@ -1,8 +1,8 @@
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import dynamic from 'next/dynamic'
 const PageSeo = dynamic(() => import('../components/PageSeo'))
 
-export default function Termos() {
+export default function Terms() {
   return (
     <PageSeo
       title="Terms and Conditions of Use - Cookies"

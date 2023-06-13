@@ -1,19 +1,9 @@
-import Image from 'next/image'
-
 export default function offline() {
   return (
     <section
       id="home"
       className="select-none relative flex flex-wrap flex-shrink md:flex-shrink-0 items-center justify-center m-auto bg-no-repeat w-full max-w-full h-screen"
     >
-      <Image
-        src="../public/backgrounds/bg3-insurances.webp"
-        alt="background img insurances"
-        layout="fill"
-        objectFit="cover"
-        loading="eager"
-        priority
-      />
       <div className="absolute grid h-screen place-content-center bg-opacity-0">
         <div className="text-center">
           <strong className="text-9xl font-black text-[#142039]">Offline!</strong>

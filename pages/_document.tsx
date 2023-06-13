@@ -1,11 +1,9 @@
-import React from 'react';
 import Script from 'next/script';
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-const nonceScriptSrc = process.env.nonceScriptSrc;
 
 class MyDocument extends Document {
-
   render() {
+
     return (
       <Html lang="en">
         <Head>
@@ -13,6 +11,9 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" type="image/png" href='/favicon.ico' />
           <link rel="icon" href='/logos/logo-144x144.png' />
           <meta name="theme-color" content="#ff6341" />
+        </Head>
+        <body className="scrollbar scrollbar-thumb-[#ff6341] scrollbar-track-[#142039] overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
+          <Main />
           <Script
             id="ga-tracking"
             strategy="afterInteractive"
@@ -27,11 +28,8 @@ class MyDocument extends Document {
                 });
               `,
             }}
-            nonce={nonceScriptSrc}
+            nonce={process.env.nonceScriptSrc}
           />
-        </Head>
-        <body className="scrollbar scrollbar-thumb-[#ff6341] scrollbar-track-[#142039] overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
-          <Main />
           <NextScript />
         </body>
       </Html>

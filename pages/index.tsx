@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 const PageSeo = dynamic(() => import('../components/PageSeo'))
+const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
 const AboutInsurances = dynamic(() => import('../components/AboutInsurances'))
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
     >
       <main>
         <section className="bg-gray-100 bg-no-repeat bg-fixed bg-cover w-screen max-w-full h-full">
+          <BgParallax1 />
           <AboutInsurances />
         </section>
 
