@@ -12,11 +12,8 @@ export default function Home() {
       path="/"
     >
       <main>
-        <section className="bg-gray-100 bg-no-repeat bg-fixed bg-cover w-screen max-w-full h-full">
-          <BgParallax1 />
-          <AboutInsurances />
-        </section>
-
+        <BgParallax1 />
+        <AboutInsurances />
       </main>
     </PageSeo>
   )

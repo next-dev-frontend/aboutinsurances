@@ -601,6 +601,14 @@ video {
   bottom: 0px;
 }
 
+.left-0 {
+  left: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
 .z-30 {
   z-index: 30;
 }
@@ -1300,6 +1308,14 @@ video {
   overflow-x: hidden;
 }
 
+.scrollbar-thumb-color1 {
+  --scrollbar-thumb: #142039 !important;
+}
+
+.scrollbar-track-color2 {
+  --scrollbar-track: #ff6341 !important;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -1436,6 +1452,11 @@ video {
 @media (min-width: 768px) {
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
+  }
+
+  .md\:h-max {
+    height: -moz-max-content;
+    height: max-content;
   }
 
   .md\:h-screen {

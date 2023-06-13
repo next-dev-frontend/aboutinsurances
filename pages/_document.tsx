@@ -12,7 +12,7 @@ class MyDocument extends Document {
           <link rel="icon" href='/logos/logo-144x144.png' />
           <meta name="theme-color" content="#ff6341" />
         </Head>
-        <body className="scrollbar scrollbar-thumb-[#ff6341] scrollbar-track-[#142039] overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
+        <body className="scrollbar scrollbar-thumb-color1 scrollbar-track-color2 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
           <Script
             id="ga-tracking"

@@ -5,7 +5,6 @@ const withPWA = require('next-pwa')({
   sw: 'sw.js',
   register: true,
   skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
 });
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -76,6 +75,7 @@ module.exports = withTM(
   withImages(
     withPWA({
       reactStrictMode: true,
+      distDir: '.next',
 
       async headers() {
         return [
