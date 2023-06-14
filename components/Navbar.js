@@ -70,6 +70,7 @@ const Navbar = () => {
             ref={navMenuRef}
             className="flex items-center p-1 focus:outline-none transform transition hover:scale-110 duration-1000 ease-in-out"
           >
+            <span className="sr-only">Menu Buttom</span>
             <svg
               className="fill-current h-5 w-5 hover:text-[#142039]"
               viewBox="0 0 18 18"
