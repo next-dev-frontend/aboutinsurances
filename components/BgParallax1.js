@@ -1,8 +1,17 @@
+import Image from "next/legacy/image";
+
 function BgParallax1() {
   return (
     <div>
-      <section className="select-none relative bg-center flex items-center justify-center w-screen h-96 md:h-screen">
-        <div className="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ backgroundImage: 'url(/backgrounds/bg1-insurances.webp)' }} />
+      <section className="select-none relative bg-center bg-cover bg-fixed bg-no-repeat flex items-center justify-center w-screen h-96 md:h-screen">
+        <Image
+          src="/backgrounds/bg1-insurances.webp"
+          alt="Background Image"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          priority
+        />
         <span className="sr-only">Image Background</span>
         <div className="sticky h-max max-w-3xl text-white bg-gray-900 bg-opacity-30">
           <h2 className="sticky p-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">
