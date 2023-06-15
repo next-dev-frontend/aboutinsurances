@@ -66,16 +66,10 @@ const Navbar = () => {
           </div>
         </a>
         <div className="block xl:hidden pt-2 tab">
-          <button
-            ref={navMenuRef}
-            className="flex items-center p-1 focus:outline-none transform transition hover:scale-110 duration-1000 ease-in-out"
-          >
+          <button ref={navMenuRef} className="flex items-center p-1 focus:outline-none transform transition hover:scale-110 duration-1000 ease-in-out" >
             <span className="sr-only">Menu Buttom</span>
             <svg
-              className="fill-current h-5 w-5 hover:text-[#142039]"
-              viewBox="0 0 18 18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+              className="fill-current h-5 w-5 hover:text-[#142039]" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" >
               <title>Menu</title>
               <path strokeLinecap="round" strokeLinejoin="round" d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>

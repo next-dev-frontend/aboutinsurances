@@ -1,3 +1,4 @@
+const runtimeCaching = require("next-pwa/cache");
 const withTM = require('next-transpile-modules')(['tailwindcss']);
 const withImages = require('next-images');
 const withPWA = require('next-pwa')({
@@ -5,6 +6,10 @@ const withPWA = require('next-pwa')({
   sw: 'sw.js',
   register: true,
   skipWaiting: true,
+  dynamicStartUrl: true,
+  runtimeCaching,
+  buildExcludes: [/middleware-manifest\.json$/],
+  disable: process.env.NODE_ENV === 'development',
 });
 
 const isProduction = process.env.NODE_ENV === "production";
