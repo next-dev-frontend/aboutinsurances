@@ -16,7 +16,7 @@ class MyDocument extends Document {
           <Main />
           <Script
             id="ga-tracking"
-            strategy="afterInteractive"
+            strategy="worker"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
