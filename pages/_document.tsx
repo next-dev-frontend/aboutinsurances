@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Script from 'next/script';
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
@@ -8,9 +7,9 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <Link rel="apple-touch-icon" type="image/png" href='/favicon.ico' />
-          <Link rel="icon" href='/logos/logo-144x144.png' />
-          <Link rel="manifest" href='/manifest.json' />
+          <link rel="manifest" href='/manifest.json' />
+          <link rel="apple-touch-icon" type="image/png" href='/favicon.ico' />
+          <link rel="icon" href='/logos/logo-144x144.png' />
           <meta name="theme-color" content="#ff6341" />
         </Head>
         <body className="scrollbar scrollbar-thumb-color1 scrollbar-track-color2 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
