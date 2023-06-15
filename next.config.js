@@ -97,6 +97,13 @@ module.exports = withTM(
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512],
       },
 
+      pages: {
+        '*': {
+          maxChunkSize: 30000
+        },
+      },
+
+
       env: {
         nonceScriptSrc,
         //nonceStyleSrc,
