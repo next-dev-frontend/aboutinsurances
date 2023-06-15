@@ -9,8 +9,8 @@ function BgParallax1() {
           alt="Background Image"
           layout="fill"
           objectFit="cover"
-          quality={100}
           priority
+          quality={100}
         />
         <span className="sr-only">Image Background</span>
         <div className="sticky h-max max-w-3xl text-white bg-gray-900 bg-opacity-30">
