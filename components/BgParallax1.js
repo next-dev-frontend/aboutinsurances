@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 function BgParallax1() {
   return (
@@ -7,11 +7,11 @@ function BgParallax1() {
         <Image
           src="/backgrounds/bg1-insurances.webp"
           alt="Background Image"
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          style={{ objectFit: "cover" }}
+          layout="fill"
+          objectFit="cover"
           quality={100}
           priority
+          as="image/webp"
         />
         <span className="sr-only">Image Background</span>
         <div className="sticky h-max max-w-3xl text-white bg-gray-900 bg-opacity-30">

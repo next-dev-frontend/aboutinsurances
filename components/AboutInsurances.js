@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 const AboutInsurances = () => {
   return (
@@ -57,39 +57,42 @@ const AboutInsurances = () => {
           </div>
         </div>
         <div className="float-right block w-full lg:w-lg xl:w-xl md:w-1/2 h-auto px-4 md:px-8 p-8 pl-8 md:pl-4 xl:pl-2">
-          <div className="relative rounded-md flex justify-center shadow-xl p-2 w-screen h-auto max-w-full">
+          <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
             <Image
               className="rounded mask mask-parallelogram-3"
               src="/backgrounds/bg-insurances.webp"
               alt="insurances template img"
-              width={700}
-              height={700}
-              style={{ objectFit: "cover" }}
+              width={1080}
+              height={1080}
+              layout="responsive"
+              objectFit="cover"
             />
           </div>
 
           <a href="https://go.hotmart.com/X80760498R?src=aboutinsurances" rel="noopener noreferrer" target="_blank" role="button">
-            <div className="relative rounded-md flex justify-center shadow-xl p-2 w-full h-auto max-w-full">
+            <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
               <Image
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/business-template2.webp"
                 alt="business plan template img"
-                width={700}
-                height={80}
-                style={{ objectFit: "cover" }}
+                width={468}
+                height={60}
+                layout="responsive"
+                objectFit="cover"
               />
             </div>
           </a>
 
           <a href="https://go.hotmart.com/A80579208O?src=aboutinsurances" rel="noopener noreferrer" target="_blank" role="button">
-            <div className="relative rounded-md flex justify-center shadow-xl p-2 w-full h-auto max-w-full">
+            <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
               <Image
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/kaspersky-template.webp"
                 alt="Kaspersky Template img"
                 width={1200}
                 height={1200}
-                style={{ objectFit: "cover" }}
+                layout="responsive"
+                objectFit="cover"
               />
             </div>
           </a>

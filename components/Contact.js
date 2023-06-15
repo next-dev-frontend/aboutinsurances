@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 const Contact = () => {
   return (
@@ -13,9 +13,11 @@ const Contact = () => {
                 <Image
                   src="/logos/logo-about-insurances.webp"
                   alt="logo about insurances"
+                  layout="responsive"
+                  objectFit="cover"
                   width={512}
                   height={512}
-                  style={{ objectFit: "cover" }} />
+                />
               </a>
             </div>
 
@@ -98,9 +100,10 @@ const Contact = () => {
                         src="/logos/logo-google.webp"
                         alt="Logo Site Seguro - Google"
                         title="Secure Site - Click to Verify!"
+                        layout="responsive"
+                        objectFit="cover"
                         width={300}
                         height={126}
-                        style={{ objectFit: "cover" }}
                       />
                     </div>
                   </a>

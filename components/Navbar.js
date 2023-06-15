@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 const Navbar = () => {
   const navMenuDivRef = useRef(null);
@@ -60,10 +60,9 @@ const Navbar = () => {
             <Image
               src="/logos/logo-about-insurances.webp"
               alt="logo about insurances"
-              fill
-              style={{ objectFit: "cover" }}
-              priority
-            />
+              width={110}
+              height={110}
+              priority />
           </div>
         </a>
         <div className="block xl:hidden pt-2 tab">
