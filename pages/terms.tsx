@@ -27,19 +27,6 @@ export default function Terms() {
             </div>
 
             <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none">
-              <div className="w-auto px-4 lg:px-8 pt-2 lg:pt-3">
-                <div className="relative w-8 md:w-14 lg:w-16 h-auto">
-                  <Image
-                    src="../public/logos/logo-about-insurances.webp"
-                    alt="logo about insurances"
-                    layout="responsive"
-                    objectFit="cover"
-                    width={512}
-                    height={512}
-                    priority
-                  />
-                </div>
-              </div>
               <div className="w-auto">
                 <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl font-bold text-dark-green">
                   Terms and Conditions of Use - Cookies
@@ -71,7 +58,7 @@ export default function Terms() {
                   <p className="text-2xl md:text-3xl lg:text-4xl pt-10 text-dark-green mx-auto font-bold leading-none mb-3">
                     2. License Use
                   </p>
-                  <p className="text-justify indent-8 text-lg md:text-xl lg:text-2xl py-4 text-gray-700">
+                  <div className="text-justify indent-8 text-lg md:text-xl lg:text-2xl py-4 text-gray-700">
                     Permission is granted to temporarily download one copy of
                     the materials. (information or software) on the About
                     Insurances website, for viewing purposes only transitory
@@ -105,7 +92,7 @@ export default function Terms() {
                       you must delete all such materials downloaded into your
                       possession, whether in electronic or printed form.
                     </p>
-                  </p>
+                  </div>
                 </div>
 
                 <div className="mx-auto align-middle">

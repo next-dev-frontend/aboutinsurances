@@ -4,12 +4,12 @@ export default function page500() {
   return (
     <section id="home" className="relative flex flex-wrap flex-shrink md:flex-shrink-0 items-center justify-center m-auto bg-no-repeat w-full max-w-full h-96 md:h-screen">
       <Image
-        src="../public/backgrounds/bg3-insurances.webp"
+        src="/backgrounds/bg3-insurances.webp"
         alt="background img insurances"
         layout="fill"
         objectFit="cover"
-        loading="eager"
         priority
+        as="image"
       />
       <div className="absolute grid h-screen place-content-center bg-opacity-0">
         <div className="text-center">

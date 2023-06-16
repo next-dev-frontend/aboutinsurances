@@ -25,17 +25,6 @@ export default function Policy() {
             </div>
 
             <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none">
-              <div className="w-auto px-4 lg:px-8 pt-2 lg:pt-3">
-                <div className="w-8 md:w-14 lg:w-16 h-auto">
-                  <Image
-                    src="../public/logos/logo-about-insurances.webp"
-                    alt="logo about insurances"
-                    layout="intrinsic"
-                    objectFit="cover"
-                    priority
-                  />
-                </div>
-              </div>
               <div className="w-auto">
                 <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl font-bold text-dark-green">
                   Privacy Policy
@@ -104,7 +93,7 @@ export default function Policy() {
                   <p className="text-2xl md:text-3xl lg:text-4xl pt-10 text-dark-green mx-auto font-bold leading-none mb-3">
                     User Commitment
                   </p>
-                  <p className="text-justify indent-8 text-lg md:text-xl lg:text-2xl py-4 text-gray-700">
+                  <div className="text-justify indent-8 text-lg md:text-xl lg:text-2xl py-4 text-gray-700">
                     The user undertakes to make proper use of the contents and
                     information that About Insurances offers on the website and
                     with an enunciative, but not limiting character:
@@ -126,7 +115,7 @@ export default function Policy() {
                       or software that are capable of causing the aforementioned
                       damage.
                     </p>
-                  </p>
+                  </div>
                 </div>
 
                 <div className="mx-auto align-middle">

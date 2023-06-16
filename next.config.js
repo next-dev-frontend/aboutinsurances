@@ -91,18 +91,10 @@ module.exports = withTM(
       },
 
       images: {
-        domains: ['localhost', 'aboutinsurances.vercel.app'],
         formats: ['image/webp'],
         deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512],
       },
-
-      pages: {
-        '*': {
-          maxChunkSize: 30000
-        },
-      },
-
 
       env: {
         nonceScriptSrc,
@@ -115,6 +107,21 @@ module.exports = withTM(
       eslint: {
         ignoreDuringBuilds: true,
       },
+
+
+      webpack: (config, { dev, isServer }) => {
+        if (!dev && !isServer) {
+          // Habilitar treeshaking para remover dependências não utilizadas
+          config.optimization.concatenateModules = true;
+          config.optimization.providedExports = true;
+          config.optimization.usedExports = true;
+          config.optimization.sideEffects = true;
+        }
+
+        return config;
+      },
+
+
     })
   )
 );
