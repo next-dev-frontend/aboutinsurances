@@ -11,7 +11,6 @@ function BgParallax1() {
           objectFit="cover"
           quality={100}
           priority
-          as="image"
         />
         <span className="sr-only">Image Background</span>
         <div className="sticky h-max max-w-3xl text-white bg-gray-900 bg-opacity-30">

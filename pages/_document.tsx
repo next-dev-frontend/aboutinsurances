@@ -16,7 +16,7 @@ class MyDocument extends Document {
           <Main />
           <Script
             id="ga-tracking"
-            strategy="lazyOnload"
+            strategy='afterInteractive'
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
