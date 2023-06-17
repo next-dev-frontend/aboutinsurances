@@ -39,11 +39,22 @@ const App = () => {
   useEffect(() => {
     setIsClient(true);
     if (!showCookiePopup) {
-      // Carrega o script do Analytics quando o usuário aceita os cookies
+
+      // Carrega o script do Analytics somente se os cookies foram aceitos
       const script = document.createElement('script');
       script.src = `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`;
       script.async = true;
       document.body.appendChild(script);
+
+      // Configuração e inicialização do Google Analytics
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', process.env.NEXT_PUBLIC_GA_TRACKING_ID, {
+        cookie_flags: 'SameSite=None;Secure',
+        page_path: window.location.pathname,
+      });
+
     }
   }, [showCookiePopup]);
 

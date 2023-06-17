@@ -12,6 +12,9 @@ module.exports = {
         color2: '#ff6341', //orange
         color3: '#27ae60' //green
       },
+
+
+
     }
   },
 

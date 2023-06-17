@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 const PageSeo = dynamic(() => import('../components/PageSeo'))
-const BgParallax1 = dynamic(() => import('../components/BgParallax1'))
+const SliderImages = dynamic(() => import('../components/SliderImages'))
 const AboutInsurances = dynamic(() => import('../components/AboutInsurances'))
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       path="/"
     >
       <main>
-        <BgParallax1 />
+        <SliderImages />
         <AboutInsurances />
       </main>
     </PageSeo>
