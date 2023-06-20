@@ -20,8 +20,8 @@ function SlideImages() {
   }, [images.length]);
 
   return (
-    <div id="default-carousel transition-fade duration-1000 ease-out opacity-50">
-      <section className="relative bg-center bg-no-repeat flex items-center justify-center w-screen h-96 md:h-full">
+    <div id="default-carousel">
+      <section className="relative bg-center bg-no-repeat flex items-center justify-center w-screen h-96 md:h-1/2">
         <Image
           src={images[currentSlide]}
           alt="Background Image"
