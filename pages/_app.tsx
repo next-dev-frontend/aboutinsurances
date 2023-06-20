@@ -6,8 +6,9 @@ import Head from 'next/head';
 import SEO from '../next-seo-config';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
-const BgParallax2 = dynamic(() => import('../components/BgParallax2'), { loading: () => <p>Loading BgParallax2...</p>, })
 const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading SideBar...</p>, })
+const BgParallax2 = dynamic(() => import('../components/BgParallax2'), { loading: () => <p>Loading BgParallax2...</p>, })
+const PostCards = dynamic(() => import('../components/PostCards'), { loading: () => <p>Loading PostCards...</p>, })
 const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Loading Footer...</p>, })
 const Analytics = dynamic(() => import('../components/Analytics'))
 
@@ -36,6 +37,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <DefaultSeo {...SEO} />
       <NavBar />
       <Component {...pageProps} />
+      <PostCards />
       <BgParallax2 />
       <SideBar />
       <Footer />
