@@ -7,6 +7,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta name="google-site-verification" content="rRKlKFWnlhU_kUGxe4fgENDoEIIcYSSc1DbdpRMn1kY" />
           <link rel="manifest" href='/manifest.json' />
           <link rel="apple-touch-icon" type="image/png" href='/favicon.ico' />
           <link rel="icon" href='/logos/logo-144x144.png' />
