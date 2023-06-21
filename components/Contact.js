@@ -3,7 +3,7 @@ import Image from 'next/legacy/image'
 
 const Contact = () => {
   return (
-    <section className="select-none container max-w-6xl mx-auto w-full bg-opacity-0 rounded">
+    <section className="select-none container max-w-4xl mx-auto w-full bg-opacity-0 rounded">
       <div className="grid grid-cols-2">
         <div className="order-1 col-span-full md:col-span-1 py-5 md:py-6 px-6">
           <div className="bg-opacity-0 mx-auto max-w-xl flex flex-col space-y-5">
