@@ -10,7 +10,7 @@ export default function teste() {
       path="/"
     >
       <main>
-        <section className="bg-gray-100 bg-no-repeat bg-fixed bg-cover w-screen max-w-full h-full">
+        <section className="bg-gray-100 bg-no-repeat bg-fixed bg-cover w-full max-w-full h-full">
 
         </section>
 

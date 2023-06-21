@@ -3,7 +3,7 @@ import Image from 'next/legacy/image'
 
 const Contact = () => {
   return (
-    <div className="select-none container max-w-5xl mx-auto w-full bg-opacity-0 rounded text-light-green">
+    <section className="select-none container max-w-6xl mx-auto w-full bg-opacity-0 rounded">
       <div className="grid grid-cols-2">
         <div className="order-1 col-span-full md:col-span-1 py-5 md:py-6 px-6">
           <div className="bg-opacity-0 mx-auto max-w-xl flex flex-col space-y-5">
@@ -113,7 +113,16 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </div>
+
+      <div className="max-w-full mx-auto px-4 pt-6 pb-6 sm:px-6 lg:px-8 lg:pt-4">
+        <div className="w-full pb-4">
+          <div className="h-1 my-0 py-0 bg-[#142039] bg-opacity-30" />
+        </div>
+        <p className="text-center text-xs lg:text-sm text-gray-700">
+          ©2023 About Insurances. All rights reserved.
+        </p>
+      </div>
+    </section>
   )
 }
 export default Contact

@@ -20,36 +20,36 @@ function SlideImages() {
   }, [images.length]);
 
   return (
-    <div id="default-carousel">
-      <section className="relative bg-center bg-no-repeat flex items-center justify-center w-screen h-96 md:h-1/2">
-        <Image
-          src={images[currentSlide]}
-          alt="Background Image"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          priority
-        />
-        <span className="sr-only">Image Background</span>
-        <div className="sticky h-max max-w-3xl p-4 text-white bg-gray-900 bg-opacity-30">
-          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">
-            {currentSlide === 0
-              ? "Security is not the end goal. It's a starting point."
-              : currentSlide === 1
-                ? "Driving race cars is risky, not having life insurance is riskier"
-                : "By failing to prepare, you are preparing to fail."}
-          </h2>
-          <p className="text-3xl">
-            {currentSlide === 0
-              ? "- Wendy Kopp"
-              : currentSlide === 1
-                ? "- Danica Patrick"
-                : "- Benjamin Franklin"
-            }
-          </p>
-        </div>
-      </section>
-    </div>
+
+    <section id="carousel" className="select-none relative mx-auto flex bg-center bg-no-repeat items-center justify-center w-full max-w-full h-96 md:h-1/4">
+      <Image
+        src={images[currentSlide]}
+        alt="Background Image"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        priority
+      />
+      <span className="sr-only">Image Background</span>
+      <div className="sticky h-max max-w-3xl p-4 text-white bg-gray-900 bg-opacity-30">
+        <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">
+          {currentSlide === 0
+            ? "Security is not the end goal. It's a starting point."
+            : currentSlide === 1
+              ? "Driving race cars is risky, not having life insurance is riskier"
+              : "By failing to prepare, you are preparing to fail."}
+        </h2>
+        <p className="text-3xl">
+          {currentSlide === 0
+            ? "- Wendy Kopp"
+            : currentSlide === 1
+              ? "- Danica Patrick"
+              : "- Benjamin Franklin"
+          }
+        </p>
+      </div>
+    </section>
+
   );
 }
 

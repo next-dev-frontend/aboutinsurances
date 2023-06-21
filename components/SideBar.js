@@ -1,6 +1,6 @@
 const SideBar = () => {
   return (
-    <div className="select-none flex h-max w-full max-w-5xl container mx-auto flex-col justify-between border-r bg-white">
+    <section className="select-none flex h-max w-full max-w-full mx-auto flex-col justify-between bg-color1">
       <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none pt-10">
         <div className="w-auto pl-5">
           <p className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl font-bold text-dark-green">
@@ -19,7 +19,7 @@ const SideBar = () => {
           </a>
         </nav>
       </div>
-    </div>
+    </section>
   )
 }
 export default SideBar

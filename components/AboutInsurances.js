@@ -2,7 +2,7 @@ import Image from 'next/legacy/image'
 
 const AboutInsurances = () => {
   return (
-    <div id="insurances" className="select-none container mx-auto pt-10 pb-10 w-full">
+    <section id="insurances" className="select-none container mx-auto pt-10 pb-10 w-full max-w-2xl">
       <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none">
         <div className="w-auto pl-5">
           <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
@@ -98,7 +98,7 @@ const AboutInsurances = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 export default AboutInsurances
