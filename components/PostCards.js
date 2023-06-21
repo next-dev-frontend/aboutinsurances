@@ -8,7 +8,7 @@ const PostCards = () => {
       <div className="flex flex-wrap justify-center">
         <div className="w-full lg:w-2/3">
           <div className="mx-auto mb-12 max-w-full text-center lg:mb-20 p-8">
-            <h2 className="text-dark mb-4 font-bold text-4xl sm:text-5xl md:text-6xl">
+            <h2 className="mb-4 text-[#142039] font-bold text-4xl sm:text-5xl md:text-6xl">
               Recent Tips and News About Insurances
             </h2>
             <p className="text-body-color text-base py-4 text-2xl sm:text-3xl md:text-4xl">
