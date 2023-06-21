@@ -1,7 +1,7 @@
 function BgParallax() {
   return (
     <div>
-      <section id="bgParallax" className="select-none relative mx-auto bg-center flex items-center justify-center w-full max-w-full h-96 md:h-1/2">
+      <section id="bgParallax" className="select-none relative mx-auto bg-center flex items-center justify-center w-full max-w-full h-96 md:h-2/4">
         <div className="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ backgroundImage: 'url(/backgrounds/bg6-insurances.webp)' }} />
         <span className="sr-only">Image Background</span>
         <div className="sticky h-max max-w-3xl text-white bg-gray-900 bg-opacity-30">

@@ -21,7 +21,7 @@ function SlideImages() {
 
   return (
 
-    <section id="carousel" className="select-none relative mx-auto flex bg-center bg-no-repeat items-center justify-center w-full max-w-full h-96 md:h-1/2">
+    <section id="carousel" className="select-none relative mx-auto flex bg-center bg-no-repeat items-center justify-center w-full max-w-full h-96 md:h-2/4">
       <Image
         src={images[currentSlide]}
         alt="Background Image"
