@@ -32,7 +32,7 @@ function SlideImages() {
       />
       <span className="sr-only">Image Background</span>
       <div className="sticky h-max max-w-3xl p-4 text-white bg-gray-900 bg-opacity-30">
-        <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-outline-orange font-bold text-center md:text-left">
+        <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-outline-gray1 md:font-outline-gray2 font-bold text-center md:text-left">
           <span className="inline-block">&#8220;</span>
           {currentSlide === 0
             ? "Security is not the end goal. It's a starting point."

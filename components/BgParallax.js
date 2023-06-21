@@ -9,7 +9,6 @@ function BgParallax() {
             "Security is not the end goal. It's a starting point."
           </h2>
           <p className="text-3xl">- Wendy Kopp</p>
-          <div className="sticky bg-white h-1 w-full"></div>
         </div>
       </section>
     </div>
