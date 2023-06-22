@@ -91,7 +91,7 @@ const Contact = () => {
               <ul className="flex mx-auto w-max h-full bg-white border-2 border-light-green rounded p-2 items-center">
                 <li>
                   <a
-                    href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fconsultbio-jr.vercel.app%2F&hl=pt_BR"
+                    href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Faboutinsurances.vercel.app%2F&hl=pt_BR"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
