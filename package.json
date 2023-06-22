@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node ./generate-sitemap.js",
-    "build": "tailwindcss -i ./styles/globals.css -o ./styles/tailwind.css && next build",
+    "build": "tailwindcss -i ./styles/globals.css -o ./styles/tailwind.css --minify && next build",
     "start": "next start",
     "lint": "eslint --fix . ; prettier --write ."
   },
