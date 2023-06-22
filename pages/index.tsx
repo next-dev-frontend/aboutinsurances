@@ -18,9 +18,6 @@ const structuredData =
   "url": "https://aboutinsurances.vercel.app/#home"
 };
 
-
-
-
 export default function Home() {
   return (
     <PageSeo
