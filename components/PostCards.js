@@ -58,7 +58,7 @@ const PostCards = () => {
             <div>
               <h3>
                 <Link href="#" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
-                  How to earn more money as a wellness coach
+                  What makes a car totaled?
                 </Link>
               </h3>
               <p className="text-body-color text-base">
