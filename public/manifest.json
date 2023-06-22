@@ -1,6 +1,6 @@
 {
   "name": "Ask Your Questions About Insurance and Agencies",
-  "short_name": "About Insurances",
+  "short_name": "Tips and Information",
   "description": "Insurance information and tips website. Before contracting any insurance service, visit our website and clarify all your doubts on the subject.",
   "display": "standalone",
   "orientation": "portrait",
@@ -48,7 +48,7 @@
     },
     {
       "src": "/logos/maskable.png",
-      "sizes": "192x192",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }

@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
-import SEO from '../next-seo-config';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading SideBar...</p>, })
@@ -34,7 +33,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       </Head>
-      <DefaultSeo {...SEO} />
       <NavBar />
       <Component {...pageProps} />
       <PostCards />
