@@ -1,6 +1,5 @@
 import '../styles/tailwind.css'
 import React, { useEffect } from 'react';
-import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
 import dynamic from 'next/dynamic'

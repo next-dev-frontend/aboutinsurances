@@ -1,8 +1,10 @@
-import { NextSeo } from 'next-seo'
-import image from 'next/legacy/image'
+import { ArticleJsonLd, NextSeo } from 'next-seo'
+import { Head } from 'next/document'
 
 function PageSeo({ title, titleTemplate, description, path, children }) {
-  const url = `https://aboutinsurances.vercel.app/${path}`
+  const url = `https://aboutinsurances.vercel.app${path}`
+  const imageUrl = 'https:/aboutinsurances.vercel.app/backgrounds/bg-insurances.jpeg';
+
   return (
     <div>
       <NextSeo
@@ -10,6 +12,7 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
         description={description}
         titleTemplate={titleTemplate}
         canonical={url}
+
         additionalMetaTags={[
           {
             property: 'dc:creator',
@@ -26,22 +29,50 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
         ]}
 
         openGraph={{
-          type: 'website',
+          type: 'article',
+          article: {
+            publishedTime: '2022-06-21T23:04:13Z',
+            modifiedTime: '2022-01-21T18:04:43Z',
+            authors: [
+              'https://aboutinsurances.vercel.app',
+            ],
+            tags: ['insurances', 'car insurances', 'life insurances'],
+          },
           url: url,
           site_name: 'Website About Insurances',
           title: title,
           description: description,
-          images: image ? [
+          images: [
             {
-              url: 'https:/aboutinsurances.vercel.app/backgrounds/bg-insurances.jpeg',
+              url: imageUrl,
               alt: 'template about insurances',
               width: 380,
               height: 380,
-              type: 'image/jpeg'
-            }
-          ] : [],
+              type: 'image/jpeg',
+            },
+          ],
         }}
       />
+
+
+      <ArticleJsonLd
+        url={url}
+        title={title}
+        images={[
+          'https:/aboutinsurances.vercel.app/backgrounds/bg-insurances.jpeg',
+          'https:/aboutinsurances.vercel.app/cards/post-card1.webp',
+          'https:/aboutinsurances.vercel.app/cards/post-card2.webp',
+          'https:/aboutinsurances.vercel.app/cards/post-card3.webp',
+          'https:/aboutinsurances.vercel.app/cards/post-card4.webp',
+        ]}
+        datePublished="2023-06-22T00:00:00Z"
+        dateModified="2023-06-22T00:00:00Z"
+        authorName="Lopes Matheus S."
+        publisherName="Website About Insurances"
+        publisherLogo="https://aboutinsurances.vercel.app/logo.png"
+        description={description}
+      />
+
       {children}
     </div>
   )
