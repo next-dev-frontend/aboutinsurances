@@ -33,10 +33,7 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
           article: {
             publishedTime: '2022-06-21T23:04:13Z',
             modifiedTime: '2022-01-21T18:04:43Z',
-            authors: [
-              'https://aboutinsurances.vercel.app',
-            ],
-            tags: ['insurances', 'car insurances', 'life insurances'],
+            tags: ['insurance', 'tips', 'coverage'],
           },
           url: url,
           site_name: 'Website About Insurances',
