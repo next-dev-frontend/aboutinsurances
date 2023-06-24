@@ -30,7 +30,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <link rel="manifest" href='/manifest.json' />
+        <link rel="apple-touch-icon" type="image/png" href='/favicon.ico' />
+        <link rel="icon" href='/logos/logo-144x144.png' />
       </Head>
       <NavBar />
       <Component {...pageProps} />

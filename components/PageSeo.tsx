@@ -1,5 +1,4 @@
 import { ArticleJsonLd, NextSeo } from 'next-seo'
-import { Head } from 'next/document'
 
 function PageSeo({ title, titleTemplate, description, path, children }) {
   const url = `https://aboutinsurances.vercel.app${path}`
@@ -51,25 +50,24 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
         }}
       />
 
-      <head>
-        <ArticleJsonLd
-          url={url}
-          title={title}
-          images={[
-            'https:/aboutinsurances.vercel.app/backgrounds/bg-insurances.jpeg',
-            'https:/aboutinsurances.vercel.app/cards/post-card1.webp',
-            'https:/aboutinsurances.vercel.app/cards/post-card2.webp',
-            'https:/aboutinsurances.vercel.app/cards/post-card3.webp',
-            'https:/aboutinsurances.vercel.app/cards/post-card4.webp',
-          ]}
-          datePublished="2023-06-22T00:00:00Z"
-          dateModified="2023-06-22T00:00:00Z"
-          authorName="Lopes Matheus S."
-          publisherName="Website About Insurances"
-          publisherLogo="https://aboutinsurances.vercel.app/logo.png"
-          description={description}
-        />
-      </head>
+      <ArticleJsonLd
+        url={url}
+        title={title}
+        images={[
+          'https:/aboutinsurances.vercel.app/backgrounds/bg-insurances.jpeg',
+          'https:/aboutinsurances.vercel.app/cards/post-card1.webp',
+          'https:/aboutinsurances.vercel.app/cards/post-card2.webp',
+          'https:/aboutinsurances.vercel.app/cards/post-card3.webp',
+          'https:/aboutinsurances.vercel.app/cards/post-card4.webp',
+        ]}
+        datePublished="2023-06-22T00:00:00Z"
+        dateModified="2023-06-22T00:00:00Z"
+        authorName="Lopes Matheus S."
+        publisherName="Website About Insurances"
+        publisherLogo="https://aboutinsurances.vercel.app/logos/logo-72x72.png"
+        description={description}
+      />
+
       {children}
     </div>
   )
