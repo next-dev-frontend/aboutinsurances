@@ -1,5 +1,5 @@
 const sitemap = require('nextjs-sitemap-generator');
-const targetDirectory = './';
+const targetDirectory = 'public';
 
 sitemap({
   baseUrl: 'https://aboutinsurances.vercel.app',

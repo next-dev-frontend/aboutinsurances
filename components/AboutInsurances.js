@@ -98,6 +98,71 @@ const AboutInsurances = () => {
           </a>
         </div>
       </div>
+
+      <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
+        <div className="w-auto pl-5">
+          <h2 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
+            What Are The 10 Most Wanted Insurance?
+          </h2>
+        </div>
+      </div>
+
+      <div className="w-full mb-6">
+        <div className="h-1 mx-8 my-0 py-0 bg-gray-400 bg-opacity-25" />
+      </div>
+
+      <div className="flex flex-wrap text-gray-700">
+        <div className="w-full px-8 text-md md:text-xl lg:text-2xl">
+          <div className="mx-auto align-middle">
+            <p>The concept of &quot;most wanted insurance&quot; is not a typical categorization in the insurance industry. However, I can provide you with information about some commonly sought-after insurance policies that individuals and businesses often consider important. These policies address various risks and offer financial protection in case of unforeseen events. Here are ten types of insurance that are frequently sought after:</p>
+            <br />
+            <ol>
+              <li>
+                <p><strong>Health Insurance</strong>: Provides coverage for medical expenses and can include doctor visits, hospitalization, prescription drugs, and preventive care.</p>
+              </li>
+              <br />
+              <li>
+                <p><strong>Auto Insurance</strong>: Protects against financial losses resulting from auto accidents, theft, or damage to vehicles.</p>
+              </li>
+              <br />
+              <li>
+                <p><strong>Homeowners/Renters Insurance</strong>: Covers damages or losses to the property and belongings caused by events like fire, theft, or natural disasters.</p>
+              </li>
+              <br />
+              <li>
+                <p><strong>Life Insurance</strong>: Provides a payout to beneficiaries in the event of the insured person&apos;s death, helping to support their financial needs.</p>
+              </li>
+              <br />
+              <li>
+                <p><strong>Disability Insurance</strong>: Offers income replacement if the policyholder becomes disabled and unable to work due to illness or injury.</p>
+              </li>
+              <br />
+              <li>
+                <p><strong>Business Insurance</strong>: Protects businesses from various risks, including property damage, liability claims, and business interruption.</p>
+              </li>
+              <br />
+              <li>
+                <p><strong>Travel Insurance</strong>: Covers unforeseen events while traveling, such as trip cancellation, medical emergencies, lost baggage, or travel delays.</p>
+              </li>
+              <br />
+              <li>
+                <p><strong>Professional Liability Insurance</strong>: Also known as Errors and Omissions (E&amp;O) insurance, it protects professionals from claims arising due to professional errors, negligence, or malpractice.</p>
+              </li>
+              <br />
+              <li>
+                <p><strong>Cyber Insurance</strong>: Provides coverage against cyber threats and data breaches, including costs related to data recovery, legal expenses, and customer notification.</p>
+              </li>
+              <br />
+              <li>
+                <p><strong>Pet Insurance</strong>: Covers veterinary expenses for pets, including accidents, illnesses, surgeries, and preventive care.</p>
+              </li>
+              <br />
+            </ol>
+            <p>Please note that the popularity and importance of insurance policies may vary depending on individual circumstances, geographical location, and legal requirements. It&apos;s essential to evaluate your specific needs and consult with insurance professionals to determine the most suitable coverage for your situation.</p>
+          </div>
+        </div>
+      </div>
+
     </section>
   )
 }

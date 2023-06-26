@@ -32,13 +32,12 @@ const PostCards = () => {
             </div>
             <div>
               <h3>
-                <Link href="#" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
-                  Meet AutoManage, the best AI management tools
+                <Link href="/tips/tip-car-insurance" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
+                  Top 10 cheapest car insurance companies
                 </Link>
               </h3>
               <p className="text-body-color text-base">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+                Car insurance is a necessity for every driver, providing financial protection in case of accidents, theft, or other unforeseen events. However, finding affordable...
               </p>
             </div>
           </div>
