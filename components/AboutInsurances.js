@@ -116,7 +116,7 @@ const AboutInsurances = () => {
           <div className="mx-auto align-middle">
             <p>The concept of &quot;most wanted insurance&quot; is not a typical categorization in the insurance industry. However, I can provide you with information about some commonly sought-after insurance policies that individuals and businesses often consider important. These policies address various risks and offer financial protection in case of unforeseen events. Here are ten types of insurance that are frequently sought after:</p>
             <br />
-            <ol>
+            <ul>
               <li>
                 <p><strong>Health Insurance</strong>: Provides coverage for medical expenses and can include doctor visits, hospitalization, prescription drugs, and preventive care.</p>
               </li>
@@ -157,7 +157,7 @@ const AboutInsurances = () => {
                 <p><strong>Pet Insurance</strong>: Covers veterinary expenses for pets, including accidents, illnesses, surgeries, and preventive care.</p>
               </li>
               <br />
-            </ol>
+            </ul>
             <p>Please note that the popularity and importance of insurance policies may vary depending on individual circumstances, geographical location, and legal requirements. It&apos;s essential to evaluate your specific needs and consult with insurance professionals to determine the most suitable coverage for your situation.</p>
           </div>
         </div>
