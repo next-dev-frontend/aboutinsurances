@@ -118,43 +118,43 @@ const AboutInsurances = () => {
             <br />
             <ul>
               <li>
-                <p><strong>Health Insurance</strong>: Provides coverage for medical expenses and can include doctor visits, hospitalization, prescription drugs, and preventive care.</p>
+                <strong>Health Insurance</strong>: Provides coverage for medical expenses and can include doctor visits, hospitalization, prescription drugs, and preventive care.
               </li>
               <br />
               <li>
-                <p><strong>Auto Insurance</strong>: Protects against financial losses resulting from auto accidents, theft, or damage to vehicles.</p>
+                <strong>Auto Insurance</strong>: Protects against financial losses resulting from auto accidents, theft, or damage to vehicles.
               </li>
               <br />
               <li>
-                <p><strong>Homeowners/Renters Insurance</strong>: Covers damages or losses to the property and belongings caused by events like fire, theft, or natural disasters.</p>
+                <strong>Homeowners/Renters Insurance</strong>: Covers damages or losses to the property and belongings caused by events like fire, theft, or natural disasters.
               </li>
               <br />
               <li>
-                <p><strong>Life Insurance</strong>: Provides a payout to beneficiaries in the event of the insured person&apos;s death, helping to support their financial needs.</p>
+                <strong>Life Insurance</strong>: Provides a payout to beneficiaries in the event of the insured person&apos;s death, helping to support their financial needs.
               </li>
               <br />
               <li>
-                <p><strong>Disability Insurance</strong>: Offers income replacement if the policyholder becomes disabled and unable to work due to illness or injury.</p>
+                <strong>Disability Insurance</strong>: Offers income replacement if the policyholder becomes disabled and unable to work due to illness or injury.
               </li>
               <br />
               <li>
-                <p><strong>Business Insurance</strong>: Protects businesses from various risks, including property damage, liability claims, and business interruption.</p>
+                <strong>Business Insurance</strong>: Protects businesses from various risks, including property damage, liability claims, and business interruption.
               </li>
               <br />
               <li>
-                <p><strong>Travel Insurance</strong>: Covers unforeseen events while traveling, such as trip cancellation, medical emergencies, lost baggage, or travel delays.</p>
+                <strong>Travel Insurance</strong>: Covers unforeseen events while traveling, such as trip cancellation, medical emergencies, lost baggage, or travel delays.
               </li>
               <br />
               <li>
-                <p><strong>Professional Liability Insurance</strong>: Also known as Errors and Omissions (E&amp;O) insurance, it protects professionals from claims arising due to professional errors, negligence, or malpractice.</p>
+                <strong>Professional Liability Insurance</strong>: Also known as Errors and Omissions (E&amp;O) insurance, it protects professionals from claims arising due to professional errors, negligence, or malpractice.
               </li>
               <br />
               <li>
-                <p><strong>Cyber Insurance</strong>: Provides coverage against cyber threats and data breaches, including costs related to data recovery, legal expenses, and customer notification.</p>
+                <strong>Cyber Insurance</strong>: Provides coverage against cyber threats and data breaches, including costs related to data recovery, legal expenses, and customer notification.
               </li>
               <br />
               <li>
-                <p><strong>Pet Insurance</strong>: Covers veterinary expenses for pets, including accidents, illnesses, surgeries, and preventive care.</p>
+                <strong>Pet Insurance</strong>: Covers veterinary expenses for pets, including accidents, illnesses, surgeries, and preventive care.
               </li>
               <br />
             </ul>
