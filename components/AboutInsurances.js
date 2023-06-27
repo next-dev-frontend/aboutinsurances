@@ -99,6 +99,9 @@ const AboutInsurances = () => {
         </div>
       </div>
 
+
+
+
       <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
         <div className="w-auto pl-5">
           <h2 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
@@ -114,51 +117,41 @@ const AboutInsurances = () => {
       <div className="flex flex-wrap text-gray-700">
         <div className="w-full px-8 text-md md:text-xl lg:text-2xl">
           <div className="mx-auto align-middle">
+
             <p>The concept of &quot;most wanted insurance&quot; is not a typical categorization in the insurance industry. However, I can provide you with information about some commonly sought-after insurance policies that individuals and businesses often consider important. These policies address various risks and offer financial protection in case of unforeseen events. Here are ten types of insurance that are frequently sought after:</p>
             <br />
-            <ul>
-              <li>
-                <strong>Health Insurance</strong>: Provides coverage for medical expenses and can include doctor visits, hospitalization, prescription drugs, and preventive care.
-              </li>
-              <br />
-              <li>
-                <strong>Auto Insurance</strong>: Protects against financial losses resulting from auto accidents, theft, or damage to vehicles.
-              </li>
-              <br />
-              <li>
-                <strong>Homeowners/Renters Insurance</strong>: Covers damages or losses to the property and belongings caused by events like fire, theft, or natural disasters.
-              </li>
-              <br />
-              <li>
-                <strong>Life Insurance</strong>: Provides a payout to beneficiaries in the event of the insured person&apos;s death, helping to support their financial needs.
-              </li>
-              <br />
-              <li>
-                <strong>Disability Insurance</strong>: Offers income replacement if the policyholder becomes disabled and unable to work due to illness or injury.
-              </li>
-              <br />
-              <li>
-                <strong>Business Insurance</strong>: Protects businesses from various risks, including property damage, liability claims, and business interruption.
-              </li>
-              <br />
-              <li>
-                <strong>Travel Insurance</strong>: Covers unforeseen events while traveling, such as trip cancellation, medical emergencies, lost baggage, or travel delays.
-              </li>
-              <br />
-              <li>
-                <strong>Professional Liability Insurance</strong>: Also known as Errors and Omissions (E&amp;O) insurance, it protects professionals from claims arising due to professional errors, negligence, or malpractice.
-              </li>
-              <br />
-              <li>
-                <strong>Cyber Insurance</strong>: Provides coverage against cyber threats and data breaches, including costs related to data recovery, legal expenses, and customer notification.
-              </li>
-              <br />
-              <li>
-                <strong>Pet Insurance</strong>: Covers veterinary expenses for pets, including accidents, illnesses, surgeries, and preventive care.
-              </li>
-              <br />
-            </ul>
+            <p className="text-xl mb-2 font-bold">Health Insurance:</p>
+            <p>Provides coverage for medical expenses and can include doctor visits, hospitalization, prescription drugs, and preventive care.</p>
+            <br />
+            <p className="text-xl mb-2 font-bold">Auto Insurance:</p>
+            <p>Protects against financial losses resulting from auto accidents, theft, or damage to vehicles.</p>
+            <br />
+            <p className="text-xl mb-2 font-bold">Homeowners/Renters Insurance:</p>
+            <p>Covers damages or losses to the property and belongings caused by events like fire, theft, or natural disasters.</p>
+            <br />
+            <p className="text-xl mb-2 font-bold">Life Insurance:</p>
+            <p>Provides a payout to beneficiaries in the event of the insured person&apos;s death, helping to support their financial needs.</p>
+            <br />
+            <p className="text-xl mb-2 font-bold">Disability Insurance:</p>
+            <p>Offers income replacement if the policyholder becomes disabled and unable to work due to illness or injury.</p>
+            <br />
+            <p className="text-xl mb-2 font-bold">Business Insurance:</p>
+            <p>Protects businesses from various risks, including property damage, liability claims, and business interruption.</p>
+            <br />
+            <p className="text-xl mb-2 font-bold">Travel Insurance:</p>
+            <p>Covers unforeseen events while traveling, such as trip cancellation, medical emergencies, lost baggage, or travel delays.</p>
+            <br />
+            <p className="text-xl mb-2 font-bold">Professional Liability Insurance:</p>
+            <p>Also known as Errors and Omissions (E&amp;O) insurance, it protects professionals from claims arising due to professional errors, negligence, or malpractice.</p>
+            <br />
+            <p className="text-xl mb-2 font-bold">Cyber Insurance:</p>
+            <p>Provides coverage against cyber threats and data breaches, including costs related to data recovery, legal expenses, and customer notification.</p>
+            <br />
+            <p className="text-xl mb-2 font-bold">Pet Insurance:</p>
+            <p>Covers veterinary expenses for pets, including accidents, illnesses, surgeries, and preventive care.</p>
+            <br />
             <p>Please note that the popularity and importance of insurance policies may vary depending on individual circumstances, geographical location, and legal requirements. It&apos;s essential to evaluate your specific needs and consult with insurance professionals to determine the most suitable coverage for your situation.</p>
+
           </div>
         </div>
       </div>
