@@ -130,7 +130,7 @@ export default function Tips2() {
             <div className="w-full px-8 text-md md:text-xl lg:text-2xl">
               <div className="mx-auto align-middle">
 
-                <ul className="list-disc ml-6 underline">
+                <ul className="list-disc ml-6 underline p-8">
                   {carInsurers.map((insurer) => (
                     <li key={insurer.name}>
                       <Link href={insurer.url} target="_blank" rel="noopener noreferrer">
