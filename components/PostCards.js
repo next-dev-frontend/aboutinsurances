@@ -32,7 +32,7 @@ const PostCards = () => {
             </div>
             <div>
               <h3>
-                <Link href="/tips/tip-car-insurance" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
+                <Link href="/tips/cheapest-car-insurance-companies" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
                   Top 10 cheapest car insurance companies
                 </Link>
               </h3>
@@ -56,13 +56,12 @@ const PostCards = () => {
             </div>
             <div>
               <h3>
-                <Link href="#" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
-                  What makes a car totaled?
+                <Link href="/tips/how-do-car-insurances-work" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
+                  Understanding Car Insurances and Car Insurance Comparison
                 </Link>
               </h3>
               <p className="text-body-color text-base">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+                Car insurance is a vital financial protection that provides coverage against damages, theft, and liability arising from...
               </p>
             </div>
           </div>

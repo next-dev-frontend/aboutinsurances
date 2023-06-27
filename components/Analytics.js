@@ -25,7 +25,7 @@ const CookiePopup = ({ onClose }) => {
         <p className='text-white'>This website uses cookies to improve your user experience. By continuing to browse the site, you agree to the use of cookies.</p>
         <br />
         <div className="flex justify-center">
-          <button ref={buttonRef} className='bg-[#27ae60] border-4 rounded border-white text-lg p-4 cursor-pointer'>Accepted</button>
+          <button ref={buttonRef} className='bg-[#27ae60] border-4 rounded border-white text-lg p-4 cursor-pointer'>Continue</button>
         </div>
       </div>
     </div>

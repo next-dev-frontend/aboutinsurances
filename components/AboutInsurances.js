@@ -99,9 +99,6 @@ const AboutInsurances = () => {
         </div>
       </div>
 
-
-
-
       <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
         <div className="w-auto pl-5">
           <h2 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">

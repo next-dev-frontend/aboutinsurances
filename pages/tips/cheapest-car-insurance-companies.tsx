@@ -1,22 +1,22 @@
 import dynamic from 'next/dynamic'
 const PageSeo = dynamic(() => import('../../components/PageSeo'))
 
-export default function TipCarInsurance() {
+export default function Tips1() {
   return (
     <PageSeo
-      title="The 10 Cheapest Car Insurance Companies for Budget-Conscious Drivers"
-      titleTemplate="%s | Car Insurance"
+      title="The 10 Cheapest Car Insurance Companies"
+      titleTemplate="%s | Budget-Conscious Drivers"
       description="Car insurance is a necessity for every driver, providing financial protection in case of accidents, theft, or other unforeseen events. However, finding affordable coverage that meets your needs can sometimes be a challenge."
       path="/tips/"
     >
       <main>
-        <section className="select-none container mx-auto pt-10 pb-10 w-full max-w-5xl">
+        <section id='tips-1' className="select-none container mx-auto pt-10 pb-10 w-full max-w-5xl">
 
           <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
             <div className="w-auto pl-5">
-              <h2 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
+              <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
                 The 10 Cheapest Car Insurance Companies for Budget-Conscious Drivers
-              </h2>
+              </h1>
             </div>
           </div>
 
