@@ -9,7 +9,6 @@
     "lint": "eslint --fix . ; prettier --write ."
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.18",
     "@next/codemod": "^13.4.4",
     "chokidar": "^3.5.3",
     "crypto-js": "^4.1.1",
