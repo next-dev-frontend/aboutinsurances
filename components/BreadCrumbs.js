@@ -9,7 +9,7 @@ const Breadcrumbs = () => {
   return (
     <section className="container mx-auto w-full max-w-5xl px-4 py-4 flex no-wrap">
 
-      <Link href="/">
+      <Link href="/" aria-label='Home'>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="w-5 h-full text-gray-500"
