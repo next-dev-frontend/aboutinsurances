@@ -28,7 +28,7 @@ img-src 'self' data: blob: https: 'unsafe-inline' https://*.gstatic.com https://
 manifest-src 'self';
 object-src 'none';
 script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' 'strict-dynamic' ${isProduction ? "" : "'unsafe-eval'"} https://aboutinsurances.vercel.app/* https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js https://pagead2.googlesyndication.com/* https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js;
+script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js https://pagead2.googlesyndication.com/* https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202306210101/show_ads_impl_fy2021.js;
 style-src 'self' 'unsafe-inline';
 `;
 
