@@ -39,7 +39,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href='/logos/logo-144x144.png' />
         <Script
           id="Absence-banner"
-          async
           strategy="afterInteractive"
           onError={(e) => {
             console.error('Script failed to load', e);
