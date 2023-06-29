@@ -18,7 +18,7 @@ const nonceScriptSrc = crypto.randomBytes(16).toString('base64');
 
 const ContentSecurityPolicy = `
 base-uri 'self';  
-connect-src 'self' 'unsafe-inline' webpack://* *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js vitals.vercel-insights.com;
+connect-src 'self' 'unsafe-inline' webpack://* *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202306210101/show_ads_impl_fy2021.js vitals.vercel-insights.com;
 default-src 'self' https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js;
 font-src 'self';
 form-action 'self';  
