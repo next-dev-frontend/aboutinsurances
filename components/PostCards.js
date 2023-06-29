@@ -80,13 +80,12 @@ const PostCards = () => {
             </div>
             <div>
               <h3>
-                <Link href="#" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
-                  The no-fuss guide to upselling and cross-selling
+                <Link href="/tips/the-value-of-life-insurance" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
+                  The Value of Life Insurance: Safeguarding What Matters Most
                 </Link>
               </h3>
               <p className="text-body-color text-base">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+                Life is full of uncertainties, and it is our responsibility to protect ourselves and our loved ones from potential financial burdens that may arise in the future. One crucial way...
               </p>
             </div>
           </div>

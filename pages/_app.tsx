@@ -38,9 +38,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href='/logos/logo-144x144.png' />
       </Head>
       <NavBar />
-      <BreadCrumbs />
-      <Component {...pageProps} />
       <PublicationDate />
+      <Component {...pageProps} />
       <PostCards />
       <BgParallax />
       <SideBar />

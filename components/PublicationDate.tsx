@@ -9,7 +9,7 @@ const LastTenDays = () => {
     const lastTenDays = [];
     for (let i = 9; i >= 0; i--) {
       const date = new Date(currentDate);
-      date.setDate(currentDate.getDate() - i);
+      date.setDate(currentDate.getDate() - 2); //mudar 2 para i se quiser mudar para 10 dias aleatórios.
       lastTenDays.push(date);
     }
     const randomIndex = Math.floor(Math.random() * 10);
@@ -28,9 +28,9 @@ const LastTenDays = () => {
   });
 
   return (
-    <div className="select-none container mx-auto pb-4 px-8 w-full max-w-5xl">
+    <div className="select-none container mx-auto py-4 px-8 w-full max-w-5xl">
       <div className="flex flex-nowrap items-center justify-end">
-        <p className="text-sm md:text-md lg:text-lg underline">Publication Date: {formattedDate}</p>
+        <p className="text-sm md:text-md underline">last update: {formattedDate}</p>
       </div>
     </div>
   );

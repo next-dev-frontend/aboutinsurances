@@ -143,11 +143,6 @@ export default function Tips2() {
               </div>
             </div>
           </div>
-
-
-
-
-
         </section>
 
       </main>

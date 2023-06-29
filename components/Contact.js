@@ -9,7 +9,7 @@ const Contact = () => {
           <div className="bg-opacity-0 mx-auto max-w-xl flex flex-col space-y-5">
 
             <div className="relative w-14 md:w-18 lg:w-24 h-auto">
-              <a href="#home">
+              <a href="/">
                 <Image
                   src="/logos/logo-about-insurances.webp"
                   alt="logo about insurances"

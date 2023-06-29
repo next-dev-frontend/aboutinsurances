@@ -1,7 +1,33 @@
+import Link from 'next/link';
 import dynamic from 'next/dynamic'
 const PageSeo = dynamic(() => import('../../components/PageSeo'))
 
 export default function Tips1() {
+
+  const carInsurers = [
+    { name: 'State Farm', url: 'https://www.statefarm.com/' },
+    { name: 'GEICO', url: 'https://www.geico.com/' },
+    { name: 'Progressive', url: 'https://www.progressive.com/' },
+    { name: 'Allstate', url: 'https://www.allstate.com/' },
+    { name: 'Nationwide', url: 'https://www.nationwide.com/' },
+    { name: 'Farmers Insurance', url: 'https://www.farmers.com/' },
+    { name: 'Liberty Mutual', url: 'https://www.libertymutual.com/' },
+    { name: 'USAA', url: 'https://www.usaa.com/' },
+    { name: 'Travelers', url: 'https://www.travelers.com/' },
+    { name: 'American Family Insurance', url: 'https://www.amfam.com/' },
+    { name: 'Auto-Owners Insurance', url: 'https://www.auto-owners.com/' },
+    { name: 'The Hartford', url: 'https://www.thehartford.com/' },
+    { name: 'Mercury Insurance', url: 'https://www.mercuryinsurance.com/' },
+    { name: 'MetLife', url: 'https://www.metlife.com/' },
+    { name: 'Safeco Insurance', url: 'https://www.safeco.com/' },
+    { name: 'Esurance', url: 'https://www.esurance.com/' },
+    { name: 'AAA (American Automobile Association)', url: 'https://www.aaa.com/' },
+    { name: 'Erie Insurance', url: 'https://www.erieinsurance.com/' },
+    { name: 'National General Insurance', url: 'https://www.nationalgeneral.com/' },
+    { name: 'Root Insurance', url: 'https://www.joinroot.com/' },
+  ];
+
+
   return (
     <PageSeo
       title="The 10 Cheapest Car Insurance Companies"
@@ -67,8 +93,38 @@ export default function Tips1() {
           </div>
 
 
-        </section>
+          <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
+            <div className="w-auto pl-5">
+              <h2 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
+                🚗 Car insurers in the USA Web Sites
+              </h2>
+            </div>
+          </div>
 
+          <div className="w-full mb-6">
+            <div className="h-1 mx-8 my-0 py-0 bg-gray-400 bg-opacity-25" />
+          </div>
+
+
+          <div className="flex flex-wrap text-gray-700">
+            <div className="w-full px-8 text-md md:text-xl lg:text-2xl">
+              <div className="mx-auto align-middle">
+
+                <ul className="list-disc ml-6 underline">
+                  {carInsurers.map((insurer) => (
+                    <li key={insurer.name} className='py-2'>
+                      <Link href={insurer.url} target="_blank" rel="noopener noreferrer">
+                        {insurer.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+        </section>
       </main>
     </PageSeo>
   )

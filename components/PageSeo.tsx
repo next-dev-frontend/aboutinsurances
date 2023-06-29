@@ -60,8 +60,8 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
           'https:/aboutinsurances.vercel.app/cards/post-card3.webp',
           'https:/aboutinsurances.vercel.app/cards/post-card4.webp',
         ]}
-        datePublished="2023-06-22T00:00:00Z"
-        dateModified="2023-06-22T00:00:00Z"
+        datePublished="2022-06-21T23:04:13Z"
+        dateModified="2022-01-21T18:04:43Z"
         authorName="Lopes Matheus S."
         publisherName="Website About Insurances"
         publisherLogo="https://aboutinsurances.vercel.app/logos/logo-72x72.png"

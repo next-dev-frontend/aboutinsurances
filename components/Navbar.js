@@ -53,7 +53,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav id="header" className="select-none  mx-auto flex-shrink md:flex-shrink-0 bg-white bg-no-repeat w-full max-w-5xl z-30 border-[#142039] border-opacity-70 border-b-4">
+    <nav id="header" className="select-none mx-auto flex-shrink md:flex-shrink-0 bg-white bg-no-repeat w-full max-w-5xl z-30 border-[#142039] border-opacity-70 border-b-4">
       <div className="text-[#ff6341] whitespace-nowrap w-full container mx-auto flex flex-wrap xl:flex-nowrap items-center justify-between py-2 px-2 pl-4 pr-8">
         <a href="/" className="pl-1 pt-2">
           <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 overflow-hidden">
