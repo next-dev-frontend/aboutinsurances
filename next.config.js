@@ -19,16 +19,16 @@ const nonceScriptSrc = crypto.randomBytes(16).toString('base64');
 const ContentSecurityPolicy = `
 base-uri 'self';  
 connect-src 'self' 'unsafe-inline' webpack://* *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com;
-default-src 'none';
+default-src 'self' https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js;
 font-src 'self';
 form-action 'self';  
 frame-ancestors 'none';
-frame-src 'none';
+frame-src 'self' https://googleads.g.doubleclick.net;
 img-src 'self' data: blob: https: 'unsafe-inline' https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://www.googletagmanager.com/gtag/js https://*.tagmanager.google.com https://*.google-analytics.com https://*.google.com.br/ads/;  
 manifest-src 'self';
 object-src 'none';
 script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' 'strict-dynamic' ${isProduction ? "" : "'unsafe-eval'"} https://aboutinsurances.vercel.app/* https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js;
+script-src-elem 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js https://pagead2.googlesyndication.com/* https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js;
 style-src 'self' 'unsafe-inline';
 `;
 

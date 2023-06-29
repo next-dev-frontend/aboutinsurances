@@ -6,10 +6,10 @@ import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BreadCrumbs = dynamic(() => import('../components/BreadCrumbs'))
 const PublicationDate = dynamic(() => import('../components/PublicationDate'))
-const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading SideBar...</p>, })
-const BgParallax = dynamic(() => import('../components/BgParallax'), { loading: () => <p>Loading BgParallax2...</p>, })
-const PostCards = dynamic(() => import('../components/PostCards'), { loading: () => <p>Loading PostCards...</p>, })
-const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Loading Footer...</p>, })
+const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading...</p>, })
+const BgParallax = dynamic(() => import('../components/BgParallax'), { loading: () => <p>Loading...</p>, })
+const PostCards = dynamic(() => import('../components/PostCards'), { loading: () => <p>Loading...</p>, })
+const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Loading...</p>, })
 const Analytics = dynamic(() => import('../components/Analytics'))
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
