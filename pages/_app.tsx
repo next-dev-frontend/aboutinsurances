@@ -2,6 +2,7 @@ import '../styles/tailwind.css'
 import React, { useEffect } from 'react';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
+import Script from 'next/script';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BreadCrumbs = dynamic(() => import('../components/BreadCrumbs'))
@@ -36,6 +37,16 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link rel="manifest" href='/manifest.json' />
         <link rel="apple-touch-icon" type="image/png" href='/favicon.ico' />
         <link rel="icon" href='/logos/logo-144x144.png' />
+        <Script
+          id="Absence-banner"
+          async
+          strategy="afterInteractive"
+          onError={(e) => {
+            console.error('Script failed to load', e);
+          }}
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}`}
+          crossOrigin="anonymous"
+        />
       </Head>
       <NavBar />
       <PublicationDate />
