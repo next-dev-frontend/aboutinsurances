@@ -49,17 +49,17 @@ export default function Tips3() {
                     <p>
                       The cost of life insurance varies based on several factors, including:
                     </p>
-                    <ul className="list-disc pl-6 py-4">
-                      <li>Age and health: Generally, younger and healthier individuals tend to have lower premiums since they are considered to be at a lower risk of passing away prematurely.</li>
+                    <div className="list-disc pl-6 py-4">
+                      <p>Age and health: Generally, younger and healthier individuals tend to have lower premiums since they are considered to be at a lower risk of passing away prematurely.</p>
                       <br />
-                      <li>Coverage amount: The death benefit amount, or the coverage chosen, directly affects the premium. Higher coverage amounts result in higher premiums.</li>
+                      <p>Coverage amount: The death benefit amount, or the coverage chosen, directly affects the premium. Higher coverage amounts result in higher premiums.</p>
                       <br />
-                      <li>Policy type: There are various types of life insurance, such as term life insurance, whole life insurance, and universal life insurance. Each type has different premium structures and benefits.</li>
+                      <p>Policy type: There are various types of life insurance, such as term life insurance, whole life insurance, and universal life insurance. Each type has different premium structures and benefits.</p>
                       <br />
-                      <li>Gender: On average, women tend to have lower life insurance premiums compared to men due to actuarial statistics indicating that women live longer.</li>
+                      <p>Gender: On average, women tend to have lower life insurance premiums compared to men due to actuarial statistics indicating that women live longer.</p>
                       <br />
-                      <li>Lifestyle choices: Certain lifestyle factors, such as smoking, excessive drinking, or engaging in hazardous activities, can increase insurance costs due to higher health risks.</li>
-                    </ul>
+                      <p>Lifestyle choices: Certain lifestyle factors, such as smoking, excessive drinking, or engaging in hazardous activities, can increase insurance costs due to higher health risks.</p>
+                    </div>
                   </section>
 
                   <section className="mb-8">
@@ -67,17 +67,17 @@ export default function Tips3() {
                     <p>
                       Life insurance offers several benefits, including:
                     </p>
-                    <ul className="list-disc pl-6 py-4">
-                      <li>Financial protection: Life insurance ensures that your loved ones are financially secure even in your absence. The death benefit can be used to cover funeral expenses, outstanding debts, mortgages, and other financial obligations.</li>
+                    <div className="list-disc pl-6 py-4">
+                      <p>Financial protection: Life insurance ensures that your loved ones are financially secure even in your absence. The death benefit can be used to cover funeral expenses, outstanding debts, mortgages, and other financial obligations.</p>
                       <br />
-                      <li>Income replacement: If you are the primary breadwinner in your family, life insurance can provide a regular income stream for your dependents to maintain their standard of living.</li>
+                      <p>Income replacement: If you are the primary breadwinner in your family, life insurance can provide a regular income stream for your dependents to maintain their standard of living.</p>
                       <br />
-                      <li>Education expenses: Life insurance can fund your children's education, ensuring that their future goals and dreams are not compromised by financial limitations.</li>
+                      <p>Education expenses: Life insurance can fund your children's education, ensuring that their future goals and dreams are not compromised by financial limitations.</p>
                       <br />
-                      <li>Estate planning: Life insurance can be a valuable tool in estate planning, providing liquidity to cover estate taxes and preserving the wealth you intend to pass on to your beneficiaries.</li>
+                      <p>Estate planning: Life insurance can be a valuable tool in estate planning, providing liquidity to cover estate taxes and preserving the wealth you intend to pass on to your beneficiaries.</p>
                       <br />
-                      <li>Business continuity: Life insurance can also be utilized by business owners to protect their enterprises, ensuring that business operations can continue uninterrupted in the event of the owner's death.</li>
-                    </ul>
+                      <p>Business continuity: Life insurance can also be utilized by business owners to protect their enterprises, ensuring that business operations can continue uninterrupted in the event of the owner's death.</p>
+                    </div>
                   </section>
 
                   <section>

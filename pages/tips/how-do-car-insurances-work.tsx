@@ -72,12 +72,12 @@ export default function Tips2() {
                   <p className="mb-4">
                     Here are a few reasons why using a car insurance comparison tool can be beneficial:
                   </p>
-                  <ul className="list-disc list-inside">
-                    <li className="mb-2">Convenient and Time-Saving: Instead of individually researching and obtaining quotes from multiple insurers, a comparison tool gathers all the necessary information in one place. It saves time and effort, making the entire process more efficient.</li>
-                    <li className="mb-2">Cost-Effective: By comparing various car insurance policies, you can identify the ones that offer the best value for your money. A comparison tool helps you find competitive prices and potential discounts, ensuring you get the coverage you need at a reasonable cost.</li>
-                    <li className="mb-2">Customized Options: Car insurance comparison tools allow you to enter specific details about your vehicle, driving history, and coverage preferences. This customization helps tailor the results to your unique requirements, enabling you to choose the most suitable policy.</li>
-                    <li className="mb-2">Comprehensive Comparison: A reliable car insurance comparison tool provides detailed comparisons of coverage limits, deductibles, exclusions, and additional features offered by different insurers. It gives you a holistic view of the policies and assists in making an informed decision.</li>
-                  </ul>
+                  <div className="list-disc list-inside">
+                    <p className="mb-2">Convenient and Time-Saving: Instead of individually researching and obtaining quotes from multiple insurers, a comparison tool gathers all the necessary information in one place. It saves time and effort, making the entire process more efficient.</p>
+                    <p className="mb-2">Cost-Effective: By comparing various car insurance policies, you can identify the ones that offer the best value for your money. A comparison tool helps you find competitive prices and potential discounts, ensuring you get the coverage you need at a reasonable cost.</p>
+                    <p className="mb-2">Customized Options: Car insurance comparison tools allow you to enter specific details about your vehicle, driving history, and coverage preferences. This customization helps tailor the results to your unique requirements, enabling you to choose the most suitable policy.</p>
+                    <p className="mb-2">Comprehensive Comparison: A reliable car insurance comparison tool provides detailed comparisons of coverage limits, deductibles, exclusions, and additional features offered by different insurers. It gives you a holistic view of the policies and assists in making an informed decision.</p>
+                  </div>
                 </div>
                 <br />
 
@@ -86,13 +86,13 @@ export default function Tips2() {
                   <p className="mb-4">
                     Here are a few tips to make the most of your car insurance comparison experience:
                   </p>
-                  <ul className="list-disc list-inside">
-                    <li className="mb-2">Gather Necessary Information: Before using a comparison tool, gather all relevant information about your vehicle, driving history, and desired coverage levels. This ensures accurate quotes and effective comparisons.</li>
-                    <li className="mb-2">Understand Your Needs: Take some time to evaluate your insurance requirements. Assess the level of coverage you need, considering factors such as your driving habits, vehicle value, and personal circumstances. This knowledge will help you make the right choices during the comparison process.</li>
-                    <li className="mb-2">Compare Apples to Apples: When comparing policies, ensure that you're evaluating similar coverage levels and deductibles. Otherwise, you might end up with an inaccurate comparison. Pay attention to the fine print and consider all the details.</li>
-                    <li className="mb-2">Research Insurers: While comparing policies, don't forget to research the reputation and financial stability of the insurance providers. Look for customer reviews and ratings to gauge their reliability and customer service.</li>
-                    <li className="mb-2">Seek Expert Advice: If you're unsure about certain aspects or have complex insurance needs, it's always a good idea to consult with an insurance professional. They can provide guidance and help you navigate through the comparison process more effectively.</li>
-                  </ul>
+                  <div className="list-disc list-inside">
+                    <p className="mb-2">Gather Necessary Information: Before using a comparison tool, gather all relevant information about your vehicle, driving history, and desired coverage levels. This ensures accurate quotes and effective comparisons.</p>
+                    <p className="mb-2">Understand Your Needs: Take some time to evaluate your insurance requirements. Assess the level of coverage you need, considering factors such as your driving habits, vehicle value, and personal circumstances. This knowledge will help you make the right choices during the comparison process.</p>
+                    <p className="mb-2">Compare Apples to Apples: When comparing policies, ensure that you're evaluating similar coverage levels and deductibles. Otherwise, you might end up with an inaccurate comparison. Pay attention to the fine print and consider all the details.</p>
+                    <p className="mb-2">Research Insurers: While comparing policies, don't forget to research the reputation and financial stability of the insurance providers. Look for customer reviews and ratings to gauge their reliability and customer service.</p>
+                    <p className="mb-2">Seek Expert Advice: If you're unsure about certain aspects or have complex insurance needs, it's always a good idea to consult with an insurance professional. They can provide guidance and help you navigate through the comparison process more effectively.</p>
+                  </div>
                 </div>
                 <br />
 
@@ -130,15 +130,15 @@ export default function Tips2() {
             <div className="w-full px-8 text-md md:text-xl lg:text-2xl">
               <div className="mx-auto align-middle">
 
-                <ul className="list-disc ml-6 underline">
+                <div className="list-disc ml-6 underline">
                   {carInsurers.map((insurer) => (
-                    <li key={insurer.name} className='py-2'>
+                    <p key={insurer.name} className='py-2'>
                       <Link href={insurer.url} target="_blank" rel="noopener noreferrer">
                         {insurer.name}
                       </Link>
-                    </li>
+                    </p>
                   ))}
-                </ul>
+                </div>
 
               </div>
             </div>
