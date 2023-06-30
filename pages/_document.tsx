@@ -10,7 +10,6 @@ class MyDocument extends Document {
           <meta name="google-site-verification" content="rRKlKFWnlhU_kUGxe4fgENDoEIIcYSSc1DbdpRMn1kY" />
           <meta name="theme-color" content="#ff6341" />
           <script
-            nonce={process.env.nonceScriptSrc}
             data-ad-client="ca-pub-4253472436511726"
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
