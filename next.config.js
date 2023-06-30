@@ -28,7 +28,7 @@ img-src 'self' data: blob: https: 'unsafe-inline' *.googleadservices.com *.googl
 manifest-src 'self';
 object-src 'none';
 script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' 'strict-dynamic' ${isProduction ? "" : "'unsafe-eval'"} https://aboutinsurances.vercel.app/* *.googleadservices.com *.googletagmanager.com *.googletagservices.com *.googlesyndication.com *.google-analytics.com *.googleapis.com *.ggpht.com *.google.com *.google.co.uk *.gstatic.com *.doubleclick.net;
-script-src-elem 'self' 'unsafe-inline' https: *.googleadservices.com *.googletagmanager.com *.googletagservices.com *.googlesyndication.com *.google-analytics.com *.googleapis.com *.ggpht.com *.google.com *.google.co.uk *.gstatic.com *.doubleclick.net;
+script-src-elem 'self' 'unsafe-inline' *.googleadservices.com *.googletagmanager.com *.googletagservices.com *.googlesyndication.com *.google-analytics.com *.googleapis.com *.ggpht.com *.google.com *.google.co.uk *.gstatic.com *.doubleclick.net;
 style-src 'self' 'unsafe-inline';
 `;
 
