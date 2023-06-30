@@ -23,12 +23,12 @@ default-src 'none';
 font-src 'self';
 form-action 'self';  
 frame-ancestors 'self';
-frame-src 'self' googleads.g.doubleclick.net tpc.googlesyndication.com;
+frame-src 'self' https://www.google.com/ googleads.g.doubleclick.net tpc.googlesyndication.com;
 img-src 'self' data: blob: https: 'unsafe-inline' https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://www.googletagmanager.com/gtag/js https://*.tagmanager.google.com https://*.google-analytics.com https://*.google.com.br/ads/ storage.googleapis.com pagead2.googlesyndication.com;  
 manifest-src 'self';
 object-src 'none';
 script-src 'self' https: 'nonce-${nonceScriptSrc}' 'unsafe-inline' 'strict-dynamic' ${isProduction ? "" : "'unsafe-eval'"} https://aboutinsurances.vercel.app/* https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js;
-script-src-elem 'self' 'unsafe-inline' *.googleadservices.com *.googletagmanager.com *.googletagservices.com *.googlesyndication.com *.google-analytics.com *.googleapis.com *.ggpht.com *.google.com *.google.co.uk *.gstatic.com *.doubleclick.net;
+script-src-elem 'self' 'unsafe-inline' https: *.googleadservices.com *.googletagmanager.com *.googletagservices.com *.googlesyndication.com *.google-analytics.com *.googleapis.com *.ggpht.com *.google.com *.google.co.uk *.gstatic.com *.doubleclick.net;
 style-src 'self' 'unsafe-inline';
 `;
 
