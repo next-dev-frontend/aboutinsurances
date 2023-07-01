@@ -4,11 +4,11 @@ import { AppProps } from 'next/app'
 import Head from 'next/head';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
-const BreadCrumbs = dynamic(() => import('../components/BreadCrumbs'))
 const PublicationDate = dynamic(() => import('../components/PublicationDate'))
 const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading...</p>, })
 const BgParallax = dynamic(() => import('../components/BgParallax'), { loading: () => <p>Loading...</p>, })
 const PostCards = dynamic(() => import('../components/PostCards'), { loading: () => <p>Loading...</p>, })
+const BreadCrumbs = dynamic(() => import('../components/BreadCrumbs'))
 const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Loading...</p>, })
 const Analytics = dynamic(() => import('../components/Analytics'))
 
