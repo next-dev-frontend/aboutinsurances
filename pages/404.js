@@ -1,4 +1,6 @@
 import Image from 'next/legacy/image'
+import dynamic from 'next/dynamic'
+const PostCards = dynamic(() => import('../components/PostCards'))
 
 export default function page404() {
   return (
@@ -27,6 +29,8 @@ export default function page404() {
           </div>
         </div>
       </div>
+      <PostCards />
     </section>
+
   )
 }
