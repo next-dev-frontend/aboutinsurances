@@ -9,7 +9,7 @@ export default function termsCanditions() {
       description="By accessing the About Insurances website, you agree to abide by these terms of service,
              all applicable laws and regulations and agree that you are responsible for
              compliance with all applicable local laws..."
-      path="/terms"
+      path="/terms-and-conditions"
     >
       <section id='terms' className="bg-gray-200 mx-auto flex w-full max-w-full h-full">
         <div className="select-none container mx-auto pt-10 w-full max-w-5xl">

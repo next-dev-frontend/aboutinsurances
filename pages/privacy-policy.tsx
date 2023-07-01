@@ -7,7 +7,7 @@ export default function privacyPolicy() {
       title="Privacy Policy"
       titleTemplate="%s | About Insurances"
       description="Your privacy is important to us. It is Site About Insurance policy. Respect your privacy regarding any information we may collect from you on the site"
-      path="/policy"
+      path="/privacy-policy"
     >
       <section id='policy' className="bg-gray-200 mx-auto flex w-full max-w-full h-full">
         <div className="select-none container mx-auto pt-10 w-full max-w-5xl">
