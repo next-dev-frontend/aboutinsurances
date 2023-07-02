@@ -4,8 +4,8 @@ import { AppProps } from 'next/app'
 import Head from 'next/head';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
-const PublicationDate = dynamic(() => import('../components/PublicationDate'))
 const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading...</p>, })
+const PublicationDate = dynamic(() => import('../components/PublicationDate'))
 const BgParallax = dynamic(() => import('../components/BgParallax'), { loading: () => <p>Loading...</p>, })
 const PostCards = dynamic(() => import('../components/PostCards'), { loading: () => <p>Loading...</p>, })
 const BreadCrumbs = dynamic(() => import('../components/BreadCrumbs'))
@@ -38,8 +38,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href='/logos/logo-144x144.png' />
       </Head>
       <NavBar />
-      <PublicationDate />
       <Component {...pageProps} />
+      <PublicationDate />
       <PostCards />
       <BgParallax />
       <SideBar />
