@@ -1,7 +1,7 @@
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
   '/',
-  '/offline',
+  '/page-offline',
   '/manifest.json',
   '/favicon.ico',
   '/logo-about-insurances.webp',
