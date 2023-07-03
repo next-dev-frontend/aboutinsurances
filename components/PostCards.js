@@ -104,13 +104,12 @@ const PostCards = () => {
             </div>
             <div>
               <h3>
-                <Link href="#" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
-                  The no-fuss guide to upselling and cross-selling
+                <Link href="/tips/hiring-business-insurance-professional" passHref className="underline font-bold hover:text-primary mb-4 block text-2xl font-semibold sm:text-3xl">
+                  Hiring a Business Insurance Professional: Your Ultimate Guide
                 </Link>
               </h3>
               <p className="text-body-color text-base">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+                When it comes to running a business, there are numerous factors to consider to ensure its success and longevity. One crucial aspect that often gets overlooked is business insurance. Having the right insurance coverage...
               </p>
             </div>
           </div>
