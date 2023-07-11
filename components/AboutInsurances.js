@@ -1,5 +1,4 @@
 import Image from 'next/legacy/image'
-import ArticleConverter from './ArticleConverter';
 
 const AboutInsurances = () => {
   return (
@@ -9,9 +8,6 @@ const AboutInsurances = () => {
           <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
             How to search and choose reliable insurance companies?
           </h1>
-
-          <ArticleConverter />
-
         </div>
       </div>
 
