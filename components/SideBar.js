@@ -12,19 +12,22 @@ const SideBar = () => {
       </div>
 
       <div className="px-4 py-6">
-        <nav aria-label="Main Nav" className="mt-6 flex flex-col space-y-1 items-center text-sm md:text-xl">
+        <nav aria-label="Main Nav" className="mt-6 flex flex-col space-y-1 text-lg md:text-xl lg:text-2xl">
 
           <Link href="/articles/affordable-pet-insurance" passHref className="flex items-center gap-2 rounded-lg px-4 py-2 text-[#142039] hover:bg-gray-100 hover:text-[#ff6341] underline">
             Hiring a Business Insurance Professional: Your Ultimate Guide
           </Link>
 
-          <Link href="/articles/affordable-pet-insurance" passHref className="flex items-center gap-2 rounded-lg px-4 py-2 text-[#142039] hover:bg-gray-100 hover:text-[#ff6341] underline">
-            Hiring a Business Insurance Professional: Your Ultimate Guide
+          <Link href="/articles/insuring-your-dream-car" passHref className="flex items-center gap-2 rounded-lg px-4 py-2 text-[#142039] hover:bg-gray-100 hover:text-[#ff6341] underline">
+            Insuring Your Dream Car: Top Tips for Comprehensive Coverage
           </Link>
 
-          <Link href="/articles/affordable-pet-insurance" passHref className="flex items-center gap-2 rounded-lg px-4 py-2 text-[#142039] hover:bg-gray-100 hover:text-[#ff6341] underline">
-            Hiring a Business Insurance Professional: Your Ultimate Guide
+
+          <Link href="/articles/The-Perfect-Home-Insurance" passHref className="flex items-center gap-2 rounded-lg px-4 py-2 text-[#142039] hover:bg-gray-100 hover:text-[#ff6341] underline">
+            Finding the Perfect Home Insurance - Options
           </Link>
+
+
 
 
         </nav>

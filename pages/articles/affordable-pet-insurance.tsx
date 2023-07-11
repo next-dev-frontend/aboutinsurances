@@ -29,7 +29,7 @@ export default function AffordablePetInsurance() {
             <div className="w-full px-8 text-md md:text-xl lg:text-2xl">
               <div className="mx-auto align-middle">
 
-                <div className="bg-gray-100 min-h-screen">
+                <div className="min-h-screen">
                   <div className="container mx-auto py-12">
                     <p className="text-xl font-semibold mb-4">Introduction</p>
                     <p className="mb-6">
