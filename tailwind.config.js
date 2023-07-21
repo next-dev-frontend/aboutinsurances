@@ -13,8 +13,6 @@ module.exports = {
         color3: '#27ae60' //green
       },
 
-
-
     }
   },
 

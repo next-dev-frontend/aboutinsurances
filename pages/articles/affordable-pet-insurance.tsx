@@ -5,7 +5,7 @@ export default function AffordablePetInsurance() {
 
   return (
     <PageSeo
-      title=">Affordable Pet Insurance"
+      title="Affordable Pet Insurance"
       titleTemplate="%s | Protect Your Furry Friends"
       description=" If you're a proud pet owner, you understand the joy and companionship that comes with having a furry friend. Pets become an integral part of our lives, providing unconditional love and loyalty."
       path="/articles/"

@@ -5,18 +5,18 @@ const AboutInsurances = () => {
     <section id="insurances" className="container mx-auto pt-10 pb-10 w-full max-w-5xl">
       <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none">
         <div className="w-auto pl-5">
-          <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
+          <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold animate-pulse">
             How to search and choose reliable insurance companies?
           </h1>
         </div>
       </div>
 
-      <div className="w-full mb-6">
+      <div data-anime="left" className="w-full mb-6">
         <div className="h-1 mx-8 my-0 py-0 bg-gray-400 bg-opacity-25" />
       </div>
 
       <div className="flex flex-wrap text-gray-700">
-        <div className="w-auto md:w-1/2 px-8 text-md md:text-xl lg:text-2xl">
+        <div data-anime="left" className="w-auto md:w-1/2 px-8 text-md md:text-xl lg:text-2xl">
           <div className="mx-auto align-middle">
             <div>
               <br />
@@ -56,7 +56,7 @@ const AboutInsurances = () => {
             </div>
           </div>
         </div>
-        <div className="float-right block w-full lg:w-lg xl:w-xl md:w-1/2 h-auto px-4 md:px-8 p-8 pl-8 md:pl-4 xl:pl-2">
+        <div data-anime="up" className="float-right block w-full lg:w-lg xl:w-xl md:w-1/2 h-auto px-4 md:px-8 p-8 pl-8 md:pl-4 xl:pl-2">
           <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
             <Image
               className="rounded mask mask-parallelogram-3"
@@ -99,7 +99,7 @@ const AboutInsurances = () => {
         </div>
       </div>
 
-      <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
+      <div data-anime="left" className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
         <div className="w-auto pl-5">
           <h2 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
             What Are The 10 Most Wanted Insurance?
@@ -111,7 +111,7 @@ const AboutInsurances = () => {
         <div className="h-1 mx-8 my-0 py-0 bg-gray-400 bg-opacity-25" />
       </div>
 
-      <div className="flex flex-wrap text-gray-700">
+      <div data-anime="blur" className="flex flex-wrap text-gray-700">
         <div className="w-full px-8 text-md md:text-xl lg:text-2xl">
           <div className="mx-auto align-middle">
 

@@ -1,4 +1,6 @@
-import '../styles/tailwind.css'
+//import '../styles/tailwind.css'
+import "../styles/globals.css";
+import "tailwindcss/tailwind.css";
 import React, { useEffect } from 'react';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
@@ -29,6 +31,24 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     }
   }, []);
 
+  //animação no scroll
+  useEffect(() => {
+    const item = document.querySelectorAll<HTMLElement>("[data-anime]");
+    const animeScroll = () => {
+      const windowTop = window.pageYOffset + window.innerHeight * 0.85;
+      item.forEach((element) => {
+        if (windowTop > element.offsetTop) {
+          element.classList.add("animate");
+        }
+      })
+    }
+    animeScroll();
+
+    window.addEventListener("scroll", () => {
+      animeScroll();
+    })
+  }, []);
+
   return (
     <>
       <Head>
@@ -38,12 +58,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href='/logos/logo-144x144.png' />
       </Head>
       <NavBar />
+      <BreadCrumbs />
       <Component {...pageProps} />
       <PublicationDate />
       <PostCards />
       <BgParallax />
       <SideBar />
-      <BreadCrumbs />
       <Footer />
       <Analytics />
     </>
