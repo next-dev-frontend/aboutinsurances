@@ -53,10 +53,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav id="header" data-anime="down" className="select-none mx-auto flex-shrink md:flex-shrink-0 bg-white bg-no-repeat w-full max-w-5xl z-30 border-[#142039] border-opacity-70 border-b-4">
+    <nav id="header" data-anime="blur" className="select-none bg-gray-300 mx-auto flex-shrink md:flex-shrink-0 bg-white bg-no-repeat w-full max-w-5xl z-30 border-[#142039] border-opacity-70 border-b-4">
       <div className="text-[#ff6341] whitespace-nowrap w-full container mx-auto flex flex-wrap xl:flex-nowrap items-center justify-between py-2 px-2 pl-4 pr-8">
         <a href="/" className="pl-1 pt-2">
-          <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 overflow-hidden">
+          <div data-anime="down" className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 overflow-hidden">
             <Image
               src="/logos/logo-about-insurances.webp"
               alt="logo about insurances"
@@ -65,7 +65,7 @@ const Navbar = () => {
               priority />
           </div>
         </a>
-        <div className="block xl:hidden pt-2 tab">
+        <div data-anime="up" className="block xl:hidden pt-2 tab">
           <button ref={navMenuRef} className="flex items-center p-1 focus:outline-none transform transition hover:scale-110 duration-1000 ease-in-out" >
             <span className="sr-only">Menu Buttom</span>
             <svg
@@ -76,10 +76,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div
-          ref={navMenuDivRef}
-          className="hidden sticky text-xs text-[#142039] xl:flex w-full items-center h-full pt-4 lg:pt-1"
-        >
+        <div ref={navMenuDivRef} className="hidden sticky text-xs text-[#142039] xl:flex w-full items-center h-full pt-4 lg:pt-1" >
           <ul className="sticky w-full xl:flex justify-end items-center">
             <li className="sticky px-4 p-4">
               <a

@@ -10,6 +10,7 @@ export default function Home() {
       titleTemplate="%s | About Insurances"
       description="Insurance information and tips website. Before contracting any insurance service, visit our website and clarify all your doubts on the subject."
       path="/"
+
     >
       <main>
         <SliderImages />

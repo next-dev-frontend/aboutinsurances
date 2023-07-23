@@ -26,11 +26,9 @@ const SideBar = () => {
             Finding the Perfect Home Insurance - Options
           </Link>
 
-
           <Link href="/articles/Securing-Your-Familys-Future" passHref className="flex items-center gap-2 rounded-lg px-4 py-2 text-[#142039] hover:bg-gray-100 hover:text-[#ff6341] underline">
             Securing Your Family's Future with the Right Policy
           </Link>
-
 
         </nav>
       </div>

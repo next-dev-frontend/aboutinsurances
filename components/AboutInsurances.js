@@ -16,7 +16,7 @@ const AboutInsurances = () => {
       </div>
 
       <div className="flex flex-wrap text-gray-700">
-        <div data-anime="left" className="w-auto md:w-1/2 px-8 text-md md:text-xl lg:text-2xl">
+        <div data-anime="blur" className="w-auto md:w-1/2 px-8 text-md md:text-xl lg:text-2xl">
           <div className="mx-auto align-middle">
             <div>
               <br />
@@ -56,8 +56,8 @@ const AboutInsurances = () => {
             </div>
           </div>
         </div>
-        <div data-anime="up" className="float-right block w-full lg:w-lg xl:w-xl md:w-1/2 h-auto px-4 md:px-8 p-8 pl-8 md:pl-4 xl:pl-2">
-          <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
+        <div className="float-right block w-full lg:w-lg xl:w-xl md:w-1/2 h-auto px-4 md:px-8 p-8 pl-8 md:pl-4 xl:pl-2">
+          <div data-anime="up" className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
             <Image
               className="rounded mask mask-parallelogram-3"
               src="/backgrounds/bg-insurances.webp"
@@ -70,7 +70,7 @@ const AboutInsurances = () => {
           </div>
 
           <a href="https://go.hotmart.com/X80760498R?src=aboutinsurances" rel="noopener noreferrer" target="_blank" role="button">
-            <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
+            <div data-anime="up" className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
               <Image
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/business-template2.webp"
@@ -84,7 +84,7 @@ const AboutInsurances = () => {
           </a>
 
           <a href="https://go.hotmart.com/A80579208O?src=aboutinsurances" rel="noopener noreferrer" target="_blank" role="button">
-            <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
+            <div data-anime="up" className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
               <Image
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/kaspersky-template.webp"
@@ -99,7 +99,7 @@ const AboutInsurances = () => {
         </div>
       </div>
 
-      <div data-anime="left" className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
+      <div data-anime="blur" className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
         <div className="w-auto pl-5">
           <h2 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
             What Are The 10 Most Wanted Insurance?

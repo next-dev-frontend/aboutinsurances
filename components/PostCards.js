@@ -17,8 +17,8 @@ const PostCards = () => {
           </div>
         </div>
       </div>
-      <div data-anime="up" className="flex flex-wrap -mx-4">
-        <div className="w-full p-2 md:w-1/2 lg:w-1/3">
+      <div className="flex flex-wrap -mx-4">
+        <div data-anime="up" className="w-full p-2 md:w-1/2 lg:w-1/3">
           <div className="mx-auto mb-10 max-w-sm">
             <div className="mb-8 overflow-hidden rounded-lg">
               <Image
@@ -42,7 +42,7 @@ const PostCards = () => {
             </div>
           </div>
         </div>
-        <div className="w-full p-2 md:w-1/2 lg:w-1/3">
+        <div data-anime="up" className="w-full p-2 md:w-1/2 lg:w-1/3">
           <div className="mx-auto mb-10 max-w-sm">
             <div className="mb-8 overflow-hidden rounded-lg">
               <Image
@@ -66,7 +66,7 @@ const PostCards = () => {
             </div>
           </div>
         </div>
-        <div className="w-full p-2 md:w-1/2 lg:w-1/3">
+        <div data-anime="up" className="w-full p-2 md:w-1/2 lg:w-1/3">
           <div className="mx-auto mb-10 max-w-sm">
             <div className="mb-8 overflow-hidden rounded-lg">
               <Image
@@ -90,7 +90,7 @@ const PostCards = () => {
             </div>
           </div>
         </div>
-        <div className="w-full p-2 md:w-1/2 lg:w-1/3">
+        <div data-anime="up" className="w-full p-2 md:w-1/2 lg:w-1/3">
           <div className="mx-auto mb-10 max-w-sm">
             <div className="relative mb-8 overflow-hidden rounded-lg">
               <Image
