@@ -27,7 +27,7 @@ const Breadcrumbs = () => {
       </Link>
 
       <div className="flex items-center space-x-2">
-        <Link href="https://aboutinsurances.vercel.app" className="text-gray-500 hover:text-gray-700">
+        <Link href="/" className="text-gray-500 hover:text-gray-700">
           &nbsp;Home
         </Link>
         {pathSegments.map((segment, index) => (

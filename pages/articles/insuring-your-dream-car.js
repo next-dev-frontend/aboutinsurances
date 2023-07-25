@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 const PageSeo = dynamic(() => import('../../components/PageSeo'))
+InsuringYourDreamCar.title = "Insuring Your Dream Car: Top Tips for Comprehensive Coverage.";
 
 export default function InsuringYourDreamCar() {
 
@@ -16,7 +17,7 @@ export default function InsuringYourDreamCar() {
           <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
             <div className="w-auto pl-5">
               <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
-                Insuring Your Dream Car: Top Tips for Comprehensive Coverage
+                Insuring Your Dream Car: Top Tips for Comprehensive Coverage.
               </h1>
             </div>
           </div>
@@ -24,7 +25,6 @@ export default function InsuringYourDreamCar() {
           <div className="w-full mb-6">
             <div className="h-1 mx-8 my-0 py-0 bg-gray-400 bg-opacity-25" />
           </div>
-
 
           <div className="container mx-auto p-4">
             <h1 className="text-3xl font-semibold mb-8">Insuring Your Dream Car: Top Tips for Comprehensive Coverage</h1>
@@ -111,9 +111,9 @@ export default function InsuringYourDreamCar() {
             </p>
           </div>
 
-
         </section>
       </main>
     </PageSeo >
   )
 }
+

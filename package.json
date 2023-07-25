@@ -16,6 +16,7 @@
     "depcheck": "^1.4.3",
     "eslint-config-next": "^13.4.4",
     "glob-parent": "^5.1.2",
+    "gray-matter": "^4.0.3",
     "local-storage": "^2.0.0",
     "next": "^13.4.4",
     "next-images": "^1.8.4",

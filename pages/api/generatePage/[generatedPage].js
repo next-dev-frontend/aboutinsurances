@@ -6,12 +6,13 @@ export default function handler(req, res) {
     const { generatedPage } = req.query;
     const { title, title2, paragraph, articleContent } = req.body;
 
-    const routeName = generatedPage; // The generated route name is now also used as the function name
+    const routeName = generatedPage;
     const words = title.trim().split(/\s+/);
     const sanitizedRouteName = words.slice(0, 4).join('').replace(/\W/g, '');
 
     const pageContent = `import dynamic from 'next/dynamic'
 const PageSeo = dynamic(() => import('../../components/PageSeo'))
+${routeName.charAt(0).toUpperCase() + sanitizedRouteName.slice(1)}.title = "${title} ${title2}";
 
 export default function ${routeName.charAt(0).toUpperCase() + sanitizedRouteName.slice(1)}() {
   return (

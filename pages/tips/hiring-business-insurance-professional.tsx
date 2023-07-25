@@ -128,8 +128,6 @@ export default function Tips4() {
             </div>
           </div>
 
-
-
         </section>
       </main>
     </PageSeo >

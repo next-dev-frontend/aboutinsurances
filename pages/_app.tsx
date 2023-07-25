@@ -10,11 +10,13 @@ const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => 
 const PublicationDate = dynamic(() => import('../components/PublicationDate'))
 const BgParallax = dynamic(() => import('../components/BgParallax'), { loading: () => <p>Loading...</p>, })
 const PostCards = dynamic(() => import('../components/PostCards'), { loading: () => <p>Loading...</p>, })
+const PostLinks = dynamic(() => import('../components/PostLinks'), { loading: () => <p>Loading...</p>, })
 const BreadCrumbs = dynamic(() => import('../components/BreadCrumbs'))
 const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Loading...</p>, })
 const Analytics = dynamic(() => import('../components/Analytics'))
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+
 
   //registrar service-worker
   useEffect(() => {
@@ -63,10 +65,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <PublicationDate />
       <PostCards />
       <BgParallax />
+      <PostLinks />
       <SideBar />
       <Footer />
       <Analytics />
     </>
   )
 }
+
+
 export default MyApp

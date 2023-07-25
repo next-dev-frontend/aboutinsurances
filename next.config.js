@@ -98,7 +98,6 @@ module.exports = withTM(
 
       env: {
         nonceScriptSrc,
-        //nonceStyleSrc,
       },
 
       typescript: {

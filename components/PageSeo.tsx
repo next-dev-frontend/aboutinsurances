@@ -1,24 +1,9 @@
-import { useState, useEffect } from 'react';
-import { ArticleJsonLd, NextSeo } from 'next-seo';
+import { ArticleJsonLd, NextSeo } from 'next-seo'
 
 function PageSeo({ title, titleTemplate, description, path, children }) {
-  const url = `https://aboutinsurances.vercel.app${path}`;
+  const url = `https://aboutinsurances.vercel.app${path}`
   const imageUrl = 'https:/aboutinsurances.vercel.app/backgrounds/bg-insurances.jpeg';
-
-  // State to hold the last build date
-  const [lastBuildDate, setLastBuildDate] = useState(null);
-
-  useEffect(() => {
-    fetch('/api/getLastBuildDate') // Replace this with the endpoint to fetch the last build date from your backend or server
-      .then((response) => response.json())
-      .then((data) => {
-        const lastBuildDate = new Date(data.lastBuildDate); // Assuming the API returns the last build date as a string in ISO format
-        setLastBuildDate(lastBuildDate);
-      })
-      .catch((error) => {
-        console.error('Error fetching last build date:', error);
-      });
-  }, []);
+  const currentDate = new Date().toISOString();
 
   return (
     <div>
@@ -46,8 +31,8 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
         openGraph={{
           type: 'article',
           article: {
-            publishedTime: lastBuildDate?.toISOString() || '2023-06-21T23:04:13Z',
-            modifiedTime: lastBuildDate?.toISOString() || '2023-01-21T18:04:43Z',
+            publishedTime: currentDate,
+            modifiedTime: currentDate,
             tags: ['insurance', 'tips', 'coverage'],
           },
           url: url,
@@ -76,8 +61,8 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
           'https:/aboutinsurances.vercel.app/cards/post-card3.webp',
           'https:/aboutinsurances.vercel.app/cards/post-card4.webp',
         ]}
-        datePublished={lastBuildDate?.toISOString() || "2023-06-21T23:04:13Z"}
-        dateModified={lastBuildDate?.toISOString() || "2023-01-21T18:04:43Z"}
+        datePublished={currentDate}
+        dateModified={currentDate}
         authorName="Lopes Matheus S."
         publisherName="Website About Insurances"
         publisherLogo="https://aboutinsurances.vercel.app/logos/logo-72x72.png"
@@ -88,4 +73,13 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
     </div>
   )
 }
-export default PageSeo;
+export default PageSeo
+
+export async function getServerSideProps() {
+  const currentDate = new Date().toString();
+  return {
+    props: {
+      currentDate,
+    },
+  };
+}

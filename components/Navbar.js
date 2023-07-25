@@ -62,7 +62,8 @@ const Navbar = () => {
               alt="logo about insurances"
               width={110}
               height={110}
-              priority />
+              priority
+            />
           </div>
         </a>
         <div data-anime="up" className="block xl:hidden pt-2 tab">
