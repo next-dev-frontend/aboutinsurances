@@ -1,9 +1,8 @@
 import { ArticleJsonLd, NextSeo } from 'next-seo'
 
-function PageSeo({ title, titleTemplate, description, path, children }) {
+function PageSeo({ title, titleTemplate, description, path, publishedTime, modifiedTime, children }) {
   const url = `https://aboutinsurances.vercel.app${path}`
   const imageUrl = 'https:/aboutinsurances.vercel.app/backgrounds/bg-insurances.jpeg';
-  const currentDate = new Date().toISOString();
 
   return (
     <div>
@@ -31,8 +30,8 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
         openGraph={{
           type: 'article',
           article: {
-            publishedTime: currentDate,
-            modifiedTime: currentDate,
+            publishedTime: publishedTime,
+            modifiedTime: modifiedTime,
             tags: ['insurance', 'tips', 'coverage'],
           },
           url: url,
@@ -61,8 +60,8 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
           'https:/aboutinsurances.vercel.app/cards/post-card3.webp',
           'https:/aboutinsurances.vercel.app/cards/post-card4.webp',
         ]}
-        datePublished={currentDate}
-        dateModified={currentDate}
+        datePublished={publishedTime}
+        dateModified={modifiedTime}
         authorName="Lopes Matheus S."
         publisherName="Website About Insurances"
         publisherLogo="https://aboutinsurances.vercel.app/logos/logo-72x72.png"
@@ -75,11 +74,4 @@ function PageSeo({ title, titleTemplate, description, path, children }) {
 }
 export default PageSeo
 
-export async function getServerSideProps() {
-  const currentDate = new Date().toString();
-  return {
-    props: {
-      currentDate,
-    },
-  };
-}
+

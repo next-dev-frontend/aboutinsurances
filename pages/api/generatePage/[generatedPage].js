@@ -10,8 +10,17 @@ export default function handler(req, res) {
     const words = title.trim().split(/\s+/);
     const sanitizedRouteName = words.slice(0, 4).join('').replace(/\W/g, '');
 
+    const currentDate = new Date().toISOString();
+    const formattedDate = new Date().toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    });
+
     const pageContent = `import dynamic from 'next/dynamic'
+import BgFixed from '../../components/BgFixed';
 const PageSeo = dynamic(() => import('../../components/PageSeo'))
+
 ${routeName.charAt(0).toUpperCase() + sanitizedRouteName.slice(1)}.title = "${title} ${title2}";
 
 export default function ${routeName.charAt(0).toUpperCase() + sanitizedRouteName.slice(1)}() {
@@ -21,9 +30,12 @@ export default function ${routeName.charAt(0).toUpperCase() + sanitizedRouteName
       titleTemplate="%s | ${title2}"
       description="${paragraph}"
       path="/articles/"
+      publishedTime="${currentDate}"
+      modifiedTime="${currentDate}"
     >
       <main>
-        <section id='convertText' className="container mx-auto pt-10 pb-10 w-full max-w-5xl">
+        <BgFixed />
+        <section id='convertText' className="container mx-auto w-full max-w-5xl">
 
           <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
             <div className="w-auto pl-5">
@@ -47,6 +59,14 @@ export default function ${routeName.charAt(0).toUpperCase() + sanitizedRouteName
             </div>
           </div>
 
+          <div className="container mx-auto py-8 px-8 w-full max-w-5xl">
+          <div className="flex flex-nowrap items-center justify-end px-2">
+            <p className="font-bold text-sm md:text-lg text-white bg-color1 px-2 rounded border-2 border-color2">
+              last update: ${formattedDate}
+            </p>
+          </div>
+        </div>
+
         </section>
       </main>
     </PageSeo >
@@ -67,3 +87,4 @@ export default function ${routeName.charAt(0).toUpperCase() + sanitizedRouteName
     res.status(405).json({ message: 'Method not allowed' });
   }
 }
+

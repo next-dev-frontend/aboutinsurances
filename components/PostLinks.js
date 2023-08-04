@@ -11,12 +11,12 @@ const PostLinks = () => {
         </div>
       </div>
 
-      <div data-anime="left" className="w-full mb-6">
+      <div className="w-full mb-6">
         <div className="h-1 mx-8 my-0 py-0 bg-gray-400 bg-opacity-25" />
       </div>
 
       <div className="flex flex-wrap text-gray-700">
-        <div data-anime="blur" className="w-auto px-8 text-md md:text-xl lg:text-2xl">
+        <div className="w-auto px-8 text-md md:text-xl lg:text-2xl">
           <div className="mx-auto align-middle">
 
             <p className="text-gray-700">When it comes to safeguarding your future and protecting what matters most, having reliable insurance coverage is paramount. With numerous insurance providers vying for your attention, it can be overwhelming to find the best fit for your needs. In this comprehensive guide, we will explore best insurance companies, highlighting their strengths, coverage options, and customer satisfaction. So, let&#039;s dive in and make an informed decision about securing your tomorrow!</p>
@@ -56,7 +56,7 @@ const PostLinks = () => {
       </div>
 
       <div className="flex flex-wrap text-gray-800 bg-gray-200">
-        <div data-anime="blur" className="w-auto px-8 text-md md:text-xl lg:text-2xl">
+        <div className="w-auto px-8 text-md md:text-xl lg:text-2xl">
           <div className="mx-auto align-middle">
             <br />
             <Link href="https://www.unitedhealthgroup.com/" target="_blank" rel="noopener noreferrer">

@@ -10,6 +10,8 @@ export default function termsCanditions() {
              all applicable laws and regulations and agree that you are responsible for
              compliance with all applicable local laws..."
       path="/terms-and-conditions"
+      publishedTime="2023-07-18T20:27:00Z"
+      modifiedTime="2023-07-29T21:12:53Z"
     >
       <section id='terms' className="bg-gray-200 mx-auto flex w-full max-w-full h-full">
         <div className="select-none container mx-auto pt-10 w-full max-w-5xl">
@@ -185,6 +187,14 @@ export default function termsCanditions() {
                   jurisdiction of the courts in that state or locality.
                 </p>
               </div>
+            </div>
+          </div>
+
+          <div className="container mx-auto py-8 px-8 w-full max-w-5xl">
+            <div className="flex flex-nowrap items-center justify-end px-2">
+              <p className="font-bold text-sm md:text-lg text-white bg-color1 px-2 rounded border-2 border-color2">
+                last update: August 1, 2023
+              </p>
             </div>
           </div>
 

@@ -9,6 +9,8 @@ export default function SecuringYourFamilysFuture() {
       titleTemplate="%s | With the Right Policy"
       description="As life unfolds with its unpredictable events, securing your family's future becomes a crucial responsibility. Protecting your loved ones and ensuring their financial stability is of paramount importance."
       path="/articles/"
+      publishedTime="2023-07-18T20:27:00Z"
+      modifiedTime="2023-07-29T21:12:53Z"
     >
       <main>
         <section id='convertText' className="container mx-auto pt-10 pb-10 w-full max-w-5xl">
@@ -112,6 +114,14 @@ export default function SecuringYourFamilysFuture() {
                 <h2 className="font-bold text-gray-900">Yes, you can and should update your insurance policy</h2>
 
               </div>
+            </div>
+          </div>
+
+          <div className="container mx-auto py-8 px-8 w-full max-w-5xl">
+            <div className="flex flex-nowrap items-center justify-end px-2">
+              <p className="font-bold text-sm md:text-lg text-white bg-color1 px-2 rounded border-2 border-color2">
+                last update: August 1, 2023
+              </p>
             </div>
           </div>
 

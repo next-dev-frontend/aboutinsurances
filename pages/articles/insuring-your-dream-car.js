@@ -10,6 +10,8 @@ export default function InsuringYourDreamCar() {
       titleTemplate="%s | for Comprehensive Coverage"
       description="Owning a dream car is a thrilling experience, but it also comes with the responsibility of insuring it properly. Comprehensive coverage ensures that you..."
       path="/articles/"
+      publishedTime="2023-07-18T20:27:00Z"
+      modifiedTime="2023-07-29T21:12:53Z"
     >
       <main>
         <section id='InsuringYourDreamCar' className="select-none container mx-auto pt-10 pb-10 w-full max-w-5xl">
@@ -109,6 +111,14 @@ export default function InsuringYourDreamCar() {
             <p className="mb-6">
               In the event of theft, promptly report it to the authorities and inform your insurance company to initiate the claims process.
             </p>
+          </div>
+
+          <div className="container mx-auto py-8 px-8 w-full max-w-5xl">
+            <div className="flex flex-nowrap items-center justify-end px-2">
+              <p className="font-bold text-sm md:text-lg text-white bg-color1 px-2 rounded border-2 border-color2">
+                last update: August 1, 2023
+              </p>
+            </div>
           </div>
 
         </section>

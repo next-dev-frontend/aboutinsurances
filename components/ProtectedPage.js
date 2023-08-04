@@ -40,6 +40,13 @@ const ProtectedPage = () => {
     }
   };
 
+  const clearAll = async () => {
+    setTitle('');
+    setTitle2('');
+    setParagraph('');
+    setArticleContent('');
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center">
       {loggedIn ? (
@@ -74,12 +81,20 @@ const ProtectedPage = () => {
               className="border border-gray-300 p-2 mb-2 rounded-lg w-full"
               rows="10"
             />
-            <button
-              onClick={handleGeneratePage}
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg"
-            >
-              Generate Page
-            </button>
+            <div class="flex justify-between">
+              <button
+                onClick={handleGeneratePage}
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg"
+              >
+                Generate Page
+              </button>
+              <button
+                onClick={clearAll}
+                class="bg-red-500 text-white px-4 py-2 rounded-lg"
+              >
+                Clear
+              </button>
+            </div>
           </div>
         </div>
       ) : (

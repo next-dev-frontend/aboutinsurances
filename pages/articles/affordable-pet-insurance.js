@@ -1,5 +1,6 @@
 import React from 'react';
 import PageSeo from '../../components/PageSeo';
+import BgFixed from '../../components/BgFixed';
 
 AffordablePetInsurance.title = "Affordable Pet Insurance: Protect Your Furry Friends without Breaking the Bank";
 
@@ -10,9 +11,12 @@ export default function AffordablePetInsurance() {
       titleTemplate="%s | Protect Your Furry Friends"
       description="If you're a proud pet owner, you understand the joy and companionship that comes with having a furry friend. Pets become an integral part of our lives, providing unconditional love and loyalty."
       path="/articles/"
+      publishedTime="2023-07-18T20:27:00Z"
+      modifiedTime="2023-07-29T21:12:53Z"
     >
       <main>
-        <section id='AffordablePetInsurance' className="select-none container mx-auto pt-10 pb-10 w-full max-w-5xl">
+        <BgFixed />
+        <section id='AffordablePetInsurance' className="select-none container mx-auto w-full max-w-5xl">
 
           <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
             <div className="w-auto pl-5">
@@ -122,6 +126,14 @@ export default function AffordablePetInsurance() {
                 </div>
 
               </div>
+            </div>
+          </div>
+
+          <div className="container mx-auto py-8 px-8 w-full max-w-5xl">
+            <div className="flex flex-nowrap items-center justify-end px-2">
+              <p className="font-bold text-sm md:text-lg text-white bg-color1 px-2 rounded border-2 border-color2">
+                last update: August 1, 2023
+              </p>
             </div>
           </div>
 

@@ -4,8 +4,14 @@ const urlsToCache = [
   '/page-offline',
   '/manifest.json',
   '/favicon.ico',
-  '/logo-about-insurances.webp',
-  '/logo-144x144.png',
+  '/logos/logo-about-insurances.webp',
+  '/logos/logo-144x144.png',
+  '/backgrounds/bg-insurances.webp',
+  '/backgrounds/bg1-insurances.webp',
+  '/backgrounds/bg2-insurances.webp',
+  '/backgrounds/bg3-insurances.webp',
+  '/backgrounds/bg4-insurances.webp',
+  '/backgrounds/bg6-insurances.webp',
 ];
 
 self.addEventListener('install', event => {
@@ -37,7 +43,7 @@ self.addEventListener('fetch', event => {
           })
           .catch(() => {
             // If fetch fails, return the offline page
-            return caches.match('/offline');
+            return caches.match('/page-offline');
           });
       })
   );
