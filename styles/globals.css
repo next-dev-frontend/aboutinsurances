@@ -5,7 +5,7 @@
 /*Animações*/
 [data-anime] {
   opacity: 0;
-  transition: 1.5s;
+  transition: 1.0s;
 }
 
 [data-anime="up"] {
@@ -25,10 +25,18 @@
 }
 
 [data-anime="blur"] {
-  transition: all 2.0s cubic-bezier(.71, 0, .33, 1.56)
+  transition: all 1.0s cubic-bezier(.71, 0, .33, 1.56)
 }
 
 [data-anime].animate {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+.custom-img {
+  background-image: none;
+}
+
+.custom-img.lazy-loaded {
+  background-image: url("/backgrounds/bg6-insurances.webp");
 }

@@ -1,6 +1,6 @@
-import '../styles/tailwind.css'
-//import "../styles/globals.css";
-//import "tailwindcss/tailwind.css";
+//import '../styles/tailwind.css'
+import "../styles/globals.css";
+import "tailwindcss/tailwind.css";
 import React, { useEffect } from 'react';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
@@ -12,6 +12,7 @@ const BgParallax = dynamic(() => import('../components/BgParallax'), { loading: 
 const PostLinks = dynamic(() => import('../components/PostLinks'), { loading: () => <p>Loading...</p>, })
 const SideBar = dynamic(() => import('../components/SideBar'), { loading: () => <p>Loading...</p>, })
 const Footer = dynamic(() => import('../components/Footer'), { loading: () => <p>Loading...</p>, })
+const ScrollToTop = dynamic(() => import('../components/ScrollToTop'))
 const Analytics = dynamic(() => import('../components/Analytics'))
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -58,6 +59,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href='/logos/logo-144x144.png' />
       </Head>
       <NavBar />
+      <ScrollToTop />
       <BreadCrumbs />
       <Component {...pageProps} />
       <PostCards />

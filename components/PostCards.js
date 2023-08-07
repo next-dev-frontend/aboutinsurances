@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const PostCards = () => {
   return (
-    <section className="container mx-auto w-full max-w-5xl px-4">
+    <section id="tips" className="container mx-auto w-full max-w-5xl px-4">
       <div className="flex flex-wrap justify-center">
         <div className="w-full lg:w-2/3">
           <div className="mx-auto mb-12 max-w-full text-center lg:mb-20 p-8">

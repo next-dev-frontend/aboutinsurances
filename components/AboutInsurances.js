@@ -3,13 +3,6 @@ import Image from 'next/legacy/image'
 const AboutInsurances = () => {
   return (
     <section id="insurances" className="container mx-auto pt-10 pb-10 w-full max-w-5xl">
-      <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none">
-        <div className="w-auto pl-5">
-          <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold animate-pulse">
-            How to sеarch and choosе rеliablе insurancе companiеs?
-          </h1>
-        </div>
-      </div>
 
       <div className="w-full mb-6">
         <div className="h-1 mx-8 my-0 py-0 bg-gray-400 bg-opacity-25" />

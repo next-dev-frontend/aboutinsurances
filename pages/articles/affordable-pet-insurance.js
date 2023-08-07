@@ -1,6 +1,5 @@
 import React from 'react';
 import PageSeo from '../../components/PageSeo';
-import BgFixed from '../../components/BgFixed';
 
 AffordablePetInsurance.title = "Affordable Pet Insurance: Protect Your Furry Friends without Breaking the Bank";
 
@@ -15,7 +14,6 @@ export default function AffordablePetInsurance() {
       modifiedTime="2023-07-29T21:12:53Z"
     >
       <main>
-        <BgFixed />
         <section id='AffordablePetInsurance' className="select-none container mx-auto w-full max-w-5xl">
 
           <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">

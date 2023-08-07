@@ -17,8 +17,50 @@ export default function handler(req, res) {
       year: 'numeric'
     });
 
+    const images = [
+      "/backgrounds/bg1-insurances.webp",
+      "/backgrounds/bg2-insurances.webp",
+      "/backgrounds/bg3-insurances.webp",
+      "/backgrounds/bg4-insurances.webp",
+      "/backgrounds/bg6-insurances.webp",
+      "/backgrounds/bg7-insurances.webp",
+      "/backgrounds/bg8-insurances.webp",
+      "/backgrounds/bg9-insurances.webp",
+      "/backgrounds/bg10-insurances.webp",
+      "/backgrounds/bg11-insurances.webp",
+      "/backgrounds/bg12-insurances.webp",
+      "/backgrounds/bg13-insurances.webp",
+      "/backgrounds/bg14-insurances.webp",
+      "/backgrounds/bg15-insurances.webp",
+      "/backgrounds/bg16-insurances.webp",
+      "/backgrounds/bg17-insurances.webp",
+      "/backgrounds/bg18-insurances.webp",
+      "/backgrounds/bg19-insurances.webp",
+      "/backgrounds/bg20-insurances.webp",
+      "/backgrounds/bg21-insurances.webp",
+      "/backgrounds/bg22-insurances.webp",
+      "/backgrounds/bg23-insurances.webp",
+      "/backgrounds/bg24-insurances.webp",
+      "/backgrounds/bg25-insurances.webp",
+      "/backgrounds/bg26-insurances.webp",
+      "/backgrounds/bg27-insurances.webp",
+      "/backgrounds/bg28-insurances.webp",
+      "/backgrounds/bg29-insurances.webp",
+      "/backgrounds/bg30-insurances.webp",
+      "/backgrounds/bg31-insurances.webp",
+      "/backgrounds/bg32-insurances.webp",
+      "/backgrounds/bg33-insurances.webp",
+      "/backgrounds/bg34-insurances.webp",
+      "/backgrounds/bg35-insurances.webp",
+      "/backgrounds/bg36-insurances.webp",
+      "/backgrounds/bg37-insurances.webp",
+      "/backgrounds/bg38-insurances.webp"
+    ];
+
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const randomImagePath = images[randomIndex];
+
     const pageContent = `import dynamic from 'next/dynamic'
-import BgFixed from '../../components/BgFixed';
 const PageSeo = dynamic(() => import('../../components/PageSeo'))
 
 ${routeName.charAt(0).toUpperCase() + sanitizedRouteName.slice(1)}.title = "${title} ${title2}";
@@ -34,22 +76,16 @@ export default function ${routeName.charAt(0).toUpperCase() + sanitizedRouteName
       modifiedTime="${currentDate}"
     >
       <main>
-        <BgFixed />
         <section id='convertText' className="container mx-auto w-full max-w-5xl">
-
-          <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
-            <div className="w-auto pl-5">
-              <h1 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
+          <div className="flex flex-nowrap items-center h-96 justify-center px-4 md:px-0 py-8 shadow-xl md:shadow-none bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('${randomImagePath}')" }}>
+            <div className="w-2/3 p-4 bg-color1 bg-opacity-70 rounded">
+              <h1 className="my-4 text-center text-4xl md:text-5xl lg:text-6xl text-white font-bold underline decoration-color2">
               ${title} ${title2}
               </h1>
             </div>
           </div>
 
-          <div className="w-full mb-6">
-            <div className="h-1 mx-8 my-0 py-0 bg-gray-400 bg-opacity-25" />
-          </div>
-
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap pt-16">
             <div className="w-full px-8 text-md md:text-xl lg:text-2xl">
               <div className="mx-auto align-middle">
 

@@ -3,7 +3,7 @@ import Image from 'next/legacy/image'
 
 const Contact = () => {
   return (
-    <section className="select-none container max-w-5xl mx-auto w-full bg-opacity-0 rounded">
+    <section id="about" className="select-none container max-w-5xl mx-auto w-full bg-opacity-0 rounded">
       <div className="grid grid-cols-2">
         <div className="order-1 col-span-full md:col-span-1 py-5 md:py-6 px-6">
           <div className="bg-opacity-0 mx-auto max-w-xl flex flex-col space-y-5">
@@ -87,8 +87,61 @@ const Contact = () => {
 
         <div className="order-2 col-span-full md:col-span-1 py-5 md:py-10 px-6">
           <form className="bg-opacity-0 rounded mx-auto max-w-xl space-y-4">
-            <div className="w-full">
-              <ul className="flex mx-auto w-max h-full bg-white border-2 border-light-green rounded p-2 items-center">
+
+            <div className="w-full mb-4 bg-color1 p-4 rounded">
+              <p className="w-full text-xl lg:text-2xl text-left text-white">
+                Contact
+              </p>
+              <div className="w-full py-2">
+                <a href="mailto:service@aboutinsurances.com" title="email contact" className="font-bold inline-flex items-center text-base text-light-green w-min bg-white hover:bg-color2 rounded px-4 py-4 border-4 border-gray-200">
+                  service@aboutinsurances.com
+                </a>
+              </div>
+            </div>
+
+            <div className='flex mx-auto text-xs lg:text-sm'>
+              <ul className="sticky w-full xl:flex justify-end items-center">
+                <li className="sticky px-4 p-4">
+                  <a
+                    href="#tips"
+                    id="nav-item2"
+                    className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
+                  >
+                    TIPS
+                  </a>
+                </li>
+                <li className="sticky px-4 p-4">
+                  <a
+                    href="#articles"
+                    id="nav-item2"
+                    className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
+                  >
+                    ARTICLES
+                  </a>
+                </li>
+                <li className="sticky px-4 p-4">
+                  <a
+                    href="/privacy-policy"
+                    id="nav-item2"
+                    className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
+                  >
+                    PRIVACY POLICY
+                  </a>
+                </li>
+                <li className="sticky px-4 p-4">
+                  <a
+                    href="/terms-and-conditions"
+                    id="nav-item1"
+                    className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
+                  >
+                    TERMS & CONDITIONS / COOKIES
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="w-full pt-8">
+              <ul className="flex mx-auto w-max h-full bg-white border-2 border-color1 rounded p-2 items-center">
                 <li>
                   <a
                     href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Faboutinsurances.vercel.app%2F&hl=pt_BR"
@@ -110,6 +163,7 @@ const Contact = () => {
                 </li>
               </ul>
             </div>
+
           </form>
         </div>
       </div>

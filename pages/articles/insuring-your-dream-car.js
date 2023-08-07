@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 const PageSeo = dynamic(() => import('../../components/PageSeo'))
+
 InsuringYourDreamCar.title = "Insuring Your Dream Car: Top Tips for Comprehensive Coverage.";
 
 export default function InsuringYourDreamCar() {

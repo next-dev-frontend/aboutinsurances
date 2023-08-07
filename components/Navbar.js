@@ -81,12 +81,32 @@ const Navbar = () => {
           <ul className="sticky w-full xl:flex justify-end items-center">
             <li className="sticky px-4 p-4">
               <a
-                href="/terms-and-conditions"
-                id="nav-item1"
-                ref={navItem1Ref}
+                href="#about"
+                id="nav-item2"
+                ref={navItem2Ref}
                 className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
               >
-                TERMS & CONDITIONS / COOKIES
+                ABOUT US
+              </a>
+            </li>
+            <li className="sticky px-4 p-4">
+              <a
+                href="#tips"
+                id="nav-item2"
+                ref={navItem2Ref}
+                className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
+              >
+                TIPS
+              </a>
+            </li>
+            <li className="sticky px-4 p-4">
+              <a
+                href="#articles"
+                id="nav-item2"
+                ref={navItem2Ref}
+                className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
+              >
+                ARTICLES
               </a>
             </li>
             <li className="sticky px-4 p-4">
@@ -97,6 +117,16 @@ const Navbar = () => {
                 className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
               >
                 PRIVACY POLICY
+              </a>
+            </li>
+            <li className="sticky px-4 p-4">
+              <a
+                href="/terms-and-conditions"
+                id="nav-item1"
+                ref={navItem1Ref}
+                className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
+              >
+                TERMS & CONDITIONS / COOKIES
               </a>
             </li>
           </ul>

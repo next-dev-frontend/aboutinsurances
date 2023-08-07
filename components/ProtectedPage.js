@@ -81,16 +81,16 @@ const ProtectedPage = () => {
               className="border border-gray-300 p-2 mb-2 rounded-lg w-full"
               rows="10"
             />
-            <div class="flex justify-between">
+            <div className="flex justify-between">
               <button
                 onClick={handleGeneratePage}
-                class="bg-blue-500 text-white px-4 py-2 rounded-lg"
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg"
               >
                 Generate Page
               </button>
               <button
                 onClick={clearAll}
-                class="bg-red-500 text-white px-4 py-2 rounded-lg"
+                className="bg-red-500 text-white px-4 py-2 rounded-lg"
               >
                 Clear
               </button>

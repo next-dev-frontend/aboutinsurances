@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-import BgFixed from '../../components/BgFixed';
 const PageSeo = dynamic(() => import('../../components/PageSeo'))
 
 SafguardYourSmallBusinss.title = "Safеguard Your Small Businеss  with Tailorеd Insurancе";
@@ -15,7 +14,6 @@ export default function SafguardYourSmallBusinss() {
       modifiedTime="2023-08-04T02:34:38.257Z"
     >
       <main>
-        <BgFixed />
         <section id='convertText' className="container mx-auto w-full max-w-5xl">
 
           <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
