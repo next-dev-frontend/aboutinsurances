@@ -18,6 +18,7 @@
     "glob-parent": "^5.1.2",
     "gray-matter": "^4.0.3",
     "local-storage": "^2.0.0",
+    "lodash": "^4.17.21",
     "next": "^13.4.4",
     "next-images": "^1.8.4",
     "next-postcss": "^2.0.0",

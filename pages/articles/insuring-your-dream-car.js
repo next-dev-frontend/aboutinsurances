@@ -30,7 +30,6 @@ export default function InsuringYourDreamCar() {
           </div>
 
           <div className="container mx-auto p-4">
-            <h1 className="text-3xl font-semibold mb-8">Insuring Your Dream Car: Top Tips for Comprehensive Coverage</h1>
             <h2 className="text-xl font-semibold mb-4">Understanding Comprehensive Coverage</h2>
             <p className="mb-6">
               Comprehensive coverage is an insurance policy that provides protection for your dream car against various risks beyond collisions, such as theft, vandalism, fire, or natural disasters. It ensures that you are financially safeguarded in case of unforeseen events that can cause damage to your vehicle.

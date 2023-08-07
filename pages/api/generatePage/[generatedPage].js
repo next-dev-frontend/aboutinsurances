@@ -78,7 +78,7 @@ export default function ${routeName.charAt(0).toUpperCase() + sanitizedRouteName
       <main>
         <section id='convertText' className="container mx-auto w-full max-w-5xl">
           <div className="flex flex-nowrap items-center h-96 justify-center px-4 md:px-0 py-8 shadow-xl md:shadow-none bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('${randomImagePath}')" }}>
-            <div className="w-2/3 p-4 bg-color1 bg-opacity-70 rounded">
+            <div className="w-full md:w-2/3 p-4 bg-color1 bg-opacity-70 rounded">
               <h1 className="my-4 text-center text-4xl md:text-5xl lg:text-6xl text-white font-bold underline decoration-color2">
               ${title} ${title2}
               </h1>
