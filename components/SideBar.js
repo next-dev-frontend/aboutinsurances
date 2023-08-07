@@ -15,14 +15,14 @@ const SideBar = () => {
   // Inicializa os artigos embaralhados como uma lista vazia
   const [shuffledArticles, setShuffledArticles] = useState([]);
 
-  const [displayedArticles, setDisplayedArticles] = useState(20);
+  const [displayedArticles, setDisplayedArticles] = useState(10);
 
   const handleShowMore = () => {
-    setDisplayedArticles((prevDisplayedArticles) => prevDisplayedArticles + 20);
+    setDisplayedArticles((prevDisplayedArticles) => prevDisplayedArticles + 10);
   };
 
   const handleShowLess = () => {
-    setDisplayedArticles(20);
+    setDisplayedArticles(10);
   };
 
   useEffect(() => {
