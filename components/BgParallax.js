@@ -26,7 +26,7 @@ function BgParallax() {
     <div>
       <div className="flex items-center justify-center h-96 mb-12 bg-fixed bg-center bg-cover custom-img">
         <span className="sr-only">code html background</span>
-        <div className="sticky p-4 h-max max-w-3xl text-white bg-gray-900 bg-opacity-30">
+        <div className="sticky p-4 h-max max-w-3xl text-white bg-gray-900 bg-opacity-60">
           <h2 data-anime="left" className="sticky p-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center md:text-left">
             "Security is not the end goal. It's a starting point."
           </h2>

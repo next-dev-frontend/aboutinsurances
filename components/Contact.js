@@ -104,7 +104,6 @@ const Contact = () => {
                 <li className="sticky px-4 p-4">
                   <a
                     href="#tips"
-                    id="nav-item2"
                     className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
                   >
                     TIPS
@@ -113,7 +112,6 @@ const Contact = () => {
                 <li className="sticky px-4 p-4">
                   <a
                     href="#articles"
-                    id="nav-item2"
                     className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
                   >
                     ARTICLES
@@ -122,7 +120,6 @@ const Contact = () => {
                 <li className="sticky px-4 p-4">
                   <a
                     href="/privacy-policy"
-                    id="nav-item2"
                     className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
                   >
                     PRIVACY POLICY
@@ -131,7 +128,6 @@ const Contact = () => {
                 <li className="sticky px-4 p-4">
                   <a
                     href="/terms-and-conditions"
-                    id="nav-item1"
                     className="sticky inline-block no-underline font-bold relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff6341] before:transition hover:before:scale-100"
                   >
                     TERMS & CONDITIONS / COOKIES
