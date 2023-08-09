@@ -7,7 +7,7 @@ const Breadcrumbs = () => {
   const pathSegments = router.asPath.split('/').filter((segment) => segment !== '');
 
   return (
-    <section className="container mx-auto w-full max-w-5xl px-4 py-4 flex wrap md:no-wrap">
+    <section className="select-none container mx-auto w-full max-w-5xl px-4 py-4 flex wrap md:no-wrap">
 
       <Link href="/" aria-label='Home'>
         <svg

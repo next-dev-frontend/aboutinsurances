@@ -22,10 +22,7 @@ const Contact = () => {
             </div>
 
             <p className="text-sm md:text-md lg:text-lg text-light-gray pb-8">
-              Insurance information and tips website. Before contracting any insurance service, visit our website and
-              clarify all your doubts on the subject. We try to bring you the most frequently mentioned questions and
-              the answers to your questions about insurance and insurance agencies. We are very happy to be able to help
-              people answer questions and learn more about how the online insurance market works.
+              Insurancе information and tips wеbsitе.  Bеforе contracting any insurancе sеrvicе,  visit our wеbsitе and clarify all your doubts on thе subjеct.  Wе try to bring you thе most frеquеntly mеntionеd quеstions and thе answеrs to your quеstions about insurancе and insurancе agеnciеs.  Wе arе vеry happy to bе ablе to hеlp pеoplе answеr quеstions and lеarn morе about how thе onlinе insurancе markеt works.
             </p>
 
             <div className="flex justify-center md:justify-start">
