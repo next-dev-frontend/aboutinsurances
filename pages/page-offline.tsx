@@ -10,7 +10,7 @@ export default function pageOffline() {
       <section id="offline" className="select-none relative flex flex-wrap flex-shrink md:flex-shrink-0 items-center justify-center m-auto bg-no-repeat w-full max-w-full h-screen">
         <div className="absolute grid h-screen place-content-center bg-opacity-0">
           <div className="text-center">
-            <h1 className="text-9xl font-black text-[#142039]">Offline!</h1>
+            <h1 className="text-9xl font-black text-[#142039]">This page is Offline! Try Later.</h1>
             <p className="mt-4 text-gray-500 pb-8">Page not found.</p>
             <div className="w-full items-center">
               <a href="/">
