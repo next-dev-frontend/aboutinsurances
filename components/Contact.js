@@ -3,7 +3,7 @@ import Image from 'next/legacy/image'
 
 const Contact = () => {
   return (
-    <section id="about" className="select-none container max-w-5xl mx-auto w-full bg-opacity-0 rounded">
+    <section id="about" className="container max-w-5xl mx-auto w-full bg-opacity-0 rounded">
       <div className="grid grid-cols-2">
         <div className="order-1 col-span-full md:col-span-1 py-5 md:py-6 px-6">
           <div className="bg-opacity-0 mx-auto max-w-xl flex flex-col space-y-5">
@@ -85,17 +85,6 @@ const Contact = () => {
         <div className="order-2 col-span-full md:col-span-1 py-5 md:py-10 px-6">
           <form className="bg-opacity-0 rounded mx-auto max-w-xl space-y-4">
 
-            <div className="w-full mb-4 bg-color1 p-4 rounded">
-              <p className="w-full text-xl lg:text-2xl text-left text-white">
-                Contact
-              </p>
-              <div className="w-full py-2">
-                <a href="mailto:service@aboutinsurances.com" title="email contact" className="font-bold inline-flex items-center text-base text-light-green w-min bg-white hover:bg-color2 rounded px-4 py-4 border-4 border-gray-200">
-                  service@aboutinsurances.com
-                </a>
-              </div>
-            </div>
-
             <div className='flex mx-auto text-xs lg:text-sm'>
               <ul className="sticky w-full xl:flex justify-end items-center">
                 <li className="sticky px-4 p-4">
@@ -131,6 +120,17 @@ const Contact = () => {
                   </a>
                 </li>
               </ul>
+            </div>
+
+            <div className="w-full mb-4 bg-color2 p-4 rounded">
+              <p className="w-full text-xl lg:text-2xl text-left text-white">
+                Contact
+              </p>
+              <div className="w-full py-2">
+                <a href="mailto:service@aboutinsurances.com" title="email contact" className="font-bold inline-flex items-center text-base text-white hover:text-color1 w-min bg-color1 hover:bg-white rounded px-4 py-4 border-4 border-gray-200">
+                  service@aboutinsurances.com
+                </a>
+              </div>
             </div>
 
             <div className="w-full pt-8">

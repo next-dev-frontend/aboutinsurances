@@ -2,10 +2,10 @@ import Link from "next/link"
 
 const PostLinks = () => {
   return (
-    <section id="insurances" className="select-none container mx-auto pt-10 pb-10 w-full max-w-5xl">
+    <section id="insurances" className="container mx-auto pt-10 pb-10 w-full max-w-5xl">
       <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none">
         <div className="w-auto pl-5">
-          <h2 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
+          <h2 className="my-4 text-left lg:text-center text-3xl md:text-4xl lg:text-5xl text-[#142039] font-bold">
             Thе Bеst Insurancе Companiеs: Protеcting Your Futurе with Top-Notch Covеragе
           </h2>
         </div>
@@ -49,7 +49,7 @@ const PostLinks = () => {
 
       <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none bg-gray-200">
         <div className="w-auto pl-5">
-          <h2 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
+          <h2 className="my-4 text-left lg:text-center text-3xl md:text-4xl lg:text-5xl text-[#142039] font-bold">
             Mееt thе most qualifiеd and rеliablе insurеrs.
           </h2>
         </div>

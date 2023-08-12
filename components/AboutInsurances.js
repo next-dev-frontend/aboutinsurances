@@ -2,7 +2,7 @@ import Image from 'next/legacy/image'
 
 const AboutInsurances = () => {
   return (
-    <section id="insurances" className="select-none container mx-auto pt-10 pb-10 w-full max-w-5xl">
+    <section id="insurances" className="container mx-auto pt-10 pb-10 w-full max-w-5xl">
 
       <div className="w-full mb-6">
         <div className="h-1 mx-8 my-0 py-0 bg-gray-400 bg-opacity-25" />
@@ -37,7 +37,7 @@ const AboutInsurances = () => {
           </div>
         </div>
         <div className="float-right block w-full lg:w-lg xl:w-xl md:w-1/2 h-auto px-4 md:px-8 p-8 pl-8 md:pl-4 xl:pl-2">
-          <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
+          <div className="hidden md:block relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
             <Image
               className="rounded mask mask-parallelogram-3"
               src="/backgrounds/bg-insurances.webp"
@@ -64,7 +64,7 @@ const AboutInsurances = () => {
           </a>
 
           <a href="https://go.hotmart.com/A80579208O?src=aboutinsurances" rel="noopener noreferrer" target="_blank" role="button">
-            <div className="relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
+            <div className="hidden md:block relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
               <Image
                 className="rounded mask mask-parallelogram-3"
                 src="/templates/kaspersky-template.webp"
@@ -81,7 +81,7 @@ const AboutInsurances = () => {
 
       <div className="flex flex-nowrap items-center justify-left md:justify-center px-4 md:px-0 shadow-xl md:shadow-none py-8">
         <div className="w-auto pl-5">
-          <h2 className="my-4 text-left lg:text-center text-4xl md:text-5xl lg:text-6xl text-[#142039] font-bold">
+          <h2 className="my-4 text-left lg:text-center text-3xl md:text-4xl lg:text-5xl text-[#142039] font-bold">
             What Arе Thе 10 Most Wantеd Insurancе?
           </h2>
         </div>
@@ -144,6 +144,11 @@ const AboutInsurances = () => {
       </div>
 
       <div className="container mx-auto py-8 px-8 w-full max-w-5xl">
+        <div className="flex flex-nowrap items-center justify-end px-2 py-2">
+          <p className="font-bold text-sm md:text-lg text-white bg-color1 px-2 rounded border-2 border-color2">
+            Posted by: About Insurances
+          </p>
+        </div>
         <div className="flex flex-nowrap items-center justify-end px-2">
           <p className="font-bold text-sm md:text-lg text-white bg-color1 px-2 rounded border-2 border-color2">
             last update: August 1, 2023

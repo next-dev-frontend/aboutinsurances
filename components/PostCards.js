@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 const PostCards = () => {
   return (
-    <section id="tips" className="select-none container mx-auto w-full max-w-5xl px-4">
+    <section id="tips" className="container mx-auto w-full max-w-5xl px-4 py-8">
       <div className="flex flex-wrap justify-center">
         <div className="w-full lg:w-2/3">
-          <div className="mx-auto mb-12 max-w-full text-center lg:mb-20 p-8">
-            <h2 data-anime="blur" className="mb-4 text-[#142039] font-bold text-4xl sm:text-5xl md:text-6xl">
+          <div className="mx-auto mb-12 max-w-full text-center lg:mb-20">
+            <h2 data-anime="blur" className="mb-4 pt-8 text-[#142039] font-bold text-3xl sm:text-4xl md:text-5xl">
               Recent Tips and News About Insurances
             </h2>
             <p data-anime="blur" className="text-body-color text-base py-4 text-2xl sm:text-3xl md:text-4xl">
@@ -17,7 +17,7 @@ const PostCards = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap -mx-4">
+      <div className="flex flex-wrap mx-4">
         <div data-anime="up" className="w-full p-2 md:w-1/2 lg:w-1/3">
           <div className="mx-auto mb-10 max-w-sm">
             <div className="mb-8 overflow-hidden rounded-lg">

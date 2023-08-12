@@ -96,6 +96,11 @@ export default function ${routeName.charAt(0).toUpperCase() + sanitizedRouteName
           </div>
 
           <div className="container mx-auto py-8 px-8 w-full max-w-5xl">
+          <div className="flex flex-nowrap items-center justify-end px-2 py-2">
+            <p className="font-bold text-sm md:text-lg text-white bg-color1 px-2 rounded border-2 border-color2">
+              Posted by: About Insurances
+            </p>
+          </div>
           <div className="flex flex-nowrap items-center justify-end px-2">
             <p className="font-bold text-sm md:text-lg text-white bg-color1 px-2 rounded border-2 border-color2">
               last update: ${formattedDate}
