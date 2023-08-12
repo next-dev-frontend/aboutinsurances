@@ -5,8 +5,8 @@ const AboutInsurances = dynamic(() => import('../components/AboutInsurances'))
 export default function Home() {
   return (
     <PageSeo
-      title="Ask Your Questions About Insurance and Agencies"
-      titleTemplate="%s | About Insurances"
+      title="Ask Your Questions About Insurance"
+      titleTemplate="%s | Tips and Articles"
       description="Insurance information and tips website. Before contracting any insurance service, visit our website and clarify all your doubts on the subject."
       path="/"
       publishedTime="2023-07-18T20:27:00Z"
