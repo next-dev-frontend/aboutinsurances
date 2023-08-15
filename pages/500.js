@@ -9,7 +9,6 @@ export default function page500() {
         layout="fill"
         objectFit="cover"
         priority
-        as="image"
       />
       <div className="absolute grid h-screen place-content-center bg-opacity-0">
         <div className="text-center">

@@ -1,13 +1,14 @@
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import ProtectedPage from '../components/ProtectedPage';
 
 const Protected = () => {
   return (
     <div>
-      <Head>
-        <title>Protected Page</title>
-        <meta name="description" content="Page Generator Web Nextjs Tailwind" />
-      </Head>
+      <NextSeo
+        noindex={true}
+        title="Protected Page Title"
+        description="This is a protected page with sensitive information."
+      />
       <ProtectedPage />
     </div>
   );
