@@ -61,9 +61,11 @@ const AboutInsurances = () => {
                 objectFit="cover"
               />
             </div>
+            Many Insurance Tips
           </a>
 
           <a href="https://go.hotmart.com/A80579208O?src=aboutinsurances" rel="noopener noreferrer" target="_blank">
+
             <div className="hidden md:block relative rounded-md shadow-xl p-2 w-full h-auto max-w-full">
               <Image
                 className="rounded mask mask-parallelogram-3"
@@ -75,6 +77,7 @@ const AboutInsurances = () => {
                 objectFit="cover"
               />
             </div>
+            Kaspersky Total Security
           </a>
         </div>
       </div>
@@ -87,7 +90,7 @@ const AboutInsurances = () => {
         </div>
         <div className="flex flex-nowrap items-center justify-end px-2">
           <p className="font-bold text-sm md:text-lg text-white bg-color1 px-2 rounded border-2 border-color2">
-            last update: August 1, 2023
+            last update: August 15, 2023
           </p>
         </div>
       </div>
