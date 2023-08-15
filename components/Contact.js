@@ -123,7 +123,7 @@ const Contact = () => {
             </div>
 
             <div className="w-full mb-4 bg-color2 p-4 rounded">
-              <p className="w-full text-xl lg:text-2xl text-left text-white">
+              <p className="w-full text-xl lg:text-2xl text-left text-color1">
                 Contact
               </p>
               <div className="w-full py-2">

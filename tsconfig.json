@@ -24,7 +24,9 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    "**/*.css"
+    "**/*.css",
+    "pages/500.jsx",
+    "pages/404.jsx"
   ],
   "exclude": [
     "node_modules"
