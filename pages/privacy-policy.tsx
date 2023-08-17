@@ -12,7 +12,7 @@ export default function privacyPolicy() {
       modifiedTime="2023-07-29T21:12:53Z"
     >
       <section id='policy' className="bg-gray-200 mx-auto flex w-full max-w-full h-full">
-        <div className="select-none container mx-auto pt-10 w-full max-w-5xl">
+        <div className="container mx-auto pt-10 w-full max-w-5xl">
           <div className="w-full items-center pb-12 pl-8">
             <a href="/">
               <button id="navAction1" className="inline-block w-max mx-auto text-md md:text-lg lg:text-xl lg:mx-0 hover:no-underline bg-[#142039] border-4 border-white text-white hover:bg-white hover:text-[#142039] hover:border-[#ff6341] rounded-full mt-4 lg:mt-0 py-4 px-8 focus:outline-none focus:shadow-outline transform transition hover:scale-100 duration-1000 ease-in-out shadow-xl" >

@@ -8,7 +8,7 @@ export default function PageOffline() {
         title="Offline Page"
         description="This page is currently offline. Please try again later."
       />
-      <section id="offline" className="select-none relative flex flex-wrap flex-shrink md:flex-shrink-0 items-center justify-center m-auto bg-no-repeat w-full max-w-full h-screen">
+      <section id="offline" className="relative flex flex-wrap flex-shrink md:flex-shrink-0 items-center justify-center m-auto bg-no-repeat w-full max-w-full h-screen">
         <div className="absolute grid h-screen place-content-center bg-opacity-0">
           <div className="text-center">
             <h1 className="text-9xl font-black text-[#142039]">This page is Offline! Try Later.</h1>
