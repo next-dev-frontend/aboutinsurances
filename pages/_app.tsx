@@ -4,6 +4,7 @@ import "tailwindcss/tailwind.css";
 import React, { useEffect } from 'react';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
+import NextNProgress from 'nextjs-progressbar';
 import dynamic from 'next/dynamic'
 const NavBar = dynamic(() => import('../components/Navbar'))
 const BreadCrumbs = dynamic(() => import('../components/BreadCrumbs'))
@@ -59,6 +60,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link rel="apple-touch-icon" type="image/png" href='/favicon.ico' />
         <link rel="icon" href='/logos/logo-144x144.png' />
       </Head>
+      <NextNProgress color="#ff6341" startPosition={0.3} stopDelayMs={200} height={3} showOnShallow={true} />
       <NavBar />
       <BreadCrumbs />
       <ScrollToTop />
